@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, Menu, X, MapPin, ChevronDown, User } from 'lucide-react';
+import { ShoppingCart, User, Menu, X, Home, Package, LogOut, UserCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import SearchBar from './SearchBar';
@@ -9,9 +9,25 @@ import './Navbar.css';
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const { getItemCount } = useCart();
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const itemCount = getItemCount();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
 
   const handleLogout = async () => {
     try {
@@ -23,118 +39,98 @@ const Navbar = () => {
     }
   };
 
+  const getUserInitials = () => {
+    if (!user) return '?';
+    const name = user.displayName || user.email || '';
+    const parts = name.split(/[\s@]/);
+    return parts.length >= 2
+      ? (parts[0][0] + parts[1][0]).toUpperCase()
+      : name.substring(0, 2).toUpperCase();
+  };
+
   return (
-    <header className="header" id="main-header">
-      {/* Top Strip (Desktop Only) */}
-      <div className="header__top-strip">
-        <div className="container header__top-inner">
-          <div className="header__top-links">
-            <Link to="/products" className="header__top-link header__top-link--active">MEDICINES</Link>
-            <Link to="/products" className="header__top-link">LAB TESTS <span className="header__safe-badge">SAFE</span></Link>
-            <Link to="/products" className="header__top-link">CONSULT DOCTORS</Link>
-            <Link to="/products" className="header__top-link">COVID-19</Link>
-            <Link to="/products" className="header__top-link">AYURVEDA</Link>
-            <Link to="/products" className="header__top-link">CARE PLAN <span className="header__save-badge">SAVE MORE</span></Link>
-          </div>
-          <div className="header__top-actions">
-            {isAuthenticated ? (
-              <div className="header__auth-group">
-                <Link to="/profile" className="header__auth-link">{user.displayName || user.email?.split('@')[0]}</Link>
-                <span className="header__divider">|</span>
-                <button onClick={handleLogout} className="header__auth-link">Logout</button>
-              </div>
-            ) : (
-              <div className="header__auth-group">
-                <Link to="/login" className="header__auth-link">Login</Link>
-                <span className="header__divider">|</span>
-                <Link to="/signup" className="header__auth-link">Sign Up</Link>
-              </div>
-            )}
-            <Link to="/offers" className="header__auth-link header__offers-link">Offers</Link>
-          </div>
+    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} id="main-navbar">
+      <div className="navbar__inner">
+        {/* Logo */}
+        <Link to="/" className="navbar__logo" id="logo-link">
+          <div className="navbar__logo-icon">TD</div>
+          <span className="navbar__logo-text">ThisDat</span>
+        </Link>
+
+        {/* Search — desktop */}
+        <div className="navbar__search">
+          <SearchBar />
         </div>
-      </div>
 
-      {/* Main Header (Logo, Location, Search, Cart) */}
-      <div className="header__main">
-        <div className="container header__main-inner">
-          
-          <button className="header__mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-          <Link to="/" className="header__logo">
-            <span className="header__logo-t">This</span><span className="header__logo-d">Dat</span>
+        {/* Actions */}
+        <div className="navbar__actions">
+          {/* Cart */}
+          <Link to="/cart" className="navbar__action-btn" id="cart-nav-btn" title="Cart">
+            <ShoppingCart size={22} />
+            {itemCount > 0 && (
+              <span className="navbar__cart-badge">{itemCount > 99 ? '99+' : itemCount}</span>
+            )}
           </Link>
 
-          <div className="header__search-container">
-            <div className="header__location-picker">
-              <MapPin size={16} className="header__location-icon" />
-              <span className="header__location-text">New Delhi</span>
-              <ChevronDown size={14} className="header__location-arrow" />
-            </div>
-            <div className="header__search-box">
-              <SearchBar />
-            </div>
-          </div>
-
-          <div className="header__actions-right">
-            <div className="header__help">
-              <span className="header__help-icon">⚡</span>
-              <div className="header__help-text">
-                Need Help?
-              </div>
-            </div>
-
-            <Link to="/cart" className="header__cart-btn">
-              <ShoppingCart size={22} className="header__cart-icon" />
-              {itemCount > 0 && <span className="header__cart-badge">{itemCount}</span>}
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Nav Strip (Categories dropdown mock) */}
-      <div className="header__bottom-strip">
-        <div className="container header__bottom-inner">
-          <Link to="/products" className="header__bottom-link">Health Resource Center <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Vitamins & Nutrition <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Diabetes <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Healthcare Devices <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Personal Care <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Health Conditions <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Ayurveda Products <ChevronDown size={14}/></Link>
-          <Link to="/products" className="header__bottom-link">Homeopathy <ChevronDown size={14}/></Link>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="header__mobile-menu">
+          {/* Auth */}
           {isAuthenticated ? (
-            <div className="header__mobile-user">
-              <User size={24} />
-              <span>{user.displayName || user.email}</span>
-            </div>
+            <Link to="/profile" className="navbar__user-btn" id="profile-nav-btn">
+              <div className="navbar__user-avatar">{getUserInitials()}</div>
+              <span className="navbar__user-name">
+                {user.displayName || user.email?.split('@')[0] || 'User'}
+              </span>
+            </Link>
           ) : (
-            <div className="header__mobile-user">
-              <Link to="/login" onClick={() => setMobileOpen(false)}>Login</Link>
-              <span> / </span>
-              <Link to="/signup" onClick={() => setMobileOpen(false)}>Sign Up</Link>
-            </div>
+            <Link to="/login" className="navbar__auth-btn" id="login-nav-btn">
+              <User size={16} />
+              <span>Login</span>
+            </Link>
           )}
-          <nav className="header__mobile-nav">
-            <Link to="/products" onClick={() => setMobileOpen(false)}>Medicines</Link>
-            <Link to="/products" onClick={() => setMobileOpen(false)}>Lab Tests</Link>
-            <Link to="/products" onClick={() => setMobileOpen(false)}>Consult Doctors</Link>
-            <Link to="/cart" onClick={() => setMobileOpen(false)}>Cart ({itemCount})</Link>
-            {isAuthenticated && (
-              <button onClick={handleLogout} className="header__mobile-logout">Logout</button>
+
+          {/* Mobile toggle */}
+          <button
+            className="navbar__mobile-toggle"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            id="mobile-menu-toggle"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="navbar__mobile-menu">
+          <SearchBar onClose={() => setMobileOpen(false)} />
+          <nav className="navbar__mobile-links">
+            <Link to="/" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
+              <Home size={20} /> Home
+            </Link>
+            <Link to="/products" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
+              <Package size={20} /> All Medicines
+            </Link>
+            <Link to="/cart" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
+              <ShoppingCart size={20} /> Cart {itemCount > 0 && `(${itemCount})`}
+            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link to="/profile" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
+                  <UserCircle size={20} /> Profile
+                </Link>
+                <button className="navbar__mobile-link" onClick={handleLogout}>
+                  <LogOut size={20} /> Logout
+                </button>
+              </>
+            ) : (
+              <Link to="/login" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
+                <User size={20} /> Login / Sign Up
+              </Link>
             )}
           </nav>
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 
