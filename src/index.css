@@ -1,0 +1,285 @@
+/* ===================================================
+   1mg Clone Design System — Global Styles & Tokens
+   =================================================== */
+
+/* ---------- CSS Custom Properties (Design Tokens) ---------- */
+:root {
+  /* Brand Colors */
+  --color-primary: #ff6f61;
+  --color-primary-dark: #e55a4c;
+  --color-primary-light: #ff8b80;
+  --color-primary-subtle: #fff1ef;
+  
+  /* Accent Colors (1mg rarely uses accent, sometimes teal for offers but very sparse) */
+  --color-accent: #14b8a6;
+  
+  /* Neutral Colors */
+  --color-neutral-0: #000000;
+  --color-neutral-10: #212121; /* text main */
+  --color-neutral-20: #333333;
+  --color-neutral-30: #4e5665;
+  --color-neutral-40: #666666; /* text secondary */
+  --color-neutral-50: #888888;
+  --color-neutral-60: #999999;
+  --color-neutral-70: #cccccc;
+  --color-neutral-80: #e0e0e0;
+  --color-neutral-90: #ebebeb; /* borders */
+  --color-neutral-95: #f6f6f6; /* body bg */
+  --color-neutral-99: #fafbfc;
+  --color-neutral-100: #ffffff; /* cards bg */
+
+  /* Semantic Colors */
+  --color-success: #1aab2a; /* 1mg green */
+  --color-success-subtle: #e4fae7;
+  --color-warning: #f9a826;
+  --color-error: #ff5443;
+  
+  /* Text Colors */
+  --text-primary: var(--color-neutral-10);
+  --text-secondary: var(--color-neutral-40);
+  --text-tertiary: var(--color-neutral-60);
+  --text-inverse: var(--color-neutral-100);
+  --text-brand: var(--color-primary);
+
+  /* Background Colors */
+  --bg-primary: var(--color-neutral-95); /* 1mg body is light grey */
+  --bg-surface: var(--color-neutral-100); /* 1mg cards are white */
+  --bg-secondary: var(--color-neutral-90);
+  --bg-brand: var(--color-primary);
+  --bg-dark: var(--color-neutral-10);
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Border Colors */
+  --border-light: var(--color-neutral-90);
+  --border-medium: var(--color-neutral-80);
+  --border-dark: var(--color-neutral-60);
+  --border-brand: var(--color-primary);
+
+  /* Typography */
+  --font-display: 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Font Sizes */
+  --fs-xs: 10px;
+  --fs-sm: 12px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 28px;
+  --fs-4xl: 32px;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.42857143; /* 1mg specific */
+  --lh-relaxed: 1.6;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px; /* standard 1mg card radius */
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px; /* used rarely, e.g., radio buttons */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.1);
+  --shadow-md: 0 2px 4px 0 rgba(0,0,0,0.1);
+  --shadow-lg: 0 4px 8px 0 rgba(0,0,0,0.1);
+  --shadow-xl: 0 8px 16px 0 rgba(0,0,0,0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* Layout */
+  --header-height: 112px; /* Top strip + main header */
+  --max-width: 1240px;
+  --container-padding: 24px;
+
+  /* Z-index layers */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ---------- CSS Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: var(--lh-normal);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  background-color: var(--bg-primary); /* #f6f6f6 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  font-size: inherit;
+  border-radius: var(--radius-md);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  outline: none;
+}
+input:focus, textarea:focus {
+  border-color: var(--color-primary);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+/* ---------- Utility Classes ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Base animations - 1mg uses very minimal animations */
+.page-enter {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-light);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+.spinner--white {
+  border-color: rgba(255,255,255,0.3);
+  border-top-color: white;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar - minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-70);
+  border-radius: var(--radius-md);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-50);
+}
+
+/* Custom 1mg style Box/Card class */
+.box-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+  }
+}
