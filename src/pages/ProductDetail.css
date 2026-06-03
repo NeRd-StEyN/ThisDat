@@ -243,24 +243,79 @@
   color: var(--text-primary);
 }
 
-/* Description */
-.product-detail__description {
-  padding: var(--sp-5);
-  border-radius: var(--cr-lg);
-  border: 1px solid var(--border-light);
+/* Highlights */
+.product-detail__highlights {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-light);
 }
 
-.product-detail__desc-title {
+.product-detail__section-title {
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
   color: var(--text-primary);
   margin-bottom: var(--sp-3);
 }
 
-.product-detail__desc-text {
+.product-detail__list {
+  list-style: disc;
+  padding-left: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.product-detail__list li {
   font-size: var(--fs-base);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
+}
+
+/* Extended Information (1mg style stacked sections) */
+.product-detail__extended-info {
+  margin-top: var(--sp-10);
+  background: var(--bg-primary);
+  border-radius: var(--cr-xl);
+  border: 1px solid var(--border-light);
+  padding: var(--sp-8);
+}
+
+.product-detail__extended-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--sp-6);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.product-detail__content-section {
+  margin-bottom: var(--sp-6);
+}
+
+.product-detail__content-section:last-child {
+  margin-bottom: 0;
+}
+
+.product-detail__content-heading {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--sp-3);
+}
+
+.product-detail__content-text {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+/* Sticky add to cart container */
+.product-detail__add-to-cart-container {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-light);
 }
 
 /* Related products */

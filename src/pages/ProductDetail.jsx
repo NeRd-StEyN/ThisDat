@@ -63,7 +63,11 @@ const ProductDetail = () => {
           {/* Image */}
           <div className="product-detail__image-section">
             <div className="product-detail__image">
-              {categoryData?.icon || '💊'}
+              {product.imageUrl ? (
+                <img src={product.imageUrl} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 'var(--sp-4)', borderRadius: 'var(--cr-xl)' }} />
+              ) : (
+                categoryData?.icon || '💊'
+              )}
             </div>
           </div>
 
@@ -138,30 +142,79 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <div className="product-detail__actions">
-              {product.inStock && (
-                inCart ? (
-                  <div className="product-detail__qty-controls">
-                    <button className="product-detail__qty-btn" onClick={handleDecrement}>
-                      <Minus size={18} />
+            <div className="product-detail__highlights">
+              <h3 className="product-detail__section-title">Product highlights</h3>
+              <ul className="product-detail__list">
+                <li>{product.description.split('.')[0]}.</li>
+                <li>Helps in managing conditions related to {categoryData?.name?.toLowerCase()}.</li>
+                <li>Safe and effective when used as directed.</li>
+                {product.requiresPrescription && <li>Requires a valid prescription.</li>}
+              </ul>
+            </div>
+            
+            <div className="product-detail__add-to-cart-container">
+              <div className="product-detail__actions">
+                {product.inStock && (
+                  inCart ? (
+                    <div className="product-detail__qty-controls">
+                      <button className="product-detail__qty-btn" onClick={handleDecrement}>
+                        <Minus size={18} />
+                      </button>
+                      <span className="product-detail__qty-value">{quantity}</span>
+                      <button className="product-detail__qty-btn" onClick={handleIncrement}>
+                        <Plus size={18} />
+                      </button>
+                    </div>
+                  ) : (
+                    <button className="product-detail__add-btn product-detail__add-btn--primary" onClick={handleAddToCart} id="add-to-cart-btn">
+                      Add to cart
                     </button>
-                    <span className="product-detail__qty-value">{quantity}</span>
-                    <button className="product-detail__qty-btn" onClick={handleIncrement}>
-                      <Plus size={18} />
-                    </button>
-                  </div>
-                ) : (
-                  <button className="product-detail__add-btn product-detail__add-btn--primary" onClick={handleAddToCart} id="add-to-cart-btn">
-                    <ShoppingCart size={20} /> Add to Cart
-                  </button>
-                )
-              )}
+                  )
+                )}
+              </div>
             </div>
 
-            <div className="product-detail__description">
-              <h3 className="product-detail__desc-title">Description</h3>
-              <p className="product-detail__desc-text">{product.description}</p>
-            </div>
+          </div>
+        </div>
+
+        <div className="product-detail__extended-info">
+          <h2 className="product-detail__extended-title">Information about {product.name}</h2>
+          
+          <div className="product-detail__content-section">
+            <h3 className="product-detail__content-heading">Description</h3>
+            <p className="product-detail__content-text">{product.description}</p>
+          </div>
+
+          <div className="product-detail__content-section">
+            <h3 className="product-detail__content-heading">Key Benefits</h3>
+            <ul className="product-detail__list">
+              <li>Provides effective relief for symptoms associated with {categoryData?.name?.toLowerCase()}.</li>
+              <li>Formulated by {product.manufacturer} ensuring high quality and safety standards.</li>
+              {product.tags?.map(tag => (
+                <li key={tag}>Contains active ingredients targeting {tag}.</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="product-detail__content-section">
+            <h3 className="product-detail__content-heading">Directions for Use</h3>
+            <p className="product-detail__content-text">
+              {product.dosageForm === 'Tablet' || product.dosageForm === 'Capsule' ? 'Take 1 tablet/capsule twice daily after meals or as directed by the physician.' :
+               product.dosageForm === 'Syrup' ? 'Take 10ml twice daily or as directed by the physician. Shake well before use.' :
+               product.dosageForm === 'Cream' || product.dosageForm === 'Lotion' ? 'Clean and dry the affected area. Apply a thin layer 2-3 times a day or as directed by the physician.' :
+               product.dosageForm === 'Eye Drop' ? 'Instil 1-2 drops in the affected eye(s) as needed or as directed by the physician.' :
+               'Use as directed by the physician.'}
+            </p>
+          </div>
+
+          <div className="product-detail__content-section">
+            <h3 className="product-detail__content-heading">Safety Information</h3>
+            <ul className="product-detail__list">
+              <li>Read the label carefully before use.</li>
+              <li>Store in a cool and dry place away from direct sunlight.</li>
+              <li>Keep out of reach of children.</li>
+              {product.requiresPrescription && <li>Do not exceed the recommended dosage without consulting a doctor.</li>}
+            </ul>
           </div>
         </div>
 
