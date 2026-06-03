@@ -9,7 +9,7 @@ const Profile = () => {
   const { user, logout } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();
-  const orders = getOrders();
+  const orders = getOrders(user?.uid);
 
   const handleLogout = async () => {
     try {

@@ -51,19 +51,21 @@ export const getOrderId = () => {
   return 'TD' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 6).toUpperCase();
 };
 
-export const saveOrder = (order) => {
+export const saveOrder = (order, userId) => {
   try {
-    const orders = JSON.parse(localStorage.getItem('thisdat_orders') || '[]');
+    const key = userId ? `thisdat_orders_${userId}` : 'thisdat_orders';
+    const orders = JSON.parse(localStorage.getItem(key) || '[]');
     orders.unshift(order);
-    localStorage.setItem('thisdat_orders', JSON.stringify(orders));
+    localStorage.setItem(key, JSON.stringify(orders));
   } catch (e) {
     console.error('Failed to save order:', e);
   }
 };
 
-export const getOrders = () => {
+export const getOrders = (userId) => {
   try {
-    return JSON.parse(localStorage.getItem('thisdat_orders') || '[]');
+    const key = userId ? `thisdat_orders_${userId}` : 'thisdat_orders';
+    return JSON.parse(localStorage.getItem(key) || '[]');
   } catch {
     return [];
   }

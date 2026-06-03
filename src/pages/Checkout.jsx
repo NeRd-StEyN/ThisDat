@@ -98,7 +98,7 @@ const Checkout = () => {
           address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
           date: new Date().toISOString(),
           status: 'Confirmed'
-        });
+        }, user?.uid);
 
         clearCart();
         toast.success('Your order has been placed!', 'Order Confirmed');
@@ -113,7 +113,7 @@ const Checkout = () => {
           address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
           date: new Date().toISOString(),
           status: 'Confirmed (Email pending)'
-        });
+        }, user?.uid);
 
         clearCart();
         toast.warning('Order placed but email confirmation may be delayed.', 'Order Placed');
@@ -129,7 +129,7 @@ const Checkout = () => {
         address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
         date: new Date().toISOString(),
         status: 'Confirmed (Offline)'
-      });
+      }, user?.uid);
 
       clearCart();
       toast.info('Order saved! Email will be sent when you are back online.', 'Order Saved');

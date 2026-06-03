@@ -8,23 +8,30 @@ export const useCart = () => {
   return context;
 };
 
-const CART_STORAGE_KEY = 'thisdat_cart';
+import { useAuth } from './AuthContext';
 
-const loadCart = () => {
-  try {
-    const saved = localStorage.getItem(CART_STORAGE_KEY);
-    return saved ? JSON.parse(saved) : [];
-  } catch {
-    return [];
-  }
+const getStorageKey = (userId) => {
+  return userId ? `thisdat_cart_${userId}` : 'thisdat_cart';
 };
 
 export const CartProvider = ({ children }) => {
-  const [items, setItems] = useState(loadCart);
+  const { user } = useAuth();
+  const [items, setItems] = useState([]);
 
+  // Load cart on mount or user change
   useEffect(() => {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-  }, [items]);
+    try {
+      const saved = localStorage.getItem(getStorageKey(user?.uid));
+      setItems(saved ? JSON.parse(saved) : []);
+    } catch {
+      setItems([]);
+    }
+  }, [user?.uid]);
+
+  // Save cart on items change
+  useEffect(() => {
+    localStorage.setItem(getStorageKey(user?.uid), JSON.stringify(items));
+  }, [items, user?.uid]);
 
   const addToCart = useCallback((product, quantity = 1) => {
     setItems(prev => {
