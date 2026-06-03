@@ -14,39 +14,34 @@
   align-items: center;
   gap: var(--sp-3);
   padding: var(--sp-3) var(--sp-4);
-  border-radius: var(--radius-lg);
+  border-radius: var(--cr-lg);
   background: var(--bg-primary);
-  box-shadow: var(--shadow-xl);
-  border-left: 4px solid var(--color-primary);
-  animation: toastSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  box-shadow: var(--shadow-l3);
+  border-left: 4px solid var(--color-brand);
+  animation: toastSlideIn 0.3s ease forwards;
   pointer-events: auto;
   min-width: 280px;
-  max-width: 420px;
-  backdrop-filter: blur(12px);
+  max-width: 400px;
 }
 
 .toast--success {
   border-left-color: var(--color-success);
-  background: linear-gradient(135deg, var(--color-success-subtle), var(--bg-primary));
 }
 
 .toast--error {
   border-left-color: var(--color-error);
-  background: linear-gradient(135deg, var(--color-error-subtle), var(--bg-primary));
 }
 
 .toast--warning {
   border-left-color: var(--color-warning);
-  background: linear-gradient(135deg, var(--color-warning-subtle), var(--bg-primary));
 }
 
 .toast--info {
   border-left-color: var(--color-info);
-  background: linear-gradient(135deg, var(--color-info-subtle), var(--bg-primary));
 }
 
 .toast--exit {
-  animation: toastSlideOut 0.3s ease forwards;
+  animation: toastSlideOut 0.25s ease forwards;
 }
 
 .toast__icon {
@@ -84,35 +79,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--cr-max);
   color: var(--text-tertiary);
   transition: all var(--transition-fast);
   cursor: pointer;
 }
 
 .toast__close:hover {
-  background: var(--bg-secondary);
+  background: var(--cool-neutral-95);
   color: var(--text-primary);
 }
 
 @keyframes toastSlideIn {
   from {
     opacity: 0;
-    transform: translateX(100%) scale(0.95);
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
   }
 }
 
 @keyframes toastSlideOut {
   from {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
   }
   to {
     opacity: 0;
-    transform: translateX(100%) scale(0.95);
+    transform: translateX(100%);
   }
 }

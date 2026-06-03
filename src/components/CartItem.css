@@ -3,25 +3,24 @@
   align-items: center;
   gap: var(--sp-4);
   padding: var(--sp-4);
-  border-radius: var(--radius-lg);
+  border-radius: var(--cr-lg);
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
-  transition: all var(--transition-fast);
 }
 
 .cart-item:hover {
-  border-color: var(--border-medium);
+  border-color: var(--border-subtle);
 }
 
 .cart-item__image {
-  width: 72px;
-  height: 72px;
-  border-radius: var(--radius-md);
-  background: var(--bg-warm);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--cr-md);
+  background: var(--cool-neutral-95);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
   flex-shrink: 0;
 }
 
@@ -32,7 +31,7 @@
 
 .cart-item__name {
   font-size: var(--fs-base);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   color: var(--text-primary);
   margin-bottom: 2px;
   white-space: nowrap;
@@ -75,9 +74,9 @@
   display: flex;
   align-items: center;
   gap: 0;
-  border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-light);
+  border-radius: var(--cr-md);
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--border-subtle);
 }
 
 .cart-item__qty-btn {
@@ -91,8 +90,8 @@
 }
 
 .cart-item__qty-btn:hover {
-  background: var(--bg-secondary);
-  color: var(--color-primary);
+  background: var(--cool-neutral-95);
+  color: var(--color-brand);
 }
 
 .cart-item__qty-value {
@@ -113,23 +112,23 @@
   font-size: var(--fs-md);
   font-weight: var(--fw-bold);
   color: var(--text-primary);
-  min-width: 80px;
+  min-width: 72px;
   text-align: right;
 }
 
 .cart-item__remove {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--cr-md);
   color: var(--text-tertiary);
   transition: all var(--transition-fast);
 }
 
 .cart-item__remove:hover {
-  background: var(--color-error-subtle);
+  background: #FFADB3;
   color: var(--color-error);
 }
 

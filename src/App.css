@@ -15,35 +15,34 @@
   bottom: var(--sp-5);
   right: var(--sp-5);
   z-index: var(--z-sticky);
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  width: 52px;
+  height: 52px;
+  border-radius: var(--cr-max);
+  background: var(--color-brand);
   color: white;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: var(--shadow-l3);
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
 .floating-cart:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+  transform: scale(1.05);
   color: white;
 }
 
 .floating-cart__badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: var(--radius-full);
-  background: var(--color-accent);
+  top: -2px;
+  right: -2px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: var(--cr-max);
+  background: var(--cool-neutral-10);
   color: white;
-  font-size: 11px;
+  font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
   display: flex;
   align-items: center;
