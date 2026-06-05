@@ -298,10 +298,29 @@
 
 @media (max-width: 600px) {
   .section-header h2 {
-    font-size: 24px;
+    font-size: 22px;
+  }
+  .home-1mg__categories-section, .home-1mg__featured-section, .home-1mg__trust, .home-1mg__how-it-works {
+    padding: 0 16px;
+    margin: 40px auto;
   }
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .category-card {
+    padding: 16px;
+  }
+  .category-icon-bg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+  }
+  .category-emoji {
+    font-size: 24px;
+  }
+  .category-card h3 {
+    font-size: 14px;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -278,6 +278,11 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-1mg__top .navbar-1mg__container {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+  
   .navbar-1mg__top-left {
     gap: 8px;
   }
@@ -286,13 +291,27 @@
     font-size: 18px;
   }
   
-  .navbar-1mg__profile-btn {
-    font-size: 12px;
+  .navbar-1mg__top-right {
+    gap: 12px;
+  }
+  
+  .navbar-1mg__auth-links {
+    gap: 8px;
+  }
+  
+  .navbar-1mg__auth-links a, .navbar-1mg__auth-links button, .navbar-1mg__help {
+    font-size: 13px;
+  }
+
+  .navbar-1mg__help {
+    display: none;
   }
   
   .navbar-1mg__search-wrapper {
     max-width: 100%;
-    margin-right: 8px;
+    flex: 0 0 100%;
+    margin: 12px 0 0 0;
+    order: 3;
   }
   
   .navbar-1mg__quick-btn {
