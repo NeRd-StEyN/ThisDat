@@ -152,7 +152,7 @@
 
 @media (max-width: 768px) {
   .products-page__grid {
-    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
     gap: var(--sp-3);
   }
 
@@ -161,11 +161,19 @@
     align-items: flex-start;
   }
 
+  .products-page__categories {
+    max-width: 100vw;
+  }
+
   .products-page__sort {
     width: 100%;
   }
 
   .products-page__sort-select {
     flex: 1;
+  }
+  
+  .products-page__title {
+    font-size: var(--fs-xl);
   }
 }

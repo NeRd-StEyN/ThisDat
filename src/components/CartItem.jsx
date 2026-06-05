@@ -1,14 +1,13 @@
 import { Plus, Minus, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { formatPrice, calculateDiscount } from '../utils/helpers';
+import { formatPrice } from '../utils/helpers';
 import { categories } from '../data/medicines';
 import './CartItem.css';
 
 const CartItem = ({ item }) => {
   const { updateQuantity, removeFromCart } = useCart();
   const categoryData = categories.find(c => c.id === item.category);
-  const effectivePrice = item.discountPrice || item.price;
-  const hasDiscount = item.discountPrice && item.discountPrice < item.price;
+  const effectivePrice = item.price;
 
   return (
     <div className="cart-item" id={`cart-item-${item.id}`}>
@@ -21,9 +20,6 @@ const CartItem = ({ item }) => {
         <p className="cart-item__meta">{item.manufacturer} · {item.packSize}</p>
         <div className="cart-item__price-row">
           <span className="cart-item__price">{formatPrice(effectivePrice)}</span>
-          {hasDiscount && (
-            <span className="cart-item__price--original">{formatPrice(item.price)}</span>
-          )}
         </div>
       </div>
 
@@ -47,7 +43,7 @@ const CartItem = ({ item }) => {
         </div>
 
         <span className="cart-item__subtotal">
-          {formatPrice(effectivePrice * item.quantity)}
+          {typeof effectivePrice === 'string' ? effectivePrice : formatPrice(effectivePrice * item.quantity)}
         </span>
 
         <button

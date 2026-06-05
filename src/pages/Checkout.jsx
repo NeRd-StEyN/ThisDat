@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
-import { MapPin, Send, AlertCircle, Package } from 'lucide-react';
+import { MapPin, Send, AlertCircle, Package, CheckCircle, Edit3, Bookmark } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
-import { formatPrice, getOrderId, saveOrder } from '../utils/helpers';
+import { formatPrice, getOrderId, saveOrder, saveAddress, getSavedAddress } from '../utils/helpers';
 import { categories } from '../data/medicines';
 import './Checkout.css';
 
@@ -12,10 +12,12 @@ import './Checkout.css';
 const FORMSPREE_URL = 'https://formspree.io/f/xnjyawqd';
 
 const Checkout = () => {
-  const { items, getSubtotal, getDiscountTotal, getSavings, getItemCount, clearCart } = useCart();
+  const { items, getSubtotal, getItemCount, clearCart } = useCart();
   const { user } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();
+
+  const savedAddr = getSavedAddress(user?.uid);
 
   const [formData, setFormData] = useState({
     fullName: user?.displayName || '',
@@ -29,6 +31,25 @@ const Checkout = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [saveAddr, setSaveAddr] = useState(true);
+  const [usingSaved, setUsingSaved] = useState(false);
+
+  // Auto-fill from saved address on mount
+  useEffect(() => {
+    if (savedAddr) {
+      setFormData(prev => ({
+        ...prev,
+        fullName: savedAddr.fullName || prev.fullName,
+        phone: savedAddr.phone || prev.phone,
+        address: savedAddr.address || prev.address,
+        city: savedAddr.city || prev.city,
+        state: savedAddr.state || prev.state,
+        pincode: savedAddr.pincode || prev.pincode,
+      }));
+      setUsingSaved(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (items.length === 0) {
     return <Navigate to="/cart" replace />;
@@ -36,6 +57,22 @@ const Checkout = () => {
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (usingSaved) setUsingSaved(false);
+  };
+
+  const handleUseSavedAddress = () => {
+    if (!savedAddr) return;
+    setFormData(prev => ({
+      ...prev,
+      fullName: savedAddr.fullName || prev.fullName,
+      phone: savedAddr.phone || prev.phone,
+      address: savedAddr.address || prev.address,
+      city: savedAddr.city || prev.city,
+      state: savedAddr.state || prev.state,
+      pincode: savedAddr.pincode || prev.pincode,
+    }));
+    setUsingSaved(true);
+    toast.success('Saved address loaded', 'Address Filled');
   };
 
   const handleSubmit = async (e) => {
@@ -55,13 +92,24 @@ const Checkout = () => {
 
     setLoading(true);
 
+    // Save address if checkbox is checked
+    if (saveAddr) {
+      saveAddress({
+        fullName: formData.fullName,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        state: formData.state,
+        pincode: formData.pincode,
+      }, user?.uid);
+    }
+
     const orderId = getOrderId();
-    const total = getDiscountTotal();
-    const savings = getSavings();
+    const subtotal = getSubtotal();
 
     // Build order summary text for email
     const orderItems = items.map(item => {
-      const price = item.discountPrice || item.price;
+      const price = item.price;
       return `${item.name} (${item.packSize}) x${item.quantity} = ₹${(price * item.quantity).toFixed(2)}`;
     }).join('\n');
 
@@ -75,8 +123,7 @@ const Checkout = () => {
       'Order Items': orderItems,
       'Total Items': getItemCount(),
       'Subtotal': `₹${getSubtotal().toFixed(2)}`,
-      'Discount': savings > 0 ? `-₹${savings.toFixed(2)}` : '₹0',
-      'Total Amount': `₹${total.toFixed(2)}`,
+      'Total Amount': `₹${subtotal.toFixed(2)}`,
       'Special Notes': formData.notes || 'None',
       'Order Date': new Date().toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short' })
     };
@@ -93,8 +140,8 @@ const Checkout = () => {
         saveOrder({
           id: orderId,
           items: [...items],
-          total,
-          savings,
+          total: subtotal,
+          savings: 0,
           address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
           date: new Date().toISOString(),
           status: 'Confirmed'
@@ -102,14 +149,14 @@ const Checkout = () => {
 
         clearCart();
         toast.success('Your order has been placed!', 'Order Confirmed');
-        navigate('/order-success', { state: { orderId, total } });
+        navigate('/order-success', { state: { orderId, total: subtotal } });
       } else {
         // If Formspree fails (e.g., invalid form ID), still save order locally
         saveOrder({
           id: orderId,
           items: [...items],
-          total,
-          savings,
+          total: subtotal,
+          savings: 0,
           address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
           date: new Date().toISOString(),
           status: 'Confirmed (Email pending)'
@@ -117,15 +164,15 @@ const Checkout = () => {
 
         clearCart();
         toast.warning('Order placed but email confirmation may be delayed.', 'Order Placed');
-        navigate('/order-success', { state: { orderId, total } });
+        navigate('/order-success', { state: { orderId, total: subtotal } });
       }
     } catch (err) {
       // Network error — save locally anyway
       saveOrder({
         id: orderId,
         items: [...items],
-        total,
-        savings,
+        total: subtotal,
+        savings: 0,
         address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
         date: new Date().toISOString(),
         status: 'Confirmed (Offline)'
@@ -133,15 +180,13 @@ const Checkout = () => {
 
       clearCart();
       toast.info('Order saved! Email will be sent when you are back online.', 'Order Saved');
-      navigate('/order-success', { state: { orderId, total } });
+      navigate('/order-success', { state: { orderId, total: subtotal } });
     } finally {
       setLoading(false);
     }
   };
 
   const subtotal = getSubtotal();
-  const total = getDiscountTotal();
-  const savings = getSavings();
 
   return (
     <div className="checkout-page page-enter">
@@ -157,10 +202,49 @@ const Checkout = () => {
               </div>
             )}
 
+            {/* Saved Address Card */}
+            {savedAddr && usingSaved && (
+              <div className="checkout-page__saved-address" id="saved-address-card">
+                <div className="checkout-page__saved-address-header">
+                  <div className="checkout-page__saved-address-badge">
+                    <CheckCircle size={16} />
+                    <span>Saved Address</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="checkout-page__saved-address-edit"
+                    onClick={() => setUsingSaved(false)}
+                    id="edit-address-btn"
+                  >
+                    <Edit3 size={14} /> Edit
+                  </button>
+                </div>
+                <div className="checkout-page__saved-address-body">
+                  <div className="checkout-page__saved-address-name">{savedAddr.fullName}</div>
+                  <div className="checkout-page__saved-address-detail">
+                    {savedAddr.address}, {savedAddr.city}, {savedAddr.state} - {savedAddr.pincode}
+                  </div>
+                  {savedAddr.phone && (
+                    <div className="checkout-page__saved-address-phone">📞 {savedAddr.phone}</div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Delivery Address */}
             <div className="checkout-page__section">
               <h2 className="checkout-page__section-title">
                 <MapPin size={20} /> Delivery Address
+                {savedAddr && !usingSaved && (
+                  <button
+                    type="button"
+                    className="checkout-page__use-saved-btn"
+                    onClick={handleUseSavedAddress}
+                    id="use-saved-address-btn"
+                  >
+                    <Bookmark size={14} /> Use saved address
+                  </button>
+                )}
               </h2>
               <div className="checkout-page__form-grid">
                 <div className="checkout-page__field">
@@ -267,6 +351,18 @@ const Checkout = () => {
                   />
                 </div>
               </div>
+
+              {/* Save address checkbox */}
+              <label className="checkout-page__save-checkbox" htmlFor="save-address-check">
+                <input
+                  type="checkbox"
+                  id="save-address-check"
+                  checked={saveAddr}
+                  onChange={(e) => setSaveAddr(e.target.checked)}
+                />
+                <Bookmark size={14} />
+                <span>Save this address for future orders</span>
+              </label>
             </div>
           </div>
 
@@ -290,7 +386,7 @@ const Checkout = () => {
                         </div>
                       </div>
                       <div className="checkout-page__summary-item-price">
-                        {formatPrice((item.discountPrice || item.price) * item.quantity)}
+                        {formatPrice(item.price * item.quantity)}
                       </div>
                     </div>
                   );
@@ -303,12 +399,6 @@ const Checkout = () => {
                 <span style={{ color: 'var(--text-secondary)' }}>Subtotal</span>
                 <span style={{ fontWeight: 'var(--fw-semibold)' }}>{formatPrice(subtotal)}</span>
               </div>
-              {savings > 0 && (
-                <div className="checkout-page__summary-row">
-                  <span style={{ color: 'var(--text-secondary)' }}>Discount</span>
-                  <span style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-success)' }}>-{formatPrice(savings)}</span>
-                </div>
-              )}
               <div className="checkout-page__summary-row">
                 <span style={{ color: 'var(--text-secondary)' }}>Delivery</span>
                 <span style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-success)' }}>FREE</span>
@@ -318,7 +408,7 @@ const Checkout = () => {
 
               <div className="checkout-page__summary-row">
                 <span style={{ fontSize: 'var(--fs-xl)', fontWeight: 'var(--fw-extrabold)' }}>Total</span>
-                <span style={{ fontSize: 'var(--fs-xl)', fontWeight: 'var(--fw-extrabold)' }}>{formatPrice(total)}</span>
+                <span style={{ fontSize: 'var(--fs-xl)', fontWeight: 'var(--fw-extrabold)' }}>{formatPrice(subtotal)}</span>
               </div>
 
               <button
@@ -334,9 +424,7 @@ const Checkout = () => {
                 )}
               </button>
 
-              <p className="checkout-page__note">
-                📧 Order details will be sent to your email via Formspree. No payment required — pay on delivery.
-              </p>
+
             </div>
           </div>
         </form>

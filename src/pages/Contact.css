@@ -1,0 +1,157 @@
+.contact-page {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 140px);
+}
+
+.contact-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.contact-page__back:hover {
+  text-decoration: underline;
+}
+
+.contact-page__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-page__header h1 {
+  font-size: 32px;
+  color: #212121;
+  margin-bottom: 8px;
+}
+
+.contact-page__header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .contact-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-page__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-page__info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.contact-page__info-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  color: #ff6f61;
+  margin-bottom: 12px;
+}
+
+.contact-page__info-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.contact-page__info-card p {
+  font-size: 16px;
+  color: #212121;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.contact-hours {
+  font-size: 13px;
+  color: #767676;
+}
+
+.contact-page__form {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-page__form h2 {
+  font-size: 24px;
+  color: #212121;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6f61;
+}
+
+.contact-submit {
+  width: 100%;
+  padding: 14px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.contact-submit:hover:not(:disabled) {
+  background: #e65c50;
+}
+
+.contact-submit:disabled {
+  background: #ffb6b0;
+  cursor: not-allowed;
+}

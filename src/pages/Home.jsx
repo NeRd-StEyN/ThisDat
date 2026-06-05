@@ -1,139 +1,147 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Truck, BadgePercent, Clock, Pill } from 'lucide-react';
-import HeroBanner from '../components/HeroBanner';
-import CategoryCard from '../components/CategoryCard';
+import { useEffect, useRef, useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, ShieldCheck, Truck, Headset, Search, FileText, CheckCircle } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
+import HeroBanner from '../components/HeroBanner';
 import { medicines, categories } from '../data/medicines';
 import './Home.css';
 
 const Home = () => {
-  const featuredProducts = medicines.filter(m => m.rating >= 4.4).slice(0, 8);
-  const dealsProducts = medicines
-    .filter(m => m.discountPrice && m.discountPrice < m.price)
-    .sort((a, b) => {
-      const discA = ((a.price - a.discountPrice) / a.price) * 100;
-      const discB = ((b.price - b.discountPrice) / b.price) * 100;
-      return discB - discA;
-    })
-    .slice(0, 8);
+  const navigate = useNavigate();
+  const featuredProducts = useMemo(() => {
+    return [...medicines].sort(() => 0.5 - Math.random()).slice(0, 6);
+  }, []);
+
+  // Intersection Observer for scroll animations
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
-    <div className="home-page page-enter">
-      <div className="container">
-        {/* Hero Banner */}
-        <section className="home-page__hero">
-          <HeroBanner />
-        </section>
-
-        {/* Categories */}
-        <section className="home-section" id="categories-section">
-          <div className="home-section__header">
-            <div>
-              <h2 className="home-section__title">Shop by Category</h2>
-              <p className="home-section__subtitle">Find the right medicine for your needs</p>
-            </div>
-            <Link to="/products" className="home-section__link">
-              View All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="home-categories__grid">
-            {categories.map(cat => (
-              <CategoryCard key={cat.id} category={cat} />
-            ))}
-          </div>
-        </section>
-
-        {/* Offer Banner */}
-        <section className="home-offer" id="offer-banner">
-          <div className="home-offer__content">
-            <span className="home-offer__tag">🔥 LIMITED OFFER</span>
-            <h3 className="home-offer__title">Up to 25% OFF on Vitamins</h3>
-            <p className="home-offer__desc">Boost your immunity with premium supplements at unbeatable prices</p>
-          </div>
-          <Link to="/products?category=vitamins" className="home-offer__btn">
-            Shop Now <ArrowRight size={16} />
-          </Link>
-        </section>
-
-        {/* Featured Products */}
-        <section className="home-section" id="featured-section">
-          <div className="home-section__header">
-            <div>
-              <h2 className="home-section__title">⭐ Top Rated Products</h2>
-              <p className="home-section__subtitle">Highest rated by our customers</p>
-            </div>
-            <Link to="/products" className="home-section__link">
-              See All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="home-products__grid">
-            {featuredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
-        {/* Best Deals */}
-        <section className="home-section" id="deals-section">
-          <div className="home-section__header">
-            <div>
-              <h2 className="home-section__title">🏷️ Best Deals</h2>
-              <p className="home-section__subtitle">Maximum savings on popular medicines</p>
-            </div>
-            <Link to="/products" className="home-section__link">
-              See All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="home-products__grid">
-            {dealsProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
-        {/* Trust Section */}
-        <section className="home-trust" id="trust-section">
-          <h2 className="home-trust__title">Why Choose ThisDat?</h2>
-          <div className="home-trust__grid">
-            <div className="home-trust__item">
-              <div className="home-trust__icon">
-                <Shield size={28} />
-              </div>
-              <h3 className="home-trust__item-title">100% Genuine</h3>
-              <p className="home-trust__item-desc">
-                All medicines are sourced from licensed pharmacies and verified suppliers
-              </p>
-            </div>
-            <div className="home-trust__item">
-              <div className="home-trust__icon">
-                <BadgePercent size={28} />
-              </div>
-              <h3 className="home-trust__item-title">Best Prices</h3>
-              <p className="home-trust__item-desc">
-                Get up to 25% off on your favorite medicines and health products
-              </p>
-            </div>
-            <div className="home-trust__item">
-              <div className="home-trust__icon">
-                <Truck size={28} />
-              </div>
-              <h3 className="home-trust__item-title">Fast Delivery</h3>
-              <p className="home-trust__item-desc">
-                Reliable delivery right to your doorstep with real-time tracking
-              </p>
-            </div>
-            <div className="home-trust__item">
-              <div className="home-trust__icon">
-                <Clock size={28} />
-              </div>
-              <h3 className="home-trust__item-title">Easy Ordering</h3>
-              <p className="home-trust__item-desc">
-                Simple checkout with order confirmation sent directly to your email
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="home-1mg page-enter">
+      {/* Top Banner Row */}
+      <div style={{ maxWidth: '1440px', margin: '16px auto', padding: '0 16px' }}>
+        <HeroBanner />
       </div>
+
+      {/* Trust Signals Banner */}
+      <section className="home-1mg__trust-banner scroll-animate">
+        <div className="trust-grid">
+          <div className="trust-item">
+            <ShieldCheck size={32} className="trust-icon" />
+            <div className="trust-text">
+              <h3>100% Genuine</h3>
+              <p>Authentic medicines</p>
+            </div>
+          </div>
+          <div className="trust-item">
+            <Truck size={32} className="trust-icon" />
+            <div className="trust-text">
+              <h3>Fast Delivery</h3>
+              <p>To your doorstep</p>
+            </div>
+          </div>
+          <div className="trust-item">
+            <Headset size={32} className="trust-icon" />
+            <div className="trust-text">
+              <h3>24/7 Support</h3>
+              <p>Always here for you</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="home-1mg__how-it-works scroll-animate">
+        <div className="section-header center">
+          <h2>How It Works</h2>
+          <p>Get your healthcare essentials in three simple steps</p>
+        </div>
+        <div className="steps-grid">
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <Search size={32} />
+              <span className="step-number">1</span>
+            </div>
+            <h3>Search Medicines</h3>
+            <p>Find your prescribed medicines or browse health products.</p>
+          </div>
+          <div className="step-arrow"><ArrowRight size={24} /></div>
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <FileText size={32} />
+              <span className="step-number">2</span>
+            </div>
+            <h3>Add Details</h3>
+            <p>Provide delivery address and quickly confirm your order.</p>
+          </div>
+          <div className="step-arrow"><ArrowRight size={24} /></div>
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <CheckCircle size={32} />
+              <span className="step-number">3</span>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Receive your authentic medicines quickly at your doorstep.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop by Categories */}
+      <section className="home-1mg__categories-section scroll-animate">
+        <div className="section-header">
+          <h2>Shop by Category</h2>
+        </div>
+        <div className="categories-grid">
+          {categories.filter(c => c.id !== 'All Categories').map(cat => (
+            <div 
+              key={cat.id} 
+              className="category-card" 
+              onClick={() => navigate(`/products?category=${encodeURIComponent(cat.id)}`)}
+            >
+              <div className="category-icon-bg" style={{ backgroundColor: cat.color + '22' }}>
+                <span className="category-emoji">{cat.icon}</span>
+              </div>
+              <h3>{cat.name}</h3>
+              <div className="category-card-hover">
+                <span>Explore</span> <ArrowRight size={14} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="home-1mg__featured-section scroll-animate">
+        <div className="section-header flex-between">
+          <h2>Featured Products</h2>
+          <Link to="/products" className="view-all-btn">
+            View All <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div className="products-grid">
+          {featuredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,0 +1,53 @@
+.auth-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.auth-carousel__title {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 22px;
+  color: #212121;
+}
+
+.auth-carousel__desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  min-height: 42px; /* Prevent layout shift */
+}
+
+/* Animations for transitioning content */
+.fade-in {
+  animation: authFadeIn 0.5s ease;
+}
+
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add custom illustration styles based on generic shapes for the new items */
+.auth-1mg-illustration.illustration-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23fcebe4"/><rect x="40" y="45" width="20" height="35" fill="%2343cad5"/><circle cx="50" cy="30" r="10" fill="%23008b8b"/></svg>');
+}
+.auth-1mg-illustration.illustration-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23e4fcf4"/><rect x="30" y="40" width="40" height="25" fill="%233bc496"/><circle cx="40" cy="70" r="8" fill="%232c9673"/><circle cx="60" cy="70" r="8" fill="%232c9673"/></svg>');
+}
+.auth-1mg-illustration.illustration-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23e4f0fc"/><path d="M50 20 L80 40 L50 80 L20 40 Z" fill="%23439ad5"/><path d="M45 40 L55 60" stroke="white" stroke-width="4"/><path d="M60 40 L45 60" stroke="white" stroke-width="4"/></svg>');
+}
+.auth-1mg-illustration.illustration-4 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23fce4f4"/><rect x="25" y="35" width="50" height="30" rx="4" fill="%23d543ad"/><rect x="25" y="45" width="50" height="5" fill="%23212121"/></svg>');
+}

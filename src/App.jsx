@@ -15,6 +15,8 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderSuccess from './pages/OrderSuccess';
 import Profile from './pages/Profile';
+import Legal from './pages/Legal';
+import Contact from './pages/Contact';
 import './App.css';
 
 // Scroll to top on route change
@@ -60,6 +62,9 @@ function AppContent() {
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/terms" element={<Legal />} />
+          <Route path="/privacy" element={<Legal />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={
             <ProtectedRoute>
               <Checkout />

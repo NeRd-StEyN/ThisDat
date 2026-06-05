@@ -102,7 +102,7 @@ const SearchBar = ({ onClose }) => {
                     <div className="search-bar__result-meta">{product.manufacturer} · {product.packSize}</div>
                   </div>
                   <div className="search-bar__result-price">
-                    {formatPrice(product.discountPrice || product.price)}
+                    {formatPrice(product.price)}
                   </div>
                 </div>
               ))}

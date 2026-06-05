@@ -4,14 +4,23 @@
   border-radius: var(--cr-lg);
   border: 1px solid var(--border-light);
   overflow: hidden;
-  transition: box-shadow var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .product-card:hover {
-  box-shadow: var(--shadow-l1);
+  box-shadow: var(--shadow-l3);
+  transform: translateY(-4px);
+}
+
+.product-card__image {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
 }
 
 .product-card__image-wrap {

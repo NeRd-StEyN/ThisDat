@@ -1,47 +1,40 @@
 export const formatPrice = (price) => {
+  if (typeof price === 'string') return price;
   return `₹${price.toFixed(2)}`;
 };
 
-export const calculateDiscount = (price, discountPrice) => {
-  if (!discountPrice || discountPrice >= price) return 0;
-  return Math.round(((price - discountPrice) / price) * 100);
-};
+
 
 export const searchProducts = (products, query) => {
   if (!query || query.trim() === '') return products;
   const lowerQuery = query.toLowerCase().trim();
   return products.filter(product =>
     product.name.toLowerCase().includes(lowerQuery) ||
-    product.manufacturer.toLowerCase().includes(lowerQuery) ||
+    (product.manufacturer && product.manufacturer.toLowerCase().includes(lowerQuery)) ||
     product.category.toLowerCase().includes(lowerQuery) ||
     (product.tags && product.tags.some(tag => tag.toLowerCase().includes(lowerQuery)))
   );
 };
 
 export const filterByCategory = (products, category) => {
-  if (!category || category === 'all') return products;
+  if (!category || category === 'all' || category === 'All Categories') return products;
   return products.filter(product => product.category === category);
 };
 
 export const sortProducts = (products, sortBy) => {
   const sorted = [...products];
+  const getNumPrice = (p) => typeof p.price === 'number' ? p.price : 0;
+  
   switch (sortBy) {
     case 'price-low':
-      return sorted.sort((a, b) => (a.discountPrice || a.price) - (b.discountPrice || b.price));
+      return sorted.sort((a, b) => getNumPrice(a) - getNumPrice(b));
     case 'price-high':
-      return sorted.sort((a, b) => (b.discountPrice || b.price) - (a.discountPrice || a.price));
+      return sorted.sort((a, b) => getNumPrice(b) - getNumPrice(a));
     case 'name-az':
       return sorted.sort((a, b) => a.name.localeCompare(b.name));
     case 'name-za':
       return sorted.sort((a, b) => b.name.localeCompare(a.name));
-    case 'rating':
-      return sorted.sort((a, b) => b.rating - a.rating);
-    case 'discount':
-      return sorted.sort((a, b) => {
-        const discA = calculateDiscount(a.price, a.discountPrice);
-        const discB = calculateDiscount(b.price, b.discountPrice);
-        return discB - discA;
-      });
+
     default:
       return sorted;
   }
@@ -68,5 +61,24 @@ export const getOrders = (userId) => {
     return JSON.parse(localStorage.getItem(key) || '[]');
   } catch {
     return [];
+  }
+};
+
+export const saveAddress = (address, userId) => {
+  try {
+    const key = userId ? `thisdat_address_${userId}` : 'thisdat_address';
+    localStorage.setItem(key, JSON.stringify(address));
+  } catch (e) {
+    console.error('Failed to save address:', e);
+  }
+};
+
+export const getSavedAddress = (userId) => {
+  try {
+    const key = userId ? `thisdat_address_${userId}` : 'thisdat_address';
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
+  } catch {
+    return null;
   }
 };

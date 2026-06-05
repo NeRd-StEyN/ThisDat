@@ -68,19 +68,13 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const getSubtotal = useCallback(() => {
-    return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  }, [items]);
-
-  const getDiscountTotal = useCallback(() => {
     return items.reduce((sum, item) => {
-      const discountPrice = item.discountPrice || item.price;
-      return sum + (discountPrice * item.quantity);
+      const price = typeof item.price === 'number' ? item.price : 0;
+      return sum + (price * item.quantity);
     }, 0);
   }, [items]);
 
-  const getSavings = useCallback(() => {
-    return getSubtotal() - getDiscountTotal();
-  }, [getSubtotal, getDiscountTotal]);
+
 
   const getItemCount = useCallback(() => {
     return items.reduce((sum, item) => sum + item.quantity, 0);
@@ -102,8 +96,6 @@ export const CartProvider = ({ children }) => {
     updateQuantity,
     clearCart,
     getSubtotal,
-    getDiscountTotal,
-    getSavings,
     getItemCount,
     isInCart,
     getItemQuantity

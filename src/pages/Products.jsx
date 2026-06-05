@@ -11,7 +11,7 @@ const Products = () => {
   const [sortBy, setSortBy] = useState('default');
 
   const searchQuery = searchParams.get('search') || '';
-  const activeCategory = searchParams.get('category') || 'all';
+  const activeCategory = searchParams.get('category') || 'All Categories';
 
   const filteredProducts = useMemo(() => {
     let result = medicines;
@@ -27,7 +27,7 @@ const Products = () => {
 
   const handleCategoryChange = (catId) => {
     const params = new URLSearchParams(searchParams);
-    if (catId === 'all') {
+    if (catId === 'All Categories') {
       params.delete('category');
     } else {
       params.set('category', catId);
@@ -35,7 +35,7 @@ const Products = () => {
     setSearchParams(params);
   };
 
-  const activeCategoryName = activeCategory === 'all'
+  const activeCategoryName = activeCategory === 'All Categories'
     ? 'All Medicines'
     : categories.find(c => c.id === activeCategory)?.name || 'All Medicines';
 
@@ -53,12 +53,6 @@ const Products = () => {
 
         <div className="products-page__controls">
           <div className="products-page__categories">
-            <button
-              className={`products-page__cat-chip${activeCategory === 'all' ? ' products-page__cat-chip--active' : ''}`}
-              onClick={() => handleCategoryChange('all')}
-            >
-              All
-            </button>
             {categories.map(cat => (
               <button
                 key={cat.id}
@@ -83,8 +77,6 @@ const Products = () => {
               <option value="price-high">Price: High to Low</option>
               <option value="name-az">Name: A to Z</option>
               <option value="name-za">Name: Z to A</option>
-              <option value="rating">Highest Rated</option>
-              <option value="discount">Best Discount</option>
             </select>
           </div>
         </div>

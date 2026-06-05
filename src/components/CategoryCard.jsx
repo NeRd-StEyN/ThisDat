@@ -3,7 +3,9 @@ import { medicines } from '../data/medicines';
 import './CategoryCard.css';
 
 const CategoryCard = ({ category }) => {
-  const count = medicines.filter(m => m.category === category.id).length;
+  const count = category.id === 'All Categories'
+    ? medicines.length
+    : medicines.filter(m => m.category === category.id).length;
 
   return (
     <Link

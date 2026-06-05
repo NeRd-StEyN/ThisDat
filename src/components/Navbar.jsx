@@ -1,135 +1,158 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Menu, X, Home, Package, LogOut, UserCircle } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ShoppingCart, Search, MapPin, ChevronDown, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
-import SearchBar from './SearchBar';
+import { useToast } from '../components/Toast';
+import { medicines } from '../data/medicines';
 import './Navbar.css';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const { getItemCount } = useCart();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { info } = useToast();
   const itemCount = getItemCount();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
+  const searchResults = searchQuery.length > 0 
+    ? medicines.filter(m => m.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5)
+    : [];
 
   const handleLogout = async () => {
     try {
       await logout();
-      setMobileOpen(false);
+      setProfileOpen(false);
       navigate('/');
     } catch (err) {
       console.error('Logout failed:', err);
     }
   };
 
-  const getUserInitials = () => {
-    if (!user) return '?';
-    const name = user.displayName || user.email || '';
-    const parts = name.split(/[\s@]/);
-    return parts.length >= 2
-      ? (parts[0][0] + parts[1][0]).toUpperCase()
-      : name.substring(0, 2).toUpperCase();
-  };
-
   return (
-    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} id="main-navbar">
-      <div className="navbar__inner">
-        {/* Logo */}
-        <Link to="/" className="navbar__logo" id="logo-link">
-          <div className="navbar__logo-icon">TD</div>
-          <span className="navbar__logo-text">ThisDat</span>
-        </Link>
+    <nav className="navbar-1mg">
+      {/* Tier 1: Top Nav */}
+      <div className="navbar-1mg__top">
+        <div className="navbar-1mg__container">
+          <div className="navbar-1mg__top-left">
+            <Link to="/" className="navbar-1mg__logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+              <img src="/favicon.svg" alt="TD Logo" style={{ width: '32px', height: '32px' }} />
+              <strong style={{ fontSize: '22px', color: '#333' }}>ThisDat</strong>
+            </Link>
+            <div className="navbar-1mg__top-links">
+              <Link to="/" className={location.pathname === '/' ? 'active' : ''}>HOME</Link>
+              <Link to="/products" className={location.pathname === '/products' ? 'active' : ''}>MEDICINES</Link>
+            </div>
+          </div>
 
-        {/* Search — desktop */}
-        <div className="navbar__search">
-          <SearchBar />
-        </div>
-
-        {/* Actions */}
-        <div className="navbar__actions">
-          {/* Cart */}
-          <Link to="/cart" className="navbar__action-btn" id="cart-nav-btn" title="Cart">
-            <ShoppingCart size={22} />
-            {itemCount > 0 && (
-              <span className="navbar__cart-badge">{itemCount > 99 ? '99+' : itemCount}</span>
+          <div className="navbar-1mg__search-wrapper" style={{ position: 'relative', flex: 1, margin: '0 32px', maxWidth: '600px' }}>
+            <div className="navbar-1mg__search">
+              <input 
+                type="text" 
+                placeholder="Search for Medicines and Health Products" 
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setShowDropdown(true);
+                }}
+                onFocus={() => setShowDropdown(true)}
+                onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && searchQuery.trim().length > 0) {
+                    e.preventDefault();
+                    setShowDropdown(false);
+                    if (searchResults.length > 0) {
+                      navigate(`/product/${searchResults[0].id}`);
+                      setSearchQuery('');
+                    } else {
+                      navigate('/products');
+                    }
+                  }
+                }}
+              />
+              <Search size={18} color="#666" />
+            </div>
+            
+            {showDropdown && searchQuery.length > 0 && (
+              <div className="navbar-1mg__search-dropdown animate-slide-down" style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                right: 0,
+                background: '#fff',
+                border: '1px solid #dfdfdf',
+                borderTop: 'none',
+                borderRadius: '0 0 4px 4px',
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                zIndex: 1000,
+                maxHeight: '300px',
+                overflowY: 'auto'
+              }}>
+                {searchResults.length > 0 ? (
+                  searchResults.slice(0, 8).map(product => (
+                    <div 
+                      key={product.id} 
+                      className="search-dropdown-item"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '10px 12px',
+                        textDecoration: 'none',
+                        color: '#333',
+                        borderBottom: '1px solid #f5f5f5',
+                        cursor: 'pointer'
+                      }}
+                      onMouseDown={(e) => {
+                        e.preventDefault(); 
+                        setSearchQuery('');
+                        setShowDropdown(false);
+                        navigate(`/product/${product.id}`);
+                      }}
+                    >
+                      <Search size={14} color="#999" style={{ marginRight: '10px' }} />
+                      <div>
+                        <div style={{ fontSize: '13px', fontWeight: '500' }}>{product.name}</div>
+                        <div style={{ fontSize: '11px', color: '#666' }}>{product.category}</div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div style={{ padding: '12px', fontSize: '13px', color: '#666' }}>
+                    No matching results found
+                  </div>
+                )}
+              </div>
             )}
-          </Link>
+          </div>
 
-          {/* Auth */}
-          {isAuthenticated ? (
-            <Link to="/profile" className="navbar__user-btn" id="profile-nav-btn">
-              <div className="navbar__user-avatar">{getUserInitials()}</div>
-              <span className="navbar__user-name">
-                {user.displayName || user.email?.split('@')[0] || 'User'}
-              </span>
+          <div className="navbar-1mg__top-right">
+            {isAuthenticated ? (
+              <div className="navbar-1mg__auth-links" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <Link to="/profile">Profile</Link> | 
+                <Link to="/profile">Orders</Link> | 
+                <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: '#4a4a4a', cursor: 'pointer', fontSize: '14px', padding: 0 }}>Logout</button>
+              </div>
+            ) : (
+              <div className="navbar-1mg__auth-links">
+                <Link to="/login">Login</Link> | <Link to="/signup">Signup</Link>
+              </div>
+            )}
+            <Link to="/cart" className="navbar-1mg__cart-icon">
+              <ShoppingCart size={20} />
+              {itemCount > 0 && <span className="navbar-1mg__cart-badge">{itemCount}</span>}
             </Link>
-          ) : (
-            <Link to="/login" className="navbar__auth-btn" id="login-nav-btn">
-              <User size={16} />
-              <span>Login</span>
-            </Link>
-          )}
-
-          {/* Mobile toggle */}
-          <button
-            className="navbar__mobile-toggle"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            id="mobile-menu-toggle"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <Link to="#" className="navbar-1mg__help" onClick={(e) => { e.preventDefault(); info('Reach us at support@thisdat.com or call 1800-THISDAT', 'Contact Support'); }}>Need Help?</Link>
+          </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="navbar__mobile-menu">
-          <SearchBar onClose={() => setMobileOpen(false)} />
-          <nav className="navbar__mobile-links">
-            <Link to="/" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
-              <Home size={20} /> Home
-            </Link>
-            <Link to="/products" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
-              <Package size={20} /> All Medicines
-            </Link>
-            <Link to="/cart" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
-              <ShoppingCart size={20} /> Cart {itemCount > 0 && `(${itemCount})`}
-            </Link>
-            {isAuthenticated ? (
-              <>
-                <Link to="/profile" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
-                  <UserCircle size={20} /> Profile
-                </Link>
-                <button className="navbar__mobile-link" onClick={handleLogout}>
-                  <LogOut size={20} /> Logout
-                </button>
-              </>
-            ) : (
-              <Link to="/login" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>
-                <User size={20} /> Login / Sign Up
-              </Link>
-            )}
-          </nav>
-        </div>
-      )}
+
+
+      {/* Tier 3 Removed as requested */}
+
     </nav>
   );
 };

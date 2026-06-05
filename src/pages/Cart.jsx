@@ -7,7 +7,7 @@ import { formatPrice } from '../utils/helpers';
 import './Cart.css';
 
 const Cart = () => {
-  const { items, getSubtotal, getDiscountTotal, getSavings, getItemCount, clearCart } = useCart();
+  const { items, getSubtotal, getItemCount, clearCart } = useCart();
   const { isAuthenticated } = useAuth();
 
   if (items.length === 0) {
@@ -29,8 +29,6 @@ const Cart = () => {
   }
 
   const subtotal = getSubtotal();
-  const total = getDiscountTotal();
-  const savings = getSavings();
   const itemCount = getItemCount();
 
   return (
@@ -52,37 +50,17 @@ const Cart = () => {
 
             <div className="cart-page__summary-row">
               <span className="cart-page__summary-label">Subtotal ({itemCount} items)</span>
-              <span className="cart-page__summary-value">{formatPrice(subtotal)}</span>
+              <span className="cart-page__summary-value">
+                {items.some(i => typeof i.price === 'string') ? 'TBD' : formatPrice(subtotal)}
+              </span>
             </div>
-
-            {savings > 0 && (
-              <div className="cart-page__summary-row">
-                <span className="cart-page__summary-label">Discount</span>
-                <span className="cart-page__summary-value cart-page__summary-value--savings">
-                  -{formatPrice(savings)}
-                </span>
-              </div>
-            )}
-
-            <div className="cart-page__summary-row">
-              <span className="cart-page__summary-label">Delivery</span>
-              <span className="cart-page__summary-value cart-page__summary-value--savings">FREE</span>
-            </div>
-
-            <div className="cart-page__summary-divider" />
 
             <div className="cart-page__summary-row">
               <span className="cart-page__summary-label cart-page__summary-total">Total</span>
-              <span className="cart-page__summary-value cart-page__summary-total">{formatPrice(total)}</span>
+              <span className="cart-page__summary-value cart-page__summary-total">
+                {formatPrice(subtotal)}
+              </span>
             </div>
-
-            {savings > 0 && (
-              <div className="cart-page__summary-row" style={{ paddingTop: 0 }}>
-                <span style={{ fontSize: 'var(--fs-sm)', color: 'var(--color-success)', fontWeight: 'var(--fw-semibold)' }}>
-                  You save {formatPrice(savings)} on this order 🎉
-                </span>
-              </div>
-            )}
 
             <Link
               to={isAuthenticated ? '/checkout' : '/login'}

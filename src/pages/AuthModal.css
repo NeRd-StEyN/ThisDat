@@ -1,0 +1,234 @@
+.auth-1mg-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-1mg-modal {
+  background: #fff;
+  width: 850px;
+  max-width: 95vw;
+  height: 500px;
+  border-radius: 4px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.auth-1mg-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.auth-1mg-close:hover {
+  color: #333;
+}
+
+/* Left Side */
+.auth-1mg-left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid #eaeaea;
+}
+
+.auth-1mg-illustration {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.login-illustration {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23ff8a65" opacity="0.2"/><path d="M40 70 L60 70 L60 40 L40 40 Z" fill="%234dd0e1"/><circle cx="50" cy="30" r="10" fill="%2300838f"/></svg>');
+}
+
+.signup-illustration {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%234dd0e1" opacity="0.2"/><path d="M30 60 L70 60 L50 30 Z" fill="%23ffb74d"/><rect x="40" y="60" width="20" height="20" fill="%23ffcc80"/></svg>');
+}
+
+.auth-1mg-left h2 {
+  font-size: 22px;
+  color: #4a4a4a;
+  margin-bottom: 16px;
+}
+
+.auth-1mg-left p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  max-width: 280px;
+}
+
+.auth-1mg-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-1mg-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.auth-1mg-dots .dot.active {
+  background: #666;
+}
+
+/* Right Side */
+.auth-1mg-right {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-1mg-right h2 {
+  font-size: 26px;
+  color: #212121;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.auth-1mg-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.auth-1mg-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-1mg-input-group label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.auth-1mg-input-group input {
+  border: none;
+  border-bottom: 1px solid #ff6f61;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #212121;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-1mg-input-group input:focus {
+  border-bottom: 2px solid #ff6f61;
+}
+
+.auth-1mg-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.auth-1mg-checkbox label {
+  font-size: 12px;
+  color: #666;
+}
+
+.auth-1mg-submit {
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: auto; /* Push to bottom of form area */
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.auth-1mg-submit:hover {
+  background: #e65c50;
+}
+
+.auth-1mg-submit:disabled {
+  background: #ffb7b0;
+  cursor: not-allowed;
+}
+
+.auth-1mg-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Footer Links */
+.auth-1mg-footer {
+  text-align: center;
+}
+
+.auth-1mg-footer p {
+  font-size: 12px;
+  color: #212121;
+  margin-bottom: 8px;
+}
+
+.auth-1mg-footer a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+.auth-1mg-footer .terms {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.auth-1mg-footer .terms a {
+  color: #666;
+  text-decoration: underline;
+}
+
+.auth-1mg-footer .need-help {
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .auth-1mg-left {
+    display: none;
+  }
+  .auth-1mg-modal {
+    height: auto;
+    min-height: 400px;
+  }
+  .auth-1mg-right {
+    padding: 32px 24px;
+  }
+}

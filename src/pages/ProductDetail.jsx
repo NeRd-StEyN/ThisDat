@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Plus, Minus, CheckCircle, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../components/Toast';
 import { medicines, categories } from '../data/medicines';
-import { calculateDiscount } from '../utils/helpers';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -12,6 +11,7 @@ const ProductDetail = () => {
   const { addToCart, updateQuantity, removeFromCart, getItemQuantity, isInCart } = useCart();
   const toast = useToast();
   const [activeSection, setActiveSection] = useState('overview');
+  const [imgError, setImgError] = useState(false);
 
   const product = medicines.find(m => m.id === id);
 
@@ -35,7 +35,6 @@ const ProductDetail = () => {
   }
 
   const categoryData = categories.find(c => c.id === product.category);
-  const discount = calculateDiscount(product.price, product.discountPrice);
   const quantity = getItemQuantity(product.id);
   const inCart = isInCart(product.id);
 
@@ -125,76 +124,84 @@ const ProductDetail = () => {
             
             <div className="product-detail__meta-row">
               <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">MARKETER</span>
-                <Link to="#" className="product-detail__meta-value">{product.manufacturer}</Link>
+                <span className="product-detail__meta-label">CATEGORY</span>
+                <Link to={`/products?category=${product.category}`} className="product-detail__meta-value">{categoryData?.name || product.category}</Link>
               </div>
               <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">SALT COMPOSITION</span>
+                <span className="product-detail__meta-label">PACKING</span>
                 <span className="product-detail__meta-value product-detail__meta-value--black">
-                  {product.tags?.[0] ? product.tags[0].charAt(0).toUpperCase() + product.tags[0].slice(1) : 'Active Ingredients'} (Standard w/w)
+                  {product.specifications?.['Packing'] || 'Standard Pack'}
                 </span>
               </div>
               <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">STORAGE</span>
-                <span className="product-detail__meta-value product-detail__meta-value--black">Store below 30°C</span>
+                <span className="product-detail__meta-label">STATUS</span>
+                <span className="product-detail__meta-value product-detail__meta-value--black">
+                  {product.specifications?.['Status'] || 'Available'}
+                </span>
               </div>
             </div>
 
             <div className="product-detail__image-container">
-              {product.imageUrl ? (
-                <img src={product.imageUrl} alt={product.name} />
+              {product.image && !imgError ? (
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  style={{width: '100%', height: '100%', objectFit: 'contain', maxHeight: '400px'}} 
+                  onError={() => setImgError(true)}
+                />
               ) : (
                 <div className="product-detail__image-placeholder">{categoryData?.icon || '💊'}</div>
               )}
             </div>
 
-            <div className="product-detail__alert-banner">
-              <div className="product-detail__alert-text">
-                <CheckCircle size={16} />
-                24% cheaper alternative available with same salt composition
-              </div>
-              <Link to="#" style={{color: '#ff6f61', fontSize: '12px', fontWeight: '700', textDecoration: 'none'}}>View substitutes</Link>
-            </div>
+
 
             <div id="overview" className="product-detail__section">
               <h2>PRODUCT INTRODUCTION</h2>
               <p>{product.description}</p>
-              <p>{product.name} is used in the treatment of conditions related to {categoryData?.name?.toLowerCase()}. It helps relieve symptoms effectively and safely when used as directed.</p>
-              <p>Some of the common side effects may include mild allergic reactions or skin peeling if used topically. If the side effects bother you or do not go away, let your doctor know.</p>
             </div>
 
             <div id="uses" className="product-detail__section">
               <h2>USES OF {product.name.toUpperCase()}</h2>
               <ul>
                 <li>Treatment of {product.tags?.[0] || 'symptoms'}</li>
-                <li>Management of {categoryData?.name?.toLowerCase()}</li>
+                {product.specifications?.['Indications'] && <li>{product.specifications['Indications']}</li>}
               </ul>
             </div>
 
             <div className="product-detail__section">
               <h2>BENEFITS OF {product.name.toUpperCase()}</h2>
-              <p>In treatment of {categoryData?.name?.toLowerCase()}:<br/>
-              {product.name} is an effective medicine. It kills and prevents the growth of the condition-causing elements. This relieves the symptoms caused by the issue. You should keep using it for as long as it is prescribed even if your symptoms have gone. This will prevent the issue from coming back.</p>
+              {product.benefits && product.benefits.length > 0 ? (
+                <ul>
+                  {product.benefits.map((benefit, idx) => (
+                    <li key={idx}>{benefit}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>Refer to the composition for therapeutic benefits.</p>
+              )}
             </div>
 
             <div id="how-to-use" className="product-detail__section">
               <h2>HOW TO USE {product.name.toUpperCase()}</h2>
               <p>
-                {product.dosageForm === 'Tablet' || product.dosageForm === 'Capsule' ? 'Take this medicine in the dose and duration as advised by your doctor. Swallow it as a whole. Do not chew, crush or break it.' :
-                 product.dosageForm === 'Syrup' ? 'Take this medicine in the dose and duration as advised by your doctor. Check the label for directions before use. Measure it with a measuring cup and take it by mouth. Shake well before use.' :
-                 product.dosageForm === 'Cream' || product.dosageForm === 'Lotion' || product.dosageForm === 'Spray' ? 'This medicine is for external use only. Use it in the dose and duration as advised by your doctor. Check the label for directions before use. Clean and dry the affected area and apply the medicine.' :
-                 product.dosageForm === 'Eye Drop' ? 'This medicine is for external use only. Use it in the dose and duration as advised by your doctor. Check the label for directions before use. Hold the dropper close to the eye without touching it. Gently squeeze the dropper and place the medicine inside the lower eyelid.' :
-                 'Use this medicine in the dose and duration as advised by your doctor. Check the label for directions before use.'}
+                {product.specifications?.['Usage Instructions'] || 'Use under medical guidance. Check the label for directions before use.'}
               </p>
+              {product.specifications?.['Dosage - Adults'] && (
+                <p><strong>Adults:</strong> {product.specifications['Dosage - Adults']}</p>
+              )}
+              {product.specifications?.['Dosage - Children'] && (
+                <p><strong>Children:</strong> {product.specifications['Dosage - Children']}</p>
+              )}
             </div>
 
             <div id="safety" className="product-detail__section">
               <h2>SAFETY ADVICE</h2>
               <ul>
-                <li>Read the label carefully before use.</li>
-                <li>Store in a cool and dry place away from direct sunlight.</li>
-                <li>Keep out of reach of children.</li>
-                {product.requiresPrescription && <li><strong>Prescription Required:</strong> Do not exceed the recommended dosage without consulting a doctor.</li>}
+                <li>{product.specifications?.['Precautions'] || 'Consult your doctor before use'}</li>
+                <li>{product.specifications?.['Storage'] || 'Store in a cool and dry place away from direct sunlight.'}</li>
+                <li>{product.specifications?.['Disclaimer'] || 'Read the label carefully before use.'}</li>
+                <li>{product.specifications?.['Possible Side Effects'] || 'Keep out of reach of children.'}</li>
               </ul>
             </div>
 
@@ -204,18 +211,9 @@ const ProductDetail = () => {
           <div className="product-detail__sidebar-right">
             
             <div className="product-detail__price-card">
-              {discount > 0 && (
-                <div className="product-detail__mrp-row">
-                  <span className="product-detail__mrp-label">MRP</span>
-                  <span className="product-detail__mrp-value">₹{product.price.toFixed(2)}</span>
-                  <span className="product-detail__discount-badge">{discount}% OFF</span>
-                </div>
-              )}
-              
               <div className="product-detail__current-price-row">
-                <span className="product-detail__price-symbol">₹</span>
-                <span className="product-detail__price-value">
-                  {(product.discountPrice || product.price).toFixed(2)}
+                <span className="product-detail__price-value" style={{fontSize: '24px'}}>
+                  {typeof product.price === 'string' ? product.price : `₹${product.price.toFixed(2)}`}
                 </span>
               </div>
               
@@ -224,11 +222,11 @@ const ProductDetail = () => {
               </div>
 
               <select className="product-detail__pack-selector" defaultValue="1">
-                <option value="1">1 {product.dosageForm} - {product.packSize}</option>
-                <option value="2">2 {product.dosageForm}s - {parseInt(product.packSize) * 2 || 'Double'}</option>
+                <option value="1">1 {product.dosageForm || 'Unit'} - {product.specifications?.['Packing'] || 'Standard'}</option>
+                <option value="2">2 {product.dosageForm || 'Unit'}s - Multi-pack</option>
               </select>
 
-              {product.inStock ? (
+              {product.inStock !== false ? (
                 inCart ? (
                   <div className="product-detail__qty-widget">
                     <button className="product-detail__qty-btn" onClick={handleDecrement}>
@@ -256,24 +254,10 @@ const ProductDetail = () => {
                 </div>
               )}
 
-              <div className="product-detail__delivery-info">
-                <div className="product-detail__delivery-title">Get in 60 minutes</div>
-                <div className="product-detail__delivery-desc">
-                  Delivering to: <span style={{fontWeight: '700', color: '#212121'}}>110020, New Delhi </span>
-                </div>
-              </div>
+
             </div>
 
-            {/* Generic alternative card placeholder */}
-            <div style={{background: '#eefbee', border: '1px solid #c9e7c9', borderRadius: '4px', padding: '16px', marginBottom: '16px'}}>
-              <div style={{display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px'}}>
-                <span style={{background: '#1aab2a', color: 'white', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px'}}>₹</span>
-                <span style={{fontSize: '13px', fontWeight: '700', color: '#212121'}}>Generic alternative available<br/><span style={{fontWeight: '400', color: '#1aab2a'}}>with 24% savings</span></span>
-              </div>
-              <button style={{width: '100%', background: 'white', border: '1px solid #1aab2a', color: '#1aab2a', padding: '8px', borderRadius: '4px', fontSize: '13px', fontWeight: '700', cursor: 'pointer'}}>
-                View alternative
-              </button>
-            </div>
+
 
           </div>
         </div>

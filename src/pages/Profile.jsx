@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserCircle, Mail, LogOut, Package, ShoppingBag, Clock } from 'lucide-react';
+import { Phone, Mail, Plus, ChevronRight, LogOut, Package, MapPin, CheckCircle, Save, Edit3, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { auth } from '../config/firebase';
+import { updateProfile } from 'firebase/auth';
 import { useToast } from '../components/Toast';
-import { getOrders, formatPrice } from '../utils/helpers';
+import { getOrders, formatPrice, saveAddress, getSavedAddress } from '../utils/helpers';
 import './Profile.css';
 
 const Profile = () => {
@@ -10,6 +13,19 @@ const Profile = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const orders = getOrders(user?.uid);
+
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [newName, setNewName] = useState(user?.displayName || '');
+  const [isUpdatingName, setIsUpdatingName] = useState(false);
+
+  const [savedAddr, setSavedAddr] = useState(() => getSavedAddress(user?.uid));
+  const [editingAddress, setEditingAddress] = useState(false);
+  const [addrForm, setAddrForm] = useState({
+    fullName: '', phone: '', address: '', city: '', state: '', pincode: '',
+  });
+
+  const [marketingOptIn, setMarketingOptIn] = useState(true);
+  const [whatsappOptIn, setWhatsappOptIn] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -21,125 +37,164 @@ const Profile = () => {
     }
   };
 
-  const getUserInitials = () => {
-    if (!user) return '?';
-    const name = user.displayName || user.email || '';
-    const parts = name.split(/[\s@]/);
-    return parts.length >= 2
-      ? (parts[0][0] + parts[1][0]).toUpperCase()
-      : name.substring(0, 2).toUpperCase();
+  const handleUpdateName = async () => {
+    if (!newName.trim()) {
+      toast.error('Name cannot be empty', 'Error');
+      return;
+    }
+    try {
+      setIsUpdatingName(true);
+      await updateProfile(auth.currentUser, { displayName: newName.trim() });
+      // We force a local update by reloading the page or we just let it be, 
+      // but reloading is easiest to ensure all components see the new name.
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+      toast.error('Failed to update name', 'Error');
+    } finally {
+      setIsUpdatingName(false);
+    }
   };
 
-  const formatDate = (dateStr) => {
-    return new Date(dateStr).toLocaleDateString('en-IN', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
+  const handleEditAddress = () => {
+    if (savedAddr) setAddrForm({ ...savedAddr });
+    else setAddrForm({ fullName: user?.displayName || '', phone: '', address: '', city: '', state: '', pincode: '' });
+    setEditingAddress(true);
   };
+
+  const handleSaveAddress = () => {
+    if (!addrForm.fullName || !addrForm.address || !addrForm.city || !addrForm.state || !addrForm.pincode) {
+      toast.error('Please fill in all required fields', 'Missing Fields');
+      return;
+    }
+    saveAddress(addrForm, user?.uid);
+    setSavedAddr({ ...addrForm });
+    setEditingAddress(false);
+    toast.success('Address saved successfully!', 'Address Saved');
+  };
+
+  const handleDeleteAddress = () => {
+    const key = user?.uid ? `thisdat_address_${user.uid}` : 'thisdat_address';
+    localStorage.removeItem(key);
+    setSavedAddr(null);
+    setEditingAddress(false);
+    toast.info('Address removed', 'Deleted');
+  };
+
+  const handleAddrChange = (e) => setAddrForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   return (
-    <div className="profile-page page-enter" id="profile-page">
-      <div className="container">
-        <h1 className="profile-page__title">My Account</h1>
-
-        <div className="profile-page__grid">
-          {/* User Info Card */}
-          <div className="profile-page__card">
-            <h2 className="profile-page__card-title">
-              <UserCircle size={22} /> Profile
-            </h2>
-
-            <div className="profile-page__user-header">
-              <div className="profile-page__avatar">
-                {getUserInitials()}
-              </div>
-              <div className="profile-page__user-info">
-                <h3 className="profile-page__user-name">
-                  {user?.displayName || 'User'}
-                </h3>
-                <p className="profile-page__user-email">
-                  <Mail size={14} />
-                  {user?.email}
-                </p>
-              </div>
+    <div className="profile-1mg page-enter">
+      <div className="profile-1mg__container">
+        
+        {/* Main 1mg Profile Header Grid */}
+        <div className="profile-1mg__grid-header">
+          
+          {/* Left Side: Contact Info */}
+          <div className="profile-1mg__contact-box" style={{ gridColumn: '1 / -1' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              {isEditingName ? (
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <input 
+                    type="text" 
+                    value={newName} 
+                    onChange={(e) => setNewName(e.target.value)} 
+                    style={{ padding: '4px 8px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '4px' }}
+                  />
+                  <button onClick={handleUpdateName} disabled={isUpdatingName} style={{ background: '#ff6f61', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer' }}>
+                    {isUpdatingName ? 'Saving...' : 'Save'}
+                  </button>
+                  <button onClick={() => { setIsEditingName(false); setNewName(user?.displayName || ''); }} style={{ background: '#eee', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer' }}>Cancel</button>
+                </div>
+              ) : (
+                <h2 style={{ margin: 0 }}>Hi {user?.displayName || 'there'}! <button onClick={() => setIsEditingName(true)} style={{ background: 'none', border: 'none', color: '#ff6f61', cursor: 'pointer', fontSize: '14px', marginLeft: '8px' }}><Edit3 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }}/>Edit Name</button></h2>
+              )}
             </div>
 
-            <div className="profile-page__info-grid">
-              <div className="profile-page__info-item">
-                <div className="profile-page__info-label">Member Since</div>
-                <div className="profile-page__info-value">
-                  {user?.metadata?.creationTime
-                    ? new Date(user.metadata.creationTime).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
-                    : 'N/A'}
-                </div>
-              </div>
-              <div className="profile-page__info-item">
-                <div className="profile-page__info-label">Total Orders</div>
-                <div className="profile-page__info-value">{orders.length}</div>
-              </div>
-              <div className="profile-page__info-item">
-                <div className="profile-page__info-label">Auth Provider</div>
-                <div className="profile-page__info-value">
-                  {user?.providerData?.[0]?.providerId === 'google.com' ? 'Google' : 'Email'}
-                </div>
-              </div>
-              <div className="profile-page__info-item">
-                <div className="profile-page__info-label">Email Verified</div>
-                <div className="profile-page__info-value" style={{ color: user?.emailVerified ? 'var(--color-success)' : 'var(--color-warning)' }}>
-                  {user?.emailVerified ? '✓ Verified' : 'Pending'}
-                </div>
+            <div className="profile-1mg__contact-row" style={{ marginTop: '24px' }}>
+              <Mail size={18} color="#999" />
+              <div className="profile-1mg__contact-details">
+                <span className="label">Primary Email address</span>
+                <span className="val">{user?.email || 'test@example.com'}</span>
               </div>
             </div>
+            
+            <button className="profile-1mg__logout-btn" onClick={handleLogout} style={{ marginTop: '16px' }}>Logout</button>
+          </div>
+        </div>
 
-            <button className="profile-page__logout-btn" onClick={handleLogout} id="logout-btn">
-              <LogOut size={18} /> Sign Out
-            </button>
+        {/* Existing App Features (Addresses & Orders) styled to match */}
+        <div className="profile-1mg__features">
+          <div className="profile-1mg__card">
+            <h3><MapPin size={20} /> Delivery Address</h3>
+            {editingAddress ? (
+              <div className="profile-1mg__addr-form">
+                <input name="fullName" placeholder="Full Name" value={addrForm.fullName} onChange={handleAddrChange} />
+                <input name="phone" placeholder="Phone" value={addrForm.phone} onChange={handleAddrChange} />
+                <textarea name="address" placeholder="Street Address" value={addrForm.address} onChange={handleAddrChange} />
+                <input name="city" placeholder="City" value={addrForm.city} onChange={handleAddrChange} />
+                <input name="state" placeholder="State" value={addrForm.state} onChange={handleAddrChange} />
+                <input name="pincode" placeholder="PIN Code" value={addrForm.pincode} onChange={handleAddrChange} />
+                <div className="addr-actions">
+                  <button onClick={handleSaveAddress} className="btn-save">Save Address</button>
+                  <button onClick={() => setEditingAddress(false)} className="btn-cancel">Cancel</button>
+                </div>
+              </div>
+            ) : savedAddr ? (
+              <div className="profile-1mg__saved-addr">
+                <p><strong>{savedAddr.fullName}</strong> <CheckCircle size={14} color="green" /></p>
+                <p>{savedAddr.address}, {savedAddr.city}, {savedAddr.state} - {savedAddr.pincode}</p>
+                <div className="addr-actions mt-2">
+                  <button onClick={handleEditAddress} className="btn-edit"><Edit3 size={14}/> Edit</button>
+                  <button onClick={handleDeleteAddress} className="btn-delete"><Trash2 size={14}/> Remove</button>
+                </div>
+              </div>
+            ) : (
+              <button className="btn-add-addr" onClick={handleEditAddress}>+ Add New Address</button>
+            )}
           </div>
 
-          {/* Order History */}
-          <div className="profile-page__card">
-            <h2 className="profile-page__card-title">
-              <Package size={22} /> Order History
-            </h2>
-
+          <div className="profile-1mg__card">
+            <h3><Package size={20} /> Order History</h3>
             {orders.length > 0 ? (
-              <div className="profile-page__orders">
-                {orders.map((order, index) => (
-                  <div key={index} className="profile-page__order">
-                    <div className="profile-page__order-info">
-                      <div className="profile-page__order-id">#{order.id}</div>
-                      <div className="profile-page__order-date">
-                        <Clock size={12} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} />
-                        {formatDate(order.date)}
+              <div className="profile-1mg__orders">
+                {orders.map((order, i) => (
+                  <div key={i} className="profile-1mg__order-item" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
+                      <div>
+                        <p style={{ marginBottom: '4px' }}><strong>Order #{order.id}</strong></p>
+                        <p style={{ fontSize: '12px', color: '#767676' }}>{new Date(order.date).toLocaleString()}</p>
                       </div>
-                      <div className="profile-page__order-items">
-                        {order.items?.length || 0} item{(order.items?.length || 0) !== 1 ? 's' : ''}
-                        {order.items?.length > 0 && ` · ${order.items.slice(0, 2).map(i => i.name).join(', ')}${order.items.length > 2 ? '...' : ''}`}
+                      <div style={{ textAlign: 'right' }}>
+                        <p className="price" style={{ fontSize: '16px' }}>{formatPrice(order.total)}</p>
+                        <p style={{ fontSize: '12px', color: '#1aab2a', fontWeight: 'bold' }}>{order.status}</p>
                       </div>
                     </div>
-                    <div className="profile-page__order-right">
-                      <div className="profile-page__order-total">{formatPrice(order.total)}</div>
-                      <span className="profile-page__order-status profile-page__order-status--confirmed">
-                        {order.status || 'Confirmed'}
-                      </span>
+                    
+                    {order.items && order.items.length > 0 && (
+                      <div style={{ width: '100%', background: '#f9f9f9', padding: '12px', borderRadius: '4px' }}>
+                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#666' }}>ITEMS ORDERED</p>
+                        {order.items.map((item, idx) => (
+                          <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px', fontSize: '13px' }}>
+                            <span style={{ color: '#333' }}>{item.quantity}x {item.name} ({item.packSize})</span>
+                            <span style={{ color: '#666' }}>{formatPrice(item.price * item.quantity)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    
+                    <div style={{ fontSize: '12px', color: '#666', borderTop: '1px solid #eaeaea', paddingTop: '8px', width: '100%' }}>
+                      <strong>Delivering to:</strong> {order.address}
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="profile-page__no-orders">
-                <div className="profile-page__no-orders-icon">📦</div>
-                <p>No orders yet</p>
-                <Link to="/products" className="profile-page__no-orders-btn">
-                  <ShoppingBag size={14} /> Start Shopping
-                </Link>
-              </div>
+              <p style={{color: '#666', marginTop: '16px'}}>No orders yet.</p>
             )}
           </div>
         </div>
+
       </div>
     </div>
   );
