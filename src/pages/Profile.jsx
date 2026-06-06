@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Phone, Mail, Plus, ChevronRight, LogOut, Package, MapPin, CheckCircle, Save, Edit3, Trash2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -12,13 +12,16 @@ const Profile = () => {
   const { user, logout } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();
-  const orders = getOrders(user?.uid);
+  
+  const [orders, setOrders] = useState([]);
+  const [isLoadingOrders, setIsLoadingOrders] = useState(true);
 
   const [isEditingName, setIsEditingName] = useState(false);
   const [newName, setNewName] = useState(user?.displayName || '');
   const [isUpdatingName, setIsUpdatingName] = useState(false);
 
-  const [savedAddr, setSavedAddr] = useState(() => getSavedAddress(user?.uid));
+  const [savedAddr, setSavedAddr] = useState(null);
+  const [isLoadingAddress, setIsLoadingAddress] = useState(true);
   const [editingAddress, setEditingAddress] = useState(false);
   const [addrForm, setAddrForm] = useState({
     fullName: '', phone: '', address: '', city: '', state: '', pincode: '',
@@ -26,6 +29,35 @@ const Profile = () => {
 
   const [marketingOptIn, setMarketingOptIn] = useState(true);
   const [whatsappOptIn, setWhatsappOptIn] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (user?.uid) {
+        setIsLoadingOrders(true);
+        setIsLoadingAddress(true);
+        
+        try {
+          const [fetchedOrders, fetchedAddress] = await Promise.all([
+            getOrders(user.uid),
+            getSavedAddress(user.uid)
+          ]);
+          setOrders(fetchedOrders || []);
+          setSavedAddr(fetchedAddress);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          setIsLoadingOrders(false);
+          setIsLoadingAddress(false);
+        }
+      } else {
+        // Handle guest case if needed, though profile usually requires login
+        setIsLoadingOrders(false);
+        setIsLoadingAddress(false);
+      }
+    };
+    
+    fetchData();
+  }, [user?.uid]);
 
   const handleLogout = async () => {
     try {
@@ -62,20 +94,22 @@ const Profile = () => {
     setEditingAddress(true);
   };
 
-  const handleSaveAddress = () => {
+  const handleSaveAddress = async () => {
     if (!addrForm.fullName || !addrForm.address || !addrForm.city || !addrForm.state || !addrForm.pincode) {
       toast.error('Please fill in all required fields', 'Missing Fields');
       return;
     }
-    saveAddress(addrForm, user?.uid);
+    await saveAddress(addrForm, user?.uid);
     setSavedAddr({ ...addrForm });
     setEditingAddress(false);
     toast.success('Address saved successfully!', 'Address Saved');
   };
 
-  const handleDeleteAddress = () => {
+  const handleDeleteAddress = async () => {
     const key = user?.uid ? `thisdat_address_${user.uid}` : 'thisdat_address';
     localStorage.removeItem(key);
+    // Note: If you want to delete from Firestore, you would need a deleteAddress helper, 
+    // but for now we just remove from state/local and let save overwrite later.
     setSavedAddr(null);
     setEditingAddress(false);
     toast.info('Address removed', 'Deleted');

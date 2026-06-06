@@ -8,30 +8,75 @@ export const useCart = () => {
   return context;
 };
 
+import { db } from '../config/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { useAuth } from './AuthContext';
 
 const getStorageKey = (userId) => {
-  return userId ? `thisdat_cart_${userId}` : 'thisdat_cart';
+  return 'thisdat_cart'; // local storage key for guests
 };
 
 export const CartProvider = ({ children }) => {
   const { user } = useAuth();
   const [items, setItems] = useState([]);
+  const [cartLoaded, setCartLoaded] = useState(false); // To prevent overwriting remote with empty local cart on mount
 
   // Load cart on mount or user change
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(getStorageKey(user?.uid));
-      setItems(saved ? JSON.parse(saved) : []);
-    } catch {
-      setItems([]);
-    }
+    const loadCart = async () => {
+      try {
+        if (user?.uid) {
+          const cartRef = doc(db, 'users', user.uid, 'cart', 'items');
+          const docSnap = await getDoc(cartRef);
+          if (docSnap.exists()) {
+            setItems(docSnap.data().items || []);
+          } else {
+            // First time login on this device? Check if local cart has items
+            const local = localStorage.getItem(getStorageKey());
+            const localItems = local ? JSON.parse(local) : [];
+            if (localItems.length > 0) {
+              setItems(localItems);
+              await setDoc(cartRef, { items: localItems });
+            } else {
+              setItems([]);
+            }
+          }
+        } else {
+          // Guest
+          const saved = localStorage.getItem(getStorageKey());
+          setItems(saved ? JSON.parse(saved) : []);
+        }
+      } catch (e) {
+        console.error('Failed to load cart', e);
+        setItems([]);
+      } finally {
+        setCartLoaded(true);
+      }
+    };
+    
+    setCartLoaded(false);
+    loadCart();
   }, [user?.uid]);
 
   // Save cart on items change
   useEffect(() => {
-    localStorage.setItem(getStorageKey(user?.uid), JSON.stringify(items));
-  }, [items, user?.uid]);
+    if (!cartLoaded) return; // Don't save if we haven't finished loading
+
+    const saveCart = async () => {
+      try {
+        if (user?.uid) {
+          const cartRef = doc(db, 'users', user.uid, 'cart', 'items');
+          await setDoc(cartRef, { items });
+        } else {
+          localStorage.setItem(getStorageKey(), JSON.stringify(items));
+        }
+      } catch (e) {
+        console.error('Failed to save cart', e);
+      }
+    };
+
+    saveCart();
+  }, [items, user?.uid, cartLoaded]);
 
   const addToCart = useCallback((product, quantity = 1) => {
     setItems(prev => {

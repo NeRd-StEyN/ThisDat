@@ -40,45 +40,78 @@ export const sortProducts = (products, sortBy) => {
   }
 };
 
+import { db } from '../config/firebase';
+import { doc, setDoc, getDoc, collection, getDocs, orderBy, query } from 'firebase/firestore';
+
 export const getOrderId = () => {
   return 'TD' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 6).toUpperCase();
 };
 
-export const saveOrder = (order, userId) => {
+export const saveOrder = async (order, userId) => {
   try {
-    const key = userId ? `thisdat_orders_${userId}` : 'thisdat_orders';
-    const orders = JSON.parse(localStorage.getItem(key) || '[]');
-    orders.unshift(order);
-    localStorage.setItem(key, JSON.stringify(orders));
+    if (userId) {
+      // Save to Firestore
+      const orderRef = doc(db, 'users', userId, 'orders', order.id);
+      await setDoc(orderRef, order);
+    } else {
+      // Fallback to local storage for guests
+      const key = 'thisdat_orders';
+      const orders = JSON.parse(localStorage.getItem(key) || '[]');
+      orders.unshift(order);
+      localStorage.setItem(key, JSON.stringify(orders));
+    }
   } catch (e) {
     console.error('Failed to save order:', e);
   }
 };
 
-export const getOrders = (userId) => {
+export const getOrders = async (userId) => {
   try {
-    const key = userId ? `thisdat_orders_${userId}` : 'thisdat_orders';
-    return JSON.parse(localStorage.getItem(key) || '[]');
-  } catch {
+    if (userId) {
+      const ordersRef = collection(db, 'users', userId, 'orders');
+      const q = query(ordersRef, orderBy('date', 'desc'));
+      const snapshot = await getDocs(q);
+      return snapshot.docs.map(doc => doc.data());
+    } else {
+      const key = 'thisdat_orders';
+      return JSON.parse(localStorage.getItem(key) || '[]');
+    }
+  } catch (e) {
+    console.error('Failed to get orders:', e);
     return [];
   }
 };
 
-export const saveAddress = (address, userId) => {
+export const saveAddress = async (address, userId) => {
   try {
-    const key = userId ? `thisdat_address_${userId}` : 'thisdat_address';
-    localStorage.setItem(key, JSON.stringify(address));
+    if (userId) {
+      const addressRef = doc(db, 'users', userId, 'address', 'default');
+      await setDoc(addressRef, address);
+    } else {
+      const key = 'thisdat_address';
+      localStorage.setItem(key, JSON.stringify(address));
+    }
   } catch (e) {
     console.error('Failed to save address:', e);
   }
 };
 
-export const getSavedAddress = (userId) => {
+export const getSavedAddress = async (userId) => {
   try {
-    const key = userId ? `thisdat_address_${userId}` : 'thisdat_address';
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
-  } catch {
+    if (userId) {
+      const addressRef = doc(db, 'users', userId, 'address', 'default');
+      const docSnap = await getDoc(addressRef);
+      if (docSnap.exists()) {
+        return docSnap.data();
+      }
+      return null;
+    } else {
+      const key = 'thisdat_address';
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    }
+  } catch (e) {
+    console.error('Failed to get address:', e);
     return null;
   }
 };

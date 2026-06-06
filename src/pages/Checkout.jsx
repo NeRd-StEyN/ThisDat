@@ -17,7 +17,7 @@ const Checkout = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const savedAddr = getSavedAddress(user?.uid);
+  const [savedAddr, setSavedAddr] = useState(null);
 
   const [formData, setFormData] = useState({
     fullName: user?.displayName || '',
@@ -36,20 +36,25 @@ const Checkout = () => {
 
   // Auto-fill from saved address on mount
   useEffect(() => {
-    if (savedAddr) {
-      setFormData(prev => ({
-        ...prev,
-        fullName: savedAddr.fullName || prev.fullName,
-        phone: savedAddr.phone || prev.phone,
-        address: savedAddr.address || prev.address,
-        city: savedAddr.city || prev.city,
-        state: savedAddr.state || prev.state,
-        pincode: savedAddr.pincode || prev.pincode,
-      }));
-      setUsingSaved(true);
-    }
+    const fetchAddress = async () => {
+      const address = await getSavedAddress(user?.uid);
+      if (address) {
+        setSavedAddr(address);
+        setFormData(prev => ({
+          ...prev,
+          fullName: address.fullName || prev.fullName,
+          phone: address.phone || prev.phone,
+          address: address.address || prev.address,
+          city: address.city || prev.city,
+          state: address.state || prev.state,
+          pincode: address.pincode || prev.pincode,
+        }));
+        setUsingSaved(true);
+      }
+    };
+    fetchAddress();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user?.uid]);
 
   if (items.length === 0) {
     return <Navigate to="/cart" replace />;
@@ -94,7 +99,7 @@ const Checkout = () => {
 
     // Save address if checkbox is checked
     if (saveAddr) {
-      saveAddress({
+      await saveAddress({
         fullName: formData.fullName,
         phone: formData.phone,
         address: formData.address,
@@ -137,7 +142,7 @@ const Checkout = () => {
 
       if (response.ok) {
         // Save order locally
-        saveOrder({
+        await saveOrder({
           id: orderId,
           items: [...items],
           total: subtotal,
@@ -152,7 +157,7 @@ const Checkout = () => {
         navigate('/order-success', { state: { orderId, total: subtotal } });
       } else {
         // If Formspree fails (e.g., invalid form ID), still save order locally
-        saveOrder({
+        await saveOrder({
           id: orderId,
           items: [...items],
           total: subtotal,
@@ -168,7 +173,7 @@ const Checkout = () => {
       }
     } catch (err) {
       // Network error — save locally anyway
-      saveOrder({
+      await saveOrder({
         id: orderId,
         items: [...items],
         total: subtotal,
