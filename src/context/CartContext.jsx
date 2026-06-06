@@ -9,7 +9,7 @@ export const useCart = () => {
 };
 
 import { db } from '../config/firebase';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { ref, get, set, child } from 'firebase/database';
 import { useAuth } from './AuthContext';
 
 const getStorageKey = (userId) => {
@@ -26,17 +26,19 @@ export const CartProvider = ({ children }) => {
     const loadCart = async () => {
       try {
         if (user?.uid) {
-          const cartRef = doc(db, 'users', user.uid, 'cart', 'items');
-          const docSnap = await getDoc(cartRef);
-          if (docSnap.exists()) {
-            setItems(docSnap.data().items || []);
+          const dbRef = ref(db);
+          const snapshot = await get(child(dbRef, `users/${user.uid}/cart/items`));
+          
+          if (snapshot.exists()) {
+            setItems(snapshot.val() || []);
           } else {
             // First time login on this device? Check if local cart has items
             const local = localStorage.getItem(getStorageKey());
             const localItems = local ? JSON.parse(local) : [];
             if (localItems.length > 0) {
               setItems(localItems);
-              await setDoc(cartRef, { items: localItems });
+              const cartRef = ref(db, `users/${user.uid}/cart/items`);
+              await set(cartRef, localItems);
             } else {
               setItems([]);
             }
@@ -65,8 +67,8 @@ export const CartProvider = ({ children }) => {
     const saveCart = async () => {
       try {
         if (user?.uid) {
-          const cartRef = doc(db, 'users', user.uid, 'cart', 'items');
-          await setDoc(cartRef, { items });
+          const cartRef = ref(db, `users/${user.uid}/cart/items`);
+          await set(cartRef, items);
         } else {
           localStorage.setItem(getStorageKey(), JSON.stringify(items));
         }
