@@ -132,7 +132,6 @@ const Navbar = () => {
             {isAuthenticated ? (
               <div className="navbar-1mg__auth-links" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <Link to="/profile">Profile</Link> | 
-                <Link to="/profile">Orders</Link> | 
                 <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: '#4a4a4a', cursor: 'pointer', fontSize: '14px', padding: 0 }}>Logout</button>
               </div>
             ) : (
