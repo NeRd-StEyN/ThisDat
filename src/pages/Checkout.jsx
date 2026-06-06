@@ -9,7 +9,7 @@ import { categories } from '../data/medicines';
 import './Checkout.css';
 
 // Replace with your Formspree form ID
-const FORMSPREE_URL = 'https://formspree.io/f/xnjyawqd';
+const FORMSPREE_URL = 'https://formspree.io/f/xwvzdbez';
 
 const Checkout = () => {
   const { items, getSubtotal, getItemCount, clearCart } = useCart();
