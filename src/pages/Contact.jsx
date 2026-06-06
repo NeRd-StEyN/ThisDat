@@ -1,28 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useToast } from '../components/Toast';
+import { ArrowLeft, Mail, Phone, MapPin } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [loading, setLoading] = useState(false);
-  const toast = useToast();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      toast.success("Your message has been sent successfully!", "Message Sent");
-      setFormData({ name: '', email: '', message: '' });
-      setLoading(false);
-    }, 1000);
-  };
 
   return (
     <div className="contact-page page-enter">
@@ -58,42 +42,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="contact-page__form" onSubmit={handleSubmit}>
-            <h2>Send a Message</h2>
-            <div className="form-group">
-              <label>Full Name</label>
-              <input 
-                type="text" 
-                required 
-                placeholder="John Doe" 
-                value={formData.name}
-                onChange={e => setFormData({...formData, name: e.target.value})}
-              />
-            </div>
-            <div className="form-group">
-              <label>Email Address</label>
-              <input 
-                type="email" 
-                required 
-                placeholder="you@example.com" 
-                value={formData.email}
-                onChange={e => setFormData({...formData, email: e.target.value})}
-              />
-            </div>
-            <div className="form-group">
-              <label>Your Message</label>
-              <textarea 
-                required 
-                placeholder="How can we help you today?" 
-                rows="5"
-                value={formData.message}
-                onChange={e => setFormData({...formData, message: e.target.value})}
-              ></textarea>
-            </div>
-            <button type="submit" className="contact-submit" disabled={loading}>
-              {loading ? 'Sending...' : <><Send size={18} /> Send Message</>}
-            </button>
-          </form>
+
         </div>
       </div>
     </div>
