@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Plus, Minus, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, ShieldCheck, User, Tag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../components/Toast';
 import { medicines, categories } from '../data/medicines';
@@ -10,7 +10,6 @@ const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, updateQuantity, removeFromCart, getItemQuantity, isInCart } = useCart();
   const toast = useToast();
-  const [activeSection, setActiveSection] = useState('overview');
   const [imgError, setImgError] = useState(false);
 
   const product = medicines.find(m => m.id === id);
@@ -21,12 +20,12 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="product-detail page-enter">
-        <div className="container">
-          <div className="product-detail__not-found" style={{textAlign: 'center', padding: '100px 0'}}>
-            <h2 style={{fontSize: '24px', marginBottom: '16px'}}>Product Not Found</h2>
-            <Link to="/products" style={{color: '#ff6f61', fontWeight: 'bold'}}>
-              <ArrowLeft size={16} style={{display: 'inline', verticalAlign: 'middle'}}/> Back to Products
+      <div className="pd-page">
+        <div className="pd-container">
+          <div className="pd-not-found">
+            <h2>Product Not Found</h2>
+            <Link to="/products" className="pd-back-link">
+              <ArrowLeft size={16} /> Back to Products
             </Link>
           </div>
         </div>
@@ -49,68 +48,171 @@ const ProductDetail = () => {
     else updateQuantity(product.id, quantity - 1);
   };
 
-  const scrollToSection = (sectionId) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 120;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
+  // Generate some tags from name/specifications for the tags section
+  const productTags = [
+    categoryData?.name || product.category || 'Product',
+    ...(product.tags || []),
+    product.specifications?.['Packing'] ? product.specifications['Packing'].split(' ')[0] : ''
+  ].filter(Boolean).slice(0, 6);
 
   return (
-    <div className="product-detail page-enter">
-      <div className="container">
+    <div className="pd-page">
+      <div className="pd-container">
         
-        <div className="product-detail__breadcrumbs">
-          <Link to="/" style={{color: '#666', textDecoration: 'none'}}>Home</Link> &gt;{' '}
-          <Link to="/products" style={{color: '#666', textDecoration: 'none'}}>Medicines</Link> &gt;{' '}
-          <span style={{color: '#212121'}}>{product.name}</span>
+        {/* Breadcrumbs */}
+        <div className="pd-breadcrumbs">
+          <Link to="/">Home</Link> / <Link to="/products">Products</Link> /{' '}
+          <Link to={`/products?category=${product.category}`}>{categoryData?.name || product.category}</Link> /{' '}
+          <span className="pd-breadcrumb-active">{product.name}</span>
         </div>
 
-        <div className="product-detail__layout">
-          
-          {/* --- Left Sidebar (Navigation) --- */}
-          <div className="product-detail__sidebar-left">
-            <ul className="product-detail__nav-menu">
-              <li 
-                className={`product-detail__nav-item ${activeSection === 'overview' ? 'product-detail__nav-item--active' : ''}`}
-                onClick={() => scrollToSection('overview')}
-              >
-                Overview
-              </li>
-              <li 
-                className={`product-detail__nav-item ${activeSection === 'uses' ? 'product-detail__nav-item--active' : ''}`}
-                onClick={() => scrollToSection('uses')}
-              >
-                Uses and benefits
-              </li>
-              <li 
-                className={`product-detail__nav-item ${activeSection === 'how-to-use' ? 'product-detail__nav-item--active' : ''}`}
-                onClick={() => scrollToSection('how-to-use')}
-              >
-                How to use
-              </li>
-              <li 
-                className={`product-detail__nav-item ${activeSection === 'safety' ? 'product-detail__nav-item--active' : ''}`}
-                onClick={() => scrollToSection('safety')}
-              >
-                Safety advice
-              </li>
-            </ul>
+        {/* Back Button */}
+        <div className="pd-back-wrapper">
+          <Link to="/products" className="pd-back-btn">
+            <ArrowLeft size={16} /> Back
+          </Link>
+        </div>
 
-            <div className="product-detail__author-box">
-              <div className="product-detail__author-title">Author Details</div>
-              <div className="product-detail__author-profile">
-                <div className="product-detail__author-img">👩‍⚕️</div>
-                <div className="product-detail__author-info">
+        {/* Main Grid */}
+        <div className="pd-grid">
+          
+          {/* Left Column: Image */}
+          <div className="pd-image-col">
+            <div className="pd-image-wrapper">
+              {product.image && !imgError ? (
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <div className="pd-image-placeholder">
+                  {product.name.charAt(0)}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right Column: Info */}
+          <div className="pd-info-col">
+            <div className="pd-category-label">
+              {categoryData?.name || product.category || 'Medicine'}
+            </div>
+            
+            <h1 className="pd-title">{product.name}</h1>
+            
+            <p className="pd-description">
+              {product.description}
+            </p>
+
+            {/* Action Box */}
+            <div className="pd-action-card">
+              <div className="pd-price-row">
+                <span className="pd-price">
+                  {typeof product.price === 'string' ? product.price : `₹${product.price.toFixed(2)}`}
+                </span>
+                <span className="pd-tax-info">inclusive of all taxes</span>
+              </div>
+
+              {/* Quantity / Pack Info inside the action box cleanly */}
+              <div className="pd-action-controls">
+                <div className="pd-pack-info">
+                  <span className="pd-pack-label">Pack Size</span>
+                  <span className="pd-pack-value">{product.specifications?.['Packing'] || `1 ${product.dosageForm || 'Unit'}`}</span>
+                </div>
+                
+                {product.inStock !== false ? (
+                  inCart ? (
+                    <div className="pd-qty-widget">
+                      <button className="pd-qty-btn" onClick={handleDecrement}><Minus size={16} /></button>
+                      <span className="pd-qty-num">{quantity}</span>
+                      <button className="pd-qty-btn" onClick={handleIncrement}><Plus size={16} /></button>
+                    </div>
+                  ) : (
+                    <button className="pd-add-btn" onClick={handleAddToCart}>
+                      Add to Cart
+                    </button>
+                  )
+                ) : (
+                  <button className="pd-add-btn pd-add-btn--disabled" disabled>
+                    Out of Stock
+                  </button>
+                )}
+              </div>
+              
+              {product.requiresPrescription && (
+                <div className="pd-prescription-req">
+                  <ShieldCheck size={16} /> Valid prescription required
+                </div>
+              )}
+            </div>
+
+            {/* Tags row */}
+            <div className="pd-tags-row">
+              {productTags.map((tag, idx) => (
+                <span key={idx} className="pd-tag">
+                  <Tag size={12} /> {tag.toUpperCase()}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Stacked Details Sections */}
+        <div className="pd-details-stack">
+          
+          <div className="pd-section">
+            <h2 className="pd-section-title">Key Benefits</h2>
+            <div className="pd-section-box">
+              {product.benefits && product.benefits.length > 0 ? (
+                <ul className="pd-list">
+                  {product.benefits.map((benefit, idx) => (
+                    <li key={idx}>{benefit}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="pd-text">
+                  Treatment of {product.tags?.[0] || 'symptoms'}. 
+                  {product.specifications?.['Indications'] && ` ${product.specifications['Indications']}`}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="pd-section">
+            <h2 className="pd-section-title">Specifications</h2>
+            <div className="pd-spec-table">
+              <div className="pd-spec-row">
+                <div className="pd-spec-label">Product Type</div>
+                <div className="pd-spec-value">{categoryData?.name || product.category || 'Medicine'}</div>
+              </div>
+              <div className="pd-spec-row">
+                <div className="pd-spec-label">Packing</div>
+                <div className="pd-spec-value">{product.specifications?.['Packing'] || `1 ${product.dosageForm || 'Unit'}`}</div>
+              </div>
+              {Object.entries(product.specifications || {}).filter(([key]) => key !== 'Packing').map(([key, value]) => (
+                <div className="pd-spec-row" key={key}>
+                  <div className="pd-spec-label">{key}</div>
+                  <div className="pd-spec-value">{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Expert Review Styled like Specifications */}
+          <div className="pd-section">
+            <h2 className="pd-section-title">Expert Verification</h2>
+            <div className="pd-expert-box">
+              <div className="pd-expert-profile">
+                <div className="pd-expert-avatar"><User size={20}/></div>
+                <div className="pd-expert-info">
                   <h4>Written By</h4>
                   <p>Dr. Medical Expert</p>
                 </div>
               </div>
-              <div className="product-detail__author-profile">
-                <div className="product-detail__author-img">👨‍⚕️</div>
-                <div className="product-detail__author-info">
+              <div className="pd-expert-profile">
+                <div className="pd-expert-avatar"><User size={20}/></div>
+                <div className="pd-expert-info">
                   <h4>Reviewed By</h4>
                   <p>Dr. Senior Doctor</p>
                 </div>
@@ -118,148 +220,6 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* --- Main Content (Center) --- */}
-          <div className="product-detail__main">
-            <h1 className="product-detail__title">{product.name} | For {categoryData?.name}</h1>
-            
-            <div className="product-detail__meta-row">
-              <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">CATEGORY</span>
-                <Link to={`/products?category=${product.category}`} className="product-detail__meta-value">{categoryData?.name || product.category}</Link>
-              </div>
-              <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">PACKING</span>
-                <span className="product-detail__meta-value product-detail__meta-value--black">
-                  {product.specifications?.['Packing'] || 'Standard Pack'}
-                </span>
-              </div>
-              <div className="product-detail__meta-item">
-                <span className="product-detail__meta-label">STATUS</span>
-                <span className="product-detail__meta-value product-detail__meta-value--black">
-                  {product.specifications?.['Status'] || 'Available'}
-                </span>
-              </div>
-            </div>
-
-            <div className="product-detail__image-container">
-              {product.image && !imgError ? (
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  style={{width: '100%', height: '100%', objectFit: 'contain', maxHeight: '400px'}} 
-                  onError={() => setImgError(true)}
-                />
-              ) : (
-                <div className="product-detail__image-placeholder">{categoryData?.icon || '💊'}</div>
-              )}
-            </div>
-
-
-
-            <div id="overview" className="product-detail__section">
-              <h2>PRODUCT INTRODUCTION</h2>
-              <p>{product.description}</p>
-            </div>
-
-            <div id="uses" className="product-detail__section">
-              <h2>USES OF {product.name.toUpperCase()}</h2>
-              <ul>
-                <li>Treatment of {product.tags?.[0] || 'symptoms'}</li>
-                {product.specifications?.['Indications'] && <li>{product.specifications['Indications']}</li>}
-              </ul>
-            </div>
-
-            <div className="product-detail__section">
-              <h2>BENEFITS OF {product.name.toUpperCase()}</h2>
-              {product.benefits && product.benefits.length > 0 ? (
-                <ul>
-                  {product.benefits.map((benefit, idx) => (
-                    <li key={idx}>{benefit}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>Refer to the composition for therapeutic benefits.</p>
-              )}
-            </div>
-
-            <div id="how-to-use" className="product-detail__section">
-              <h2>HOW TO USE {product.name.toUpperCase()}</h2>
-              <p>
-                {product.specifications?.['Usage Instructions'] || 'Use under medical guidance. Check the label for directions before use.'}
-              </p>
-              {product.specifications?.['Dosage - Adults'] && (
-                <p><strong>Adults:</strong> {product.specifications['Dosage - Adults']}</p>
-              )}
-              {product.specifications?.['Dosage - Children'] && (
-                <p><strong>Children:</strong> {product.specifications['Dosage - Children']}</p>
-              )}
-            </div>
-
-            <div id="safety" className="product-detail__section">
-              <h2>SAFETY ADVICE</h2>
-              <ul>
-                <li>{product.specifications?.['Precautions'] || 'Consult your doctor before use'}</li>
-                <li>{product.specifications?.['Storage'] || 'Store in a cool and dry place away from direct sunlight.'}</li>
-                <li>{product.specifications?.['Disclaimer'] || 'Read the label carefully before use.'}</li>
-                <li>{product.specifications?.['Possible Side Effects'] || 'Keep out of reach of children.'}</li>
-              </ul>
-            </div>
-
-          </div>
-
-          {/* --- Right Sidebar (Action/Price) --- */}
-          <div className="product-detail__sidebar-right">
-            
-            <div className="product-detail__price-card">
-              <div className="product-detail__current-price-row">
-                <span className="product-detail__price-value" style={{fontSize: '24px'}}>
-                  {typeof product.price === 'string' ? product.price : `₹${product.price.toFixed(2)}`}
-                </span>
-              </div>
-              
-              <div className="product-detail__tax-info">
-                inclusive of all taxes
-              </div>
-
-              <select className="product-detail__pack-selector" defaultValue="1">
-                <option value="1">1 {product.dosageForm || 'Unit'} - {product.specifications?.['Packing'] || 'Standard'}</option>
-                <option value="2">2 {product.dosageForm || 'Unit'}s - Multi-pack</option>
-              </select>
-
-              {product.inStock !== false ? (
-                inCart ? (
-                  <div className="product-detail__qty-widget">
-                    <button className="product-detail__qty-btn" onClick={handleDecrement}>
-                      <Minus size={18} />
-                    </button>
-                    <span className="product-detail__qty-number">{quantity}</span>
-                    <button className="product-detail__qty-btn" onClick={handleIncrement}>
-                      <Plus size={18} />
-                    </button>
-                  </div>
-                ) : (
-                  <button className="product-detail__btn-add" onClick={handleAddToCart}>
-                    Add to cart
-                  </button>
-                )
-              ) : (
-                <button className="product-detail__btn-add" style={{background: '#ccc', cursor: 'not-allowed'}} disabled>
-                  Out of Stock
-                </button>
-              )}
-              
-              {product.requiresPrescription && (
-                <div style={{marginTop: '16px', fontSize: '11px', color: '#767676', display: 'flex', alignItems: 'center', gap: '4px'}}>
-                  <ShieldCheck size={14} color="#ff6f61"/> Valid prescription required
-                </div>
-              )}
-
-
-            </div>
-
-
-
-          </div>
         </div>
 
       </div>

@@ -4,77 +4,77 @@ export const categories = [
   {
     "id": "All Categories",
     "name": "All Categories",
-    "icon": "💊"
+    "icon": "Pill"
   },
   {
     "id": "Capsule",
     "name": "Capsule",
-    "icon": "💊"
+    "icon": "Pill"
   },
   {
     "id": "Gel",
     "name": "Gel",
-    "icon": "🧴"
+    "icon": "Droplets"
   },
   {
     "id": "Granules",
     "name": "Granules",
-    "icon": "💊"
+    "icon": "Pill"
   },
   {
     "id": "Gummy",
     "name": "Gummy",
-    "icon": "🍬"
+    "icon": "Candy"
   },
   {
     "id": "Infusion",
     "name": "Infusion",
-    "icon": "🩸"
+    "icon": "Droplet"
   },
   {
     "id": "Injection",
     "name": "Injection",
-    "icon": "💉"
+    "icon": "Syringe"
   },
   {
     "id": "Lozenges",
     "name": "Lozenges",
-    "icon": "🍬"
+    "icon": "Candy"
   },
   {
     "id": "Nasal Drops",
     "name": "Nasal Drops",
-    "icon": "💧"
+    "icon": "Droplets"
   },
   {
     "id": "Oral Drops",
     "name": "Oral Drops",
-    "icon": "💧"
+    "icon": "Droplets"
   },
   {
     "id": "Other",
     "name": "Other",
-    "icon": "⚕️"
+    "icon": "Stethoscope"
   },
   {
     "id": "Sachet",
     "name": "Sachet",
-    "icon": "💊"
+    "icon": "Pill"
   },
   {
     "id": "Suspension",
     "name": "Suspension",
-    "icon": "🧪"
+    "icon": "FlaskConical"
   },
   {
     "id": "Syrup",
     "name": "Syrup",
-    "icon": "🫙"
+    "icon": "Beaker"
   },
   {
     "id": "Tablet",
     "name": "Tablet",
-    "icon": "💊"
+    "icon": "Pill"
   }
 ];
 

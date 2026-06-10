@@ -24,8 +24,10 @@ const Profile = () => {
   const [isLoadingAddress, setIsLoadingAddress] = useState(true);
   const [editingAddress, setEditingAddress] = useState(false);
   const [addrForm, setAddrForm] = useState({
-    fullName: '', phone: '', address: '', city: '', state: '', pincode: '',
+    fullName: '', phone: '', address: '', city: '', state: '', pincode: '', country: 'India',
   });
+  const [pinError, setPinError] = useState('');
+  const [isSavingAddress, setIsSavingAddress] = useState(false);
 
   const [marketingOptIn, setMarketingOptIn] = useState(true);
   const [whatsappOptIn, setWhatsappOptIn] = useState(false);
@@ -89,19 +91,35 @@ const Profile = () => {
   };
 
   const handleEditAddress = () => {
-    if (savedAddr) setAddrForm({ ...savedAddr });
-    else setAddrForm({ fullName: user?.displayName || '', phone: '', address: '', city: '', state: '', pincode: '' });
+    if (savedAddr) setAddrForm({ ...savedAddr, country: 'India' });
+    else setAddrForm({ fullName: user?.displayName || '', phone: '', address: '', city: '', state: '', pincode: '', country: 'India' });
     setEditingAddress(true);
   };
 
   const handleSaveAddress = async () => {
+    setPinError('');
     if (!addrForm.fullName || !addrForm.address || !addrForm.city || !addrForm.state || !addrForm.pincode) {
       toast.error('Please fill in all required fields', 'Missing Fields');
       return;
     }
-    await saveAddress(addrForm, user?.uid);
-    setSavedAddr({ ...addrForm });
+
+    setIsSavingAddress(true);
+    try {
+      const pinRes = await fetch(`https://api.postalpincode.in/pincode/${addrForm.pincode}`);
+      const pinData = await pinRes.json();
+      if (!pinData || !pinData[0] || pinData[0].Status === 'Error') {
+        setPinError('Invalid PIN code. The entered PIN code does not exist in India.');
+        setIsSavingAddress(false);
+        return;
+      }
+    } catch (err) {
+      console.warn('Pincode validation API failed:', err);
+    }
+
+    await saveAddress({ ...addrForm, country: 'India' }, user?.uid);
+    setSavedAddr({ ...addrForm, country: 'India' });
     setEditingAddress(false);
+    setIsSavingAddress(false);
     toast.success('Address saved successfully!', 'Address Saved');
   };
 
@@ -115,7 +133,10 @@ const Profile = () => {
     toast.info('Address removed', 'Deleted');
   };
 
-  const handleAddrChange = (e) => setAddrForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleAddrChange = (e) => {
+    setAddrForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === 'pincode') setPinError('');
+  };
 
   return (
     <div className="profile-1mg page-enter">
@@ -167,10 +188,54 @@ const Profile = () => {
                 <input name="phone" placeholder="Phone" value={addrForm.phone} onChange={handleAddrChange} />
                 <textarea name="address" placeholder="Street Address" value={addrForm.address} onChange={handleAddrChange} />
                 <input name="city" placeholder="City" value={addrForm.city} onChange={handleAddrChange} />
-                <input name="state" placeholder="State" value={addrForm.state} onChange={handleAddrChange} />
-                <input name="pincode" placeholder="PIN Code" value={addrForm.pincode} onChange={handleAddrChange} />
+                <select name="country" value={addrForm.country || 'India'} onChange={handleAddrChange} disabled style={{ backgroundColor: '#f5f5f5', color: '#666' }}>
+                  <option value="India">India</option>
+                </select>
+                <select name="state" value={addrForm.state} onChange={handleAddrChange}>
+                  <option value="" disabled>Select State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Ladakh">Ladakh</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                </select>
+                <div style={{ marginBottom: '12px' }}>
+                  <input name="pincode" placeholder="PIN Code" value={addrForm.pincode} onChange={handleAddrChange} maxLength={6} pattern="^[1-9][0-9]{5}$" title="Please enter a valid 6-digit Indian PIN code" style={{ marginBottom: 0 }} />
+                  {pinError && <div style={{ color: '#ff4d4f', fontSize: '13px', marginTop: '6px' }}>{pinError}</div>}
+                </div>
                 <div className="addr-actions">
-                  <button onClick={handleSaveAddress} className="btn-save">Save Address</button>
+                  <button onClick={handleSaveAddress} className="btn-save" disabled={isSavingAddress}>{isSavingAddress ? 'Saving...' : 'Save Address'}</button>
                   <button onClick={() => setEditingAddress(false)} className="btn-cancel">Cancel</button>
                 </div>
               </div>
@@ -189,14 +254,14 @@ const Profile = () => {
           </div>
 
           <div className="profile-1mg__card">
-            <h3><Package size={20} /> Order History</h3>
+            <h3><Package size={20} /> Request History</h3>
             {orders.length > 0 ? (
               <div className="profile-1mg__orders">
                 {orders.map((order, i) => (
                   <div key={i} className="profile-1mg__order-item" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '12px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
                       <div>
-                        <p style={{ marginBottom: '4px' }}><strong>Order #{order.id}</strong></p>
+                        <p style={{ marginBottom: '4px' }}><strong>Request #{order.id}</strong></p>
                         <p style={{ fontSize: '12px', color: '#767676' }}>{new Date(order.date).toLocaleString()}</p>
                       </div>
                       <div style={{ textAlign: 'right' }}>
@@ -207,7 +272,7 @@ const Profile = () => {
                     
                     {order.items && order.items.length > 0 && (
                       <div style={{ width: '100%', background: '#f9f9f9', padding: '12px', borderRadius: '4px' }}>
-                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#666' }}>ITEMS ORDERED</p>
+                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#666' }}>ITEMS REQUESTED</p>
                         {order.items.map((item, idx) => (
                           <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px', fontSize: '13px' }}>
                             <span style={{ color: '#333' }}>{item.quantity}x {item.name} ({item.packSize})</span>
@@ -224,7 +289,7 @@ const Profile = () => {
                 ))}
               </div>
             ) : (
-              <p style={{color: '#666', marginTop: '16px'}}>No orders yet.</p>
+              <p style={{color: '#666', marginTop: '16px'}}>No requests yet.</p>
             )}
           </div>
         </div>

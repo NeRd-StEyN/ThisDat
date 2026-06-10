@@ -50,15 +50,6 @@ const SearchBar = ({ onClose }) => {
     }
   };
 
-  const getCategoryIcon = (category) => {
-    const cat = {
-      'pain-relief': '💊', 'cold-flu': '🤧', 'vitamins': '💪',
-      'diabetes': '🩸', 'skin-care': '🧴', 'digestive': '🫁',
-      'heart-bp': '❤️', 'eye-ear': '👁️'
-    };
-    return cat[category] || '💊';
-  };
-
   return (
     <div className="search-bar" ref={wrapperRef}>
       <form onSubmit={handleSubmit}>
@@ -94,8 +85,8 @@ const SearchBar = ({ onClose }) => {
                   className="search-bar__result"
                   onClick={() => handleSelect(product)}
                 >
-                  <div className="search-bar__result-icon">
-                    {getCategoryIcon(product.category)}
+                  <div className="search-bar__result-image-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '4px', width: '40px', height: '40px' }}>
+                    <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#888' }}>{product.name.charAt(0)}</span>
                   </div>
                   <div className="search-bar__result-info">
                     <div className="search-bar__result-name">{product.name}</div>

@@ -1,5 +1,5 @@
 import { Link, useLocation, Navigate } from 'react-router-dom';
-import { Check, ShoppingBag, User, Mail } from 'lucide-react';
+import { Check, ShoppingBag, User, Mail, PartyPopper } from 'lucide-react';
 import { formatPrice } from '../utils/helpers';
 import './OrderSuccess.css';
 
@@ -18,14 +18,14 @@ const OrderSuccess = () => {
           <Check size={44} color="white" strokeWidth={3} />
         </div>
 
-        <h1 className="order-success__title">Order Placed! 🎉</h1>
+        <h1 className="order-success__title">Request Placed! <PartyPopper size={32} style={{display: 'inline', verticalAlign: 'middle', marginLeft: '8px'}} /></h1>
         <p className="order-success__subtitle">
-          Thank you for your order. Your medicines will be delivered to your doorstep soon.
+          Thank you for your request. Your medicines will be delivered to your doorstep soon.
         </p>
 
         <div className="order-success__details">
           <div className="order-success__detail-row">
-            <span className="order-success__detail-label">Order ID</span>
+            <span className="order-success__detail-label">Request ID</span>
             <span className="order-success__detail-value order-success__detail-value--id">
               {orderId}
             </span>
@@ -41,14 +41,14 @@ const OrderSuccess = () => {
           <div className="order-success__detail-row">
             <span className="order-success__detail-label">Status</span>
             <span className="order-success__detail-value" style={{ color: 'var(--color-success)' }}>
-              ✓ Confirmed
+              Confirmed
             </span>
           </div>
         </div>
 
         <div className="order-success__email-note">
           <Mail size={16} />
-          Order details have been sent to your email
+          Request details have been sent to your email
         </div>
 
         <div className="order-success__actions">
@@ -56,7 +56,7 @@ const OrderSuccess = () => {
             <ShoppingBag size={16} /> Continue Shopping
           </Link>
           <Link to="/profile" className="order-success__btn order-success__btn--secondary">
-            <User size={16} /> View Orders
+            <User size={16} /> View Requests
           </Link>
         </div>
       </div>

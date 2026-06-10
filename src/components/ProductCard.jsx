@@ -48,8 +48,8 @@ const ProductCard = ({ product }) => {
               onError={() => setImgError(true)}
             />
           ) : (
-            <span className="product-card__image-placeholder">
-              {categoryData?.icon || '💊'}
+            <span className="product-card__image-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '4px', width: '100%', height: '100%' }}>
+              <span style={{ fontSize: '32px', fontWeight: 'bold', color: '#ccc' }}>{product.name.charAt(0)}</span>
             </span>
           )}
           <div className="product-card__badges">

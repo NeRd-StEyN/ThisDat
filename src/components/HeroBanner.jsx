@@ -1,34 +1,31 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { Search, ArrowRight, ShieldCheck, Truck, Pill, Bike, CheckCircle } from 'lucide-react';
 import './HeroBanner.css';
 
 const heroBanners = [
   {
-    tag: "💊 India's Trusted Online Pharmacy",
+    tag: <><Pill size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: '4px'}} /> India's Trusted Online Pharmacy</>,
     title: "Your Health, Delivered at Your Doorstep",
-    subtitle: "Browse 55+ medicines and order with ease. Just place your order and we'll handle the rest.",
+    subtitle: "Browse 55+ medicines and request with ease. Just place your request and we'll handle the rest.",
     primaryAction: { text: "Browse Medicines", link: "/products", icon: Search },
     secondaryAction: { text: "View Capsules", link: "/products", icon: ArrowRight },
-    floatingIcon: "💊",
     bgClass: "hero-banner--variant-1"
   },
   {
-    tag: "🚚 Fast & Free Delivery",
+    tag: <><Truck size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: '4px'}} /> Fast & Free Delivery</>,
     title: "Medicines at Your Door in Hours",
     subtitle: "We ensure fast and reliable delivery of all your healthcare essentials right to your doorstep.",
-    primaryAction: { text: "Order Now", link: "/products", icon: Truck },
-    secondaryAction: { text: "Track Order", link: "/profile", icon: ArrowRight },
-    floatingIcon: "🛵",
+    primaryAction: { text: "Request Now", link: "/products", icon: Truck },
+    secondaryAction: { text: "Track Request", link: "/profile", icon: ArrowRight },
     bgClass: "hero-banner--variant-2"
   },
   {
-    tag: "🛡️ 100% Genuine Products",
+    tag: <><ShieldCheck size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: '4px'}} /> 100% Genuine Products</>,
     title: "Quality You Can Trust",
     subtitle: "All our medicines and health products are sourced from verified manufacturers and licensed pharmacies.",
     primaryAction: { text: "Shop Essentials", link: "/products", icon: ShieldCheck },
     secondaryAction: { text: "Need Help?", link: "/contact", icon: ArrowRight },
-    floatingIcon: "✅",
     bgClass: "hero-banner--variant-3"
   }
 ];
@@ -82,8 +79,6 @@ const HeroBanner = () => {
                   )}
                 </div>
               </div>
-              
-              <div className="hero-banner__floating">{item.floatingIcon}</div>
             </div>
           );
         })}

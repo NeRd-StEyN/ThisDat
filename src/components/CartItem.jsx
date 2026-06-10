@@ -11,8 +11,8 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="cart-item" id={`cart-item-${item.id}`}>
-      <div className="cart-item__image">
-        {categoryData?.icon || '💊'}
+      <div className="cart-item__image-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '4px', width: '60px', height: '60px', flexShrink: 0 }}>
+        <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#888' }}>{item.name.charAt(0)}</span>
       </div>
 
       <div className="cart-item__info">

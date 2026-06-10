@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ShoppingCart } from 'lucide-react';
 import { ShoppingBag, ArrowRight, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -16,7 +17,7 @@ const Cart = () => {
         <div className="container">
           <h1 className="cart-page__title">Your Cart</h1>
           <div className="cart-page__empty">
-            <div className="cart-page__empty-icon">🛒</div>
+            <div className="cart-page__empty-icon"><ShoppingCart size={48} /></div>
             <h2 className="cart-page__empty-title">Your cart is empty</h2>
             <p className="cart-page__empty-text">Looks like you haven't added any medicines yet</p>
             <Link to="/products" className="cart-page__empty-btn">
@@ -46,7 +47,7 @@ const Cart = () => {
 
           {/* Summary */}
           <div className="cart-page__summary" id="cart-summary">
-            <h3 className="cart-page__summary-title">Order Summary</h3>
+            <h3 className="cart-page__summary-title">Request Summary</h3>
 
             <div className="cart-page__summary-row">
               <span className="cart-page__summary-label">Subtotal ({itemCount} items)</span>
@@ -67,7 +68,7 @@ const Cart = () => {
               className="cart-page__checkout-btn"
               id="checkout-btn"
             >
-              {isAuthenticated ? 'Proceed to Checkout' : 'Login to Checkout'}
+              {isAuthenticated ? 'Proceed to Request' : 'Login to Request'}
               <ArrowRight size={18} />
             </Link>
 

@@ -45,21 +45,21 @@ const Home = () => {
       <section className="home-1mg__trust-banner scroll-animate">
         <div className="trust-grid">
           <div className="trust-item">
-            <ShieldCheck size={32} className="trust-icon" />
+
             <div className="trust-text">
               <h3>100% Genuine</h3>
               <p>Authentic medicines</p>
             </div>
           </div>
           <div className="trust-item">
-            <Truck size={32} className="trust-icon" />
+
             <div className="trust-text">
               <h3>Fast Delivery</h3>
               <p>To your doorstep</p>
             </div>
           </div>
           <div className="trust-item">
-            <Headset size={32} className="trust-icon" />
+
             <div className="trust-text">
               <h3>24/7 Support</h3>
               <p>Always here for you</p>
@@ -76,8 +76,8 @@ const Home = () => {
         </div>
         <div className="steps-grid">
           <div className="step-card">
-            <div className="step-icon-wrapper">
-              <Search size={32} />
+            <div className="step-icon-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
               <span className="step-number">1</span>
             </div>
             <h3>Search Medicines</h3>
@@ -85,17 +85,17 @@ const Home = () => {
           </div>
           <div className="step-arrow"><ArrowRight size={24} /></div>
           <div className="step-card">
-            <div className="step-icon-wrapper">
-              <FileText size={32} />
+            <div className="step-icon-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
               <span className="step-number">2</span>
             </div>
             <h3>Add Details</h3>
-            <p>Provide delivery address and quickly confirm your order.</p>
+            <p>Provide delivery address and quickly confirm your request.</p>
           </div>
           <div className="step-arrow"><ArrowRight size={24} /></div>
           <div className="step-card">
-            <div className="step-icon-wrapper">
-              <CheckCircle size={32} />
+            <div className="step-icon-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
               <span className="step-number">3</span>
             </div>
             <h3>Fast Delivery</h3>
@@ -116,9 +116,6 @@ const Home = () => {
               className="category-card" 
               onClick={() => navigate(`/products?category=${encodeURIComponent(cat.id)}`)}
             >
-              <div className="category-icon-bg" style={{ backgroundColor: cat.color + '22' }}>
-                <span className="category-emoji">{cat.icon}</span>
-              </div>
               <h3>{cat.name}</h3>
               <div className="category-card-hover">
                 <span>Explore</span> <ArrowRight size={14} />

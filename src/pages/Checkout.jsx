@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
-import { MapPin, Send, AlertCircle, Package, CheckCircle, Edit3, Bookmark } from 'lucide-react';
+import { MapPin, Send, AlertCircle, Package, CheckCircle, Edit3, Bookmark, Phone } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
@@ -9,7 +9,8 @@ import { categories } from '../data/medicines';
 import './Checkout.css';
 
 // Replace with your Formspree form ID
-const FORMSPREE_URL = 'https://formspree.io/f/xwvzdbez';
+// const FORMSPREE_URL = 'https://formspree.io/f/xwvzdbez';
+const FORMSPREE_URL = 'https://formspree.io/f/xnjyawqd';
 
 const Checkout = () => {
   const { items, getSubtotal, getItemCount, clearCart } = useCart();
@@ -26,13 +27,17 @@ const Checkout = () => {
     address: '',
     city: '',
     state: '',
+    country: 'India',
     pincode: '',
     notes: ''
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [pinError, setPinError] = useState('');
   const [saveAddr, setSaveAddr] = useState(true);
   const [usingSaved, setUsingSaved] = useState(false);
+  const [isLocationValid, setIsLocationValid] = useState(true);
+  const [checkingLocation, setCheckingLocation] = useState(true);
 
   // Auto-fill from saved address on mount
   useEffect(() => {
@@ -56,12 +61,32 @@ const Checkout = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.uid]);
 
+  // Geolocation check
+  useEffect(() => {
+    const checkLocation = async () => {
+      try {
+        const res = await fetch('https://api.country.is');
+        const data = await res.json();
+        if (data.country !== 'IN') {
+          setIsLocationValid(false);
+        }
+      } catch (err) {
+        console.warn('Geolocation check failed:', err);
+        // Fail open if the API is down
+      } finally {
+        setCheckingLocation(false);
+      }
+    };
+    checkLocation();
+  }, []);
+
   if (items.length === 0) {
     return <Navigate to="/cart" replace />;
   }
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === 'pincode') setPinError('');
     if (usingSaved) setUsingSaved(false);
   };
 
@@ -83,6 +108,7 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setPinError('');
 
     // Validation
     if (!formData.fullName || !formData.email || !formData.phone || !formData.address || !formData.city || !formData.state || !formData.pincode) {
@@ -96,6 +122,20 @@ const Checkout = () => {
     }
 
     setLoading(true);
+
+    // Verify PIN code via API
+    try {
+      const pinRes = await fetch(`https://api.postalpincode.in/pincode/${formData.pincode}`);
+      const pinData = await pinRes.json();
+      if (!pinData || !pinData[0] || pinData[0].Status === 'Error') {
+        setPinError('Invalid PIN code. The entered PIN code does not exist in India.');
+        setLoading(false);
+        return;
+      }
+    } catch (err) {
+      console.warn('Pincode validation API failed:', err);
+      // We continue if API fails to avoid blocking users due to third-party downtime
+    }
 
     // Save address if checkbox is checked
     if (saveAddr) {
@@ -119,8 +159,8 @@ const Checkout = () => {
     }).join('\n');
 
     const emailBody = {
-      _subject: `🧾 ThisDat Order #${orderId}`,
-      'Order ID': orderId,
+      _subject: `ThisDat Request #${orderId}`,
+      'Request ID': orderId,
       'Customer Name': formData.fullName,
       'Email': formData.email,
       'Phone': formData.phone,
@@ -153,7 +193,7 @@ const Checkout = () => {
         }, user?.uid);
 
         clearCart();
-        toast.success('Your order has been placed!', 'Order Confirmed');
+        toast.success('Your request has been placed!', 'Request Confirmed');
         navigate('/order-success', { state: { orderId, total: subtotal } });
       } else {
         // If Formspree fails (e.g., invalid form ID), still save order locally
@@ -198,6 +238,25 @@ const Checkout = () => {
       <div className="container">
         <h1 className="checkout-page__title">Checkout</h1>
 
+        {checkingLocation ? (
+          <div className="checkout-page__layout" style={{ display: 'flex', justifyContent: 'center', padding: '60px 0', width: '100%' }}>
+            <div className="spinner" style={{ width: 40, height: 40, borderColor: '#ff6f61', borderTopColor: 'transparent' }} />
+          </div>
+        ) : !isLocationValid ? (
+          <div className="checkout-page__layout" style={{ display: 'flex', justifyContent: 'center', padding: '60px 0', width: '100%' }}>
+            <div style={{ textAlign: 'center', maxWidth: '500px', background: '#fff0f0', border: '1px solid #ffcccc', padding: '32px', borderRadius: '8px' }}>
+              <AlertCircle size={48} color="#ff4d4f" style={{ marginBottom: '16px' }} />
+              <h2 style={{ color: '#d32f2f', marginBottom: '12px', marginTop: 0 }}>Location Restricted</h2>
+              <p style={{ color: '#666', lineHeight: 1.6, marginBottom: '24px' }}>
+                Sorry, we are currently only accepting requests from within India. 
+                Our systems have detected that you are accessing the site from outside our serviceable region.
+              </p>
+              <button onClick={() => navigate('/')} className="checkout-page__submit-btn" style={{ width: 'auto', padding: '12px 32px' }}>
+                Return to Home
+              </button>
+            </div>
+          </div>
+        ) : (
         <form className="checkout-page__layout" onSubmit={handleSubmit} id="checkout-form">
           {/* Form */}
           <div className="checkout-page__form-section">
@@ -230,7 +289,7 @@ const Checkout = () => {
                     {savedAddr.address}, {savedAddr.city}, {savedAddr.state} - {savedAddr.pincode}
                   </div>
                   {savedAddr.phone && (
-                    <div className="checkout-page__saved-address-phone">📞 {savedAddr.phone}</div>
+                    <div className="checkout-page__saved-address-phone"><Phone size={14} style={{display: 'inline', verticalAlign: 'middle'}} /> {savedAddr.phone}</div>
                   )}
                 </div>
               </div>
@@ -317,17 +376,67 @@ const Checkout = () => {
                   />
                 </div>
                 <div className="checkout-page__field">
+                  <label className="checkout-page__label" htmlFor="country">Country *</label>
+                  <select
+                    id="country"
+                    name="country"
+                    className="checkout-page__input"
+                    value={formData.country || 'India'}
+                    onChange={handleChange}
+                    required
+                    disabled
+                  >
+                    <option value="India">India</option>
+                  </select>
+                </div>
+                <div className="checkout-page__field">
                   <label className="checkout-page__label" htmlFor="state">State *</label>
-                  <input
+                  <select
                     id="state"
                     name="state"
-                    type="text"
                     className="checkout-page__input"
-                    placeholder="Maharashtra"
                     value={formData.state}
                     onChange={handleChange}
                     required
-                  />
+                  >
+                    <option value="" disabled>Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Ladakh">Ladakh</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                  </select>
                 </div>
                 <div className="checkout-page__field">
                   <label className="checkout-page__label" htmlFor="pincode">PIN Code *</label>
@@ -340,8 +449,11 @@ const Checkout = () => {
                     value={formData.pincode}
                     onChange={handleChange}
                     required
+                    pattern="^[1-9][0-9]{5}$"
+                    title="Please enter a valid 6-digit Indian PIN code"
                     maxLength={6}
                   />
+                  {pinError && <div style={{ color: '#ff4d4f', fontSize: '13px', marginTop: '6px' }}>{pinError}</div>}
                 </div>
                 <div className="checkout-page__field">
                   <label className="checkout-page__label" htmlFor="notes">Special Notes</label>
@@ -374,15 +486,15 @@ const Checkout = () => {
           {/* Sidebar */}
           <div className="checkout-page__sidebar">
             <div className="checkout-page__summary">
-              <h3 className="checkout-page__summary-title">Order Summary</h3>
+              <h3 className="checkout-page__summary-title">Request Summary</h3>
 
               <div className="checkout-page__summary-items">
                 {items.map(item => {
                   const catData = categories.find(c => c.id === item.category);
                   return (
                     <div key={item.id} className="checkout-page__summary-item">
-                      <div className="checkout-page__summary-item-icon">
-                        {catData?.icon || '💊'}
+                      <div className="checkout-page__summary-item-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '4px', width: '40px', height: '40px' }}>
+                        <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#888' }}>{item.name.charAt(0)}</span>
                       </div>
                       <div className="checkout-page__summary-item-info">
                         <div className="checkout-page__summary-item-name">{item.name}</div>
@@ -425,7 +537,7 @@ const Checkout = () => {
                 {loading ? (
                   <div className="spinner spinner--white" style={{ width: 20, height: 20 }} />
                 ) : (
-                  <><Send size={18} /> Place Order</>
+                  <><Send size={18} /> Request Order</>
                 )}
               </button>
 
@@ -433,6 +545,7 @@ const Checkout = () => {
             </div>
           </div>
         </form>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useToast } from './Toast';
+import { ShieldCheck, Lock, Banknote, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -36,28 +37,31 @@ const Footer = () => {
             <h4>Connect</h4>
             <p>Social Links</p>
             <div className="social-icons" style={{cursor: 'pointer'}} onClick={(e) => showInfo(e, "Follow our official handles on Facebook, Twitter, and Instagram!", "Social Media")}>
-              <span>📘</span><span>🐦</span><span>📸</span><span>👔</span>
+              <a href="#"><Facebook size={20} /></a>
+              <a href="#"><Twitter size={20} /></a>
+              <a href="#"><Instagram size={20} /></a>
+              <a href="#"><Linkedin size={20} /></a>
             </div>
           </div>
         </div>
 
         <div className="footer-badges">
           <div className="badge-item">
-            <div className="icon">🛡️</div>
+            <div className="icon"><ShieldCheck size={32} /></div>
             <div className="text">
               <h5>Reliable</h5>
               <p>All products displayed on ThisDat are procured from verified and licensed pharmacies.</p>
             </div>
           </div>
           <div className="badge-item">
-            <div className="icon">🔒</div>
+            <div className="icon"><Lock size={32} /></div>
             <div className="text">
               <h5>Secure</h5>
               <p>ThisDat uses Secure Sockets Layer (SSL) 128-bit encryption and is PCI DSS compliant.</p>
             </div>
           </div>
           <div className="badge-item">
-            <div className="icon">💸</div>
+            <div className="icon"><Banknote size={32} /></div>
             <div className="text">
               <h5>Affordable</h5>
               <p>Find affordable medicine substitutes, save up to 50% on health products.</p>

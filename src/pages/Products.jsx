@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { Package } from 'lucide-react';
+import { Package, Search } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { medicines, categories } from '../data/medicines';
 import { searchProducts, filterByCategory, sortProducts } from '../utils/helpers';
@@ -59,7 +59,7 @@ const Products = () => {
                 className={`products-page__cat-chip${activeCategory === cat.id ? ' products-page__cat-chip--active' : ''}`}
                 onClick={() => handleCategoryChange(cat.id)}
               >
-                {cat.icon} {cat.name}
+                {cat.name}
               </button>
             ))}
           </div>
@@ -88,7 +88,7 @@ const Products = () => {
             ))
           ) : (
             <div className="products-page__empty">
-              <div className="products-page__empty-icon">🔍</div>
+              <div className="products-page__empty-icon"><Search size={48} /></div>
               <h3 className="products-page__empty-title">No products found</h3>
               <p className="products-page__empty-text">
                 {searchQuery

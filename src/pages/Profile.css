@@ -228,7 +228,8 @@ input:checked + .slider:before {
 }
 
 .profile-1mg__addr-form input,
-.profile-1mg__addr-form textarea {
+.profile-1mg__addr-form textarea,
+.profile-1mg__addr-form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
@@ -267,6 +268,30 @@ input:checked + .slider:before {
   margin-bottom: 4px;
   color: #333;
   font-size: 14px;
+}
+
+.profile-1mg__orders {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.profile-1mg__orders::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-1mg__orders::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.profile-1mg__orders::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.profile-1mg__orders::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
 }
 
 .profile-1mg__order-item {

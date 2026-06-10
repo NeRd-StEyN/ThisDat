@@ -70,7 +70,7 @@ const Signup = () => {
         </div>
         <div className="auth-1mg-right">
           <h2>Sign Up</h2>
-          <p className="auth-subtitle">Create an account to track orders and get exclusive offers</p>
+          <p className="auth-subtitle">Create an account to track requests and get exclusive offers</p>
           
           <form onSubmit={handleSubmit} className="auth-1mg-form">
             <div className="auth-1mg-input-group">
