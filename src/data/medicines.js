@@ -279,44 +279,6 @@ export const medicines = [
     }
   },
   {
-    "id": "aciclodiar-250-500",
-    "name": "ACICLODIAR-(250,500)",
-    "category": "Injection",
-    "image": "/products/aciclodiar-250-500.jpg",
-    "shortDescription": "Injection formulation with Acyclovir Sodium (Sterile) Eq. to Acyclovir 250/500 mg.",
-    "description": "ACICLODIAR-(250,500) is a injection product supplied in VIAL. Composition: Each vial contains: Acyclovir Sodium (Sterile) Eq. to Acyclovir 250/500 mg Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "injection",
-      "aciclodiar",
-      "250",
-      "500",
-      "vial",
-      "acyclovir",
-      "sodium",
-      "uzbekistan"
-    ],
-    "price": 190,
-    "specifications": {
-      "Product Type": "Injection",
-      "Packing": "VIAL",
-      "Composition": "Each vial contains: Acyclovir Sodium (Sterile) Eq. to Acyclovir 250/500 mg",
-      "Shelf Life": "2 years",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
     "id": "azidiar-suspension",
     "name": "AZIDIAR SUSPENSION",
     "category": "Suspension",
@@ -421,42 +383,6 @@ export const medicines = [
       "Shelf Life": "3 years",
       "Status": "Registered",
       "Registered Countries": "Uzbekistan, Tajikistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
-    "id": "barkhat",
-    "name": "BARKHAT",
-    "category": "Other",
-    "image": "/products/barkhat.jpg",
-    "shortDescription": "Other formulation with Lubricated condom.",
-    "description": "BARKHAT is a other product supplied in 3 PCS. Composition: Lubricated condom Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "barkhat",
-      "other",
-      "lubricated",
-      "condom",
-      "pcs",
-      "uzbekistan"
-    ],
-    "price": 99,
-    "specifications": {
-      "Product Type": "Other",
-      "Packing": "3 PCS",
-      "Composition": "Lubricated condom",
-      "Shelf Life": "5 years",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
       "Dosage - Children": "As prescribed by the physician",
       "Dosage - Adults": "As directed by the doctor",
       "Indications": "As indicated by the healthcare provider",
@@ -797,49 +723,6 @@ export const medicines = [
     }
   },
   {
-    "id": "bolnol-suspension",
-    "name": "BOLNOL SUSPENSION",
-    "category": "Suspension",
-    "image": "/products/bolnol-suspension.jpg",
-    "shortDescription": "Suspension formulation with Paracetamol BP 240 mg in a flavoured syrup base q.s..",
-    "description": "BOLNOL SUSPENSION is a suspension product supplied in 60 ML Bottle with Measuring Device. Composition: Each 5 ml of oral suspension contains: Paracetamol BP 240 mg in a flavoured syrup base q.s. Indications: For the reduction of fever from various causes including colds, flu, and post-vaccination reactions., For the symptomatic relief of mild to moderate pain such as headaches, toothaches, earaches, and sore throats., Relief from pain and discomfort associated with teething.. Usage: Shake the bottle well before every use to ensure the medicine is evenly distributed., Measure the exact dose using the spoon, dropper or cup provided. Do not use a kitchen spoon., Ensure at least 4 hours between doses and do not give more than 4 doses in any 24-hour period., Can be given with or without food or milk.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Trusted Fever & Pain Relief: Contains Paracetamol, a globally recognized and trusted ingredient for effectively reducing fever and relieving mild to moderate pain in children.",
-      "Concentrated Formula: The 240 mg/5 ml strength provides an effective dose in a smaller volume, making it easier to administer, especially to older children.",
-      "Gentle Action: Paracetamol is known for being gentle on the stomach and can typically be administered without food.",
-      "Pleasant Taste: A child-friendly flavor helps ensure children take their full prescribed dose without difficulty."
-    ],
-    "tags": [
-      "suspension",
-      "bolnol",
-      "oral",
-      "paracetamol",
-      "240",
-      "flavoured",
-      "base",
-      "measuring",
-      "device",
-      "tajikistan"
-    ],
-    "price": 169,
-    "specifications": {
-      "Product Type": "Suspension",
-      "Packing": "60 ML Bottle with Measuring Device",
-      "Composition": "Each 5 ml of oral suspension contains: Paracetamol BP 240 mg in a flavoured syrup base q.s.",
-      "Shelf Life": "3 years from the date of manufacture",
-      "Status": "Registered",
-      "Registered Countries": "Tajikistan",
-      "Dosage - Children": "Dosage must be calculated according to the child's weight and age. Strictly follow the pediatrician's prescription. Always use the provided measuring device for accuracy.",
-      "Dosage - Adults": "May be used by adults as directed by a physician, but is primarily formulated for children.",
-      "Indications": "For the reduction of fever from various causes including colds, flu, and post-vaccination reactions.; For the symptomatic relief of mild to moderate pain such as headaches, toothaches, earaches, and sore throats.; Relief from pain and discomfort associated with teething.",
-      "Usage Instructions": "Shake the bottle well before every use to ensure the medicine is evenly distributed.; Measure the exact dose using the spoon, dropper or cup provided. Do not use a kitchen spoon.; Ensure at least 4 hours between doses and do not give more than 4 doses in any 24-hour period.; Can be given with or without food or milk.",
-      "Precautions": "Contains Paracetamol: It is critical not to give this medicine with any other product containing paracetamol to prevent overdose, which can cause severe liver damage.; Allergy: Do not use if your child has a known allergy to paracetamol.; Medical Consultation: Consult a doctor before use if your child has any liver or kidney conditions.; Seek Medical Advice: If fever or pain persists for more than 3 days, or if new symptoms appear, consult your doctor immediately.",
-      "Possible Side Effects": "Side effects are rare when taken at the recommended dose. In some cases, allergic reactions, such as skin rash or itching, can occur.; Stop use and contact a doctor immediately if you notice any unexpected side effects or signs of an allergic reaction.",
-      "Storage": "Store in a cool, dry place below 25°C. Protect from direct sunlight.; Keep the bottle cap tightly secured after each use.; Once opened, use within the recommended period mentioned on the pack.; Keep out of the sight and reach of children.",
-      "Disclaimer": "This is a prescription medication for the symptomatic relief of fever and pain. Accurate dosing based on your child's weight is essential. Always follow your pediatrician's advice and do not self-medicate."
-    }
-  },
-  {
     "id": "bolnol-tablet",
     "name": "BOLNOL TABLET",
     "category": "Tablet",
@@ -880,49 +763,6 @@ export const medicines = [
       "Possible Side Effects": "Common side effects can include indigestion, heartburn, stomach pain, nausea, and loss of appetite.; Seek immediate medical attention if you experience severe abdominal pain, black tarry stools, chest pain, shortness of breath, or a severe allergic reaction.",
       "Storage": "Store in a cool, dry place, away from direct sunlight and moisture, at a temperature below 25°C.; Keep the medication in its original packaging to protect it from light and environmental factors.; Keep out of the sight and reach of children.",
       "Disclaimer": "This is a potent prescription-only medication. Use strictly under medical supervision. The information provided is not a substitute for a professional medical diagnosis. Long-term use without medical advice can be harmful."
-    }
-  },
-  {
-    "id": "bolnol-ac-tablet",
-    "name": "BOLNOL-AC TABLET",
-    "category": "Tablet",
-    "image": "/products/bolnol-ac-tablet.jpg",
-    "shortDescription": "Tablet formulation with Aceclofenac BP 100 mg, Paracetamol BP 500 mg..",
-    "description": "BOLNOL-AC TABLET is a tablet product supplied in 10X10 Blister Pack. Composition: Each film-coated tablet contains: Aceclofenac BP 100 mg, Paracetamol BP 500 mg. Indications: For the relief of pain and inflammation in osteoarthritis, rheumatoid arthritis, and ankylosing spondylitis., Management of low back pain, toothache, and pain associated with trauma or minor surgery., Symptomatic relief of painful conditions such as headache and menstrual cramps (dysmenorrhea).. Usage: Swallow the tablet whole with a full glass of water. Do not chew, crush, or break the tablet., It is advisable to take this medication with or immediately after food to reduce the chance of stomach irritation., Take the tablet at the same times each day to maintain a consistent level of the medicine in your body., Follow the dosage and duration as prescribed by your doctor for your specific condition.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Synergistic Action: Combines Aceclofenac and Paracetamol to provide rapid, effective relief from both pain and inflammation through two different mechanisms.",
-      "Potent Anti-inflammatory: Aceclofenac effectively reduces swelling, stiffness, and joint pain associated with arthritic and musculoskeletal conditions.",
-      "Trusted Analgesic & Antipyretic: Paracetamol provides fast relief from pain and helps to reduce any associated fever.",
-      "Good Tolerability Profile: Aceclofenac is known for its favorable gastrointestinal safety profile compared to some other NSAIDs, making it a well-tolerated option for many patients."
-    ],
-    "tags": [
-      "tablet",
-      "bolnol",
-      "aceclofenac",
-      "100",
-      "paracetamol",
-      "500",
-      "10x10",
-      "blister",
-      "pack",
-      "uzbekistan"
-    ],
-    "price": 162,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "10X10 Blister Pack",
-      "Composition": "Each film-coated tablet contains: Aceclofenac BP 100 mg, Paracetamol BP 500 mg.",
-      "Shelf Life": "3 years from the date of manufacture",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "The use of this combination is not recommended for children unless specifically advised by a doctor.",
-      "Dosage - Adults": "One tablet twice daily, or as directed by the physician. Should be taken with or after meals to minimize stomach upset.",
-      "Indications": "For the relief of pain and inflammation in osteoarthritis, rheumatoid arthritis, and ankylosing spondylitis.; Management of low back pain, toothache, and pain associated with trauma or minor surgery.; Symptomatic relief of painful conditions such as headache and menstrual cramps (dysmenorrhea).",
-      "Usage Instructions": "Swallow the tablet whole with a full glass of water. Do not chew, crush, or break the tablet.; It is advisable to take this medication with or immediately after food to reduce the chance of stomach irritation.; Take the tablet at the same times each day to maintain a consistent level of the medicine in your body.; Follow the dosage and duration as prescribed by your doctor for your specific condition.",
-      "Precautions": "History of GI Issues: Inform your doctor if you have a history of stomach ulcers or bleeding, as NSAIDs like Aceclofenac can increase this risk.; Contains Paracetamol: Do not take with other medicines containing paracetamol to avoid exceeding the daily limit and prevent potential liver damage.; Heart and Kidney Conditions: Use with caution in patients with a history of heart, kidney, or severe liver disease.; Allergy Warning: Do not take if you are allergic to Aceclofenac, Paracetamol, aspirin, or other Non-Steroidal Anti-Inflammatory Drugs (NSAIDs).",
-      "Possible Side Effects": "Common side effects may include dizziness, indigestion (dyspepsia), abdominal pain, and nausea. These are usually mild.; If you experience any severe side effects such as black stools, a severe skin rash, or difficulty breathing, stop taking the medicine and consult your doctor immediately.",
-      "Storage": "Store in a cool, dry place below 25°C, protected from direct light and moisture.; Keep the medicine in its original blister pack until it is time to take it.; Keep all medicines out of the reach and sight of children.",
-      "Disclaimer": "This is a prescription-only medicine for pain and inflammation. Use strictly as directed by your healthcare provider. Do not exceed the recommended dose. Long-term use requires medical supervision."
     }
   },
   {
@@ -1278,46 +1118,6 @@ export const medicines = [
     }
   },
   {
-    "id": "crofzone-sb-injection",
-    "name": "CROFZONE-SB INJECTION",
-    "category": "Injection",
-    "image": "/products/crofzone-sb-injection.jpg",
-    "shortDescription": "Injection formulation with Ceftriaxone Sodium (Sterile) Eq. to Anhydrous Ceftriaxone 1000 mg, Sulbactam Sodium (Sterile) Eq. to Anhydrous Sulb.",
-    "description": "CROFZONE-SB INJECTION is a injection product supplied in VIAL. Composition: Each Vial Contains: Ceftriaxone Sodium (Sterile) Eq. to Anhydrous Ceftriaxone 1000 mg, Sulbactam Sodium (Sterile) Eq. to Anhydrous Sulbactam 500 mg Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "injection",
-      "crofzone",
-      "vial",
-      "ceftriaxone",
-      "sodium",
-      "anhydrous",
-      "1000",
-      "sulbactam",
-      "500",
-      "uzbekistan"
-    ],
-    "price": 197,
-    "specifications": {
-      "Product Type": "Injection",
-      "Packing": "VIAL",
-      "Composition": "Each Vial Contains: Ceftriaxone Sodium (Sterile) Eq. to Anhydrous Ceftriaxone 1000 mg, Sulbactam Sodium (Sterile) Eq. to Anhydrous Sulbactam 500 mg",
-      "Shelf Life": "30 months",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
     "id": "crotcef-ds",
     "name": "CROTCEF-DS",
     "category": "Suspension",
@@ -1344,86 +1144,6 @@ export const medicines = [
       "Product Type": "Suspension",
       "Packing": "30 ML Bottle",
       "Composition": "Each 5 ml reconstituted suspension contains: Cefixime (as Trihydrate) USP Equivalent to Cefixime anhydrous 100 mg, Flavoured Base q.s.",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
-    "id": "crotcef-dt-100",
-    "name": "CROTCEF-DT 100",
-    "category": "Tablet",
-    "image": "/products/crotcef-dt-100.jpg",
-    "shortDescription": "Tablet formulation with Cefixime (as trihydrate) USP Equivalent to Cefixime anhydrous 100 mg, Excipients q.s..",
-    "description": "CROTCEF-DT 100 is a tablet product supplied in 1 X 10 TAB. Composition: Each uncoated Dispersible Tablet contains: Cefixime (as trihydrate) USP Equivalent to Cefixime anhydrous 100 mg, Excipients q.s. Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "tablet",
-      "crotcef",
-      "100",
-      "dispersible",
-      "cefixime",
-      "trihydrate",
-      "equivalent",
-      "anhydrous",
-      "excipients",
-      "tab"
-    ],
-    "price": 148,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "1 X 10 TAB",
-      "Composition": "Each uncoated Dispersible Tablet contains: Cefixime (as trihydrate) USP Equivalent to Cefixime anhydrous 100 mg, Excipients q.s.",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
-    "id": "crotcef-dt-200",
-    "name": "CROTCEF-DT 200",
-    "category": "Tablet",
-    "image": "/products/crotcef-dt-200.jpg",
-    "shortDescription": "Tablet formulation with Cefixime (As Trihydrate) USP Equivalent to Cefixime anhydrous 200 mg, Excipients q.s..",
-    "description": "CROTCEF-DT 200 is a tablet product supplied in 1 X 10 TAB. Composition: Each uncoated Dispersible Tablet contains: Cefixime (As Trihydrate) USP Equivalent to Cefixime anhydrous 200 mg, Excipients q.s. Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "tablet",
-      "crotcef",
-      "200",
-      "dispersible",
-      "cefixime",
-      "trihydrate",
-      "equivalent",
-      "anhydrous",
-      "excipients",
-      "tab"
-    ],
-    "price": 148,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "1 X 10 TAB",
-      "Composition": "Each uncoated Dispersible Tablet contains: Cefixime (As Trihydrate) USP Equivalent to Cefixime anhydrous 200 mg, Excipients q.s.",
       "Shelf Life": "3 years",
       "Status": "Registered",
       "Registered Countries": "Uzbekistan, Turkmenistan",
@@ -1518,46 +1238,6 @@ export const medicines = [
     }
   },
   {
-    "id": "diarcal-tablet",
-    "name": "DIARCAL TABLET",
-    "category": "Tablet",
-    "image": "/products/diarcal-tablet.jpg",
-    "shortDescription": "Tablet formulation with Calcium Carbonate BP 1250 mg eq. to elemental Calcium 500 mg, Colecalciferol BP (Vitamin D3) 200I.U..",
-    "description": "DIARCAL TABLET is a tablet product supplied in 3X10 TAB.. Composition: Each film coated tablet contains: Calcium Carbonate BP 1250 mg eq. to elemental Calcium 500 mg, Colecalciferol BP (Vitamin D3) 200I.U. Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "tablet",
-      "diarcal",
-      "calcium",
-      "carbonate",
-      "1250",
-      "elemental",
-      "500",
-      "colecalciferol",
-      "vitamin",
-      "200i"
-    ],
-    "price": 148,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "3X10 TAB.",
-      "Composition": "Each film coated tablet contains: Calcium Carbonate BP 1250 mg eq. to elemental Calcium 500 mg, Colecalciferol BP (Vitamin D3) 200I.U.",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
     "id": "diarcal-boneplus-chewable-tablet",
     "name": "DIARCAL BONEPLUS CHEWABLE TABLET",
     "category": "Tablet",
@@ -1638,46 +1318,6 @@ export const medicines = [
     }
   },
   {
-    "id": "gilant-tablet",
-    "name": "GILANT TABLET",
-    "category": "Tablet",
-    "image": "/products/gilant-tablet.jpg",
-    "shortDescription": "Tablet formulation with Clopidogrel Bisulfate USP equivalent to Clopidogrel Base 75 mg, Excipients q.s..",
-    "description": "GILANT TABLET is a tablet product supplied in 3X10 TAB.. Composition: Each film coated tablet contains: Clopidogrel Bisulfate USP equivalent to Clopidogrel Base 75 mg, Excipients q.s. Indications: As indicated by the healthcare provider. Usage: Use under medical guidance. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Refer to the composition for therapeutic benefits"
-    ],
-    "tags": [
-      "tablet",
-      "gilant",
-      "clopidogrel",
-      "bisulfate",
-      "equivalent",
-      "base",
-      "excipients",
-      "3x10",
-      "tab",
-      "uzbekistan"
-    ],
-    "price": 141,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "3X10 TAB.",
-      "Composition": "Each film coated tablet contains: Clopidogrel Bisulfate USP equivalent to Clopidogrel Base 75 mg, Excipients q.s.",
-      "Shelf Life": "3 years",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As prescribed by the physician",
-      "Dosage - Adults": "As directed by the doctor",
-      "Indications": "As indicated by the healthcare provider",
-      "Usage Instructions": "Use under medical guidance",
-      "Precautions": "Consult your doctor before use",
-      "Possible Side Effects": "Mild side effects may occur",
-      "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
-      "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
     "id": "hepanol-capsule",
     "name": "HEPANOL CAPSULE",
     "category": "Capsule",
@@ -1714,84 +1354,6 @@ export const medicines = [
       "Indications": "Liver disorders; Hepatic insufficiency; Fatty liver",
       "Usage Instructions": "Take after meals with water unless prescribed otherwise.",
       "Precautions": "Consult physician before use in pregnant or lactating women."
-    }
-  },
-  {
-    "id": "hepanol-plus-capsule",
-    "name": "HEPANOL PLUS CAPSULE",
-    "category": "Capsule",
-    "image": "/products/hepanol-plus-capsule.jpg",
-    "shortDescription": "Capsule formulation with Soya Lecithin Providing 3 Sn Phosphotidly Choline (Essential Phospholipids) 300 mg, Vitamin E Acetate 6.00 mg, Thia.",
-    "description": "HEPANOL PLUS CAPSULE is a capsule product supplied in 2x15 Cap. Composition: Each soft gelatin capsule contains: Soya Lecithin Providing 3 Sn Phosphotidly Choline (Essential Phospholipids) 300 mg, Vitamin E Acetate 6.00 mg, Thiamine Mononitrate 1.00 mg, Vitamin B2 1.20 mg, Vitamin B6 1.20 mg, Vitamin B12 2.20 mcg, Vitamin B3 1.20 mg Indications: Liver dysfunction, Vitamin B deficiency, Fatigue or stress-related weakness. Usage: Swallow with water post-meal. Do not chew.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Comprehensive liver and antioxidant support",
-      "Promotes nerve and metabolic health",
-      "Reduces fatigue and enhances vitality"
-    ],
-    "tags": [
-      "capsule",
-      "hepanol",
-      "plus",
-      "gelatin",
-      "soya",
-      "lecithin",
-      "providing",
-      "phosphotidly",
-      "choline",
-      "essential"
-    ],
-    "price": 190,
-    "specifications": {
-      "Product Type": "Capsule",
-      "Packing": "2x15 Cap",
-      "Composition": "Each soft gelatin capsule contains: Soya Lecithin Providing 3 Sn Phosphotidly Choline (Essential Phospholipids) 300 mg, Vitamin E Acetate 6.00 mg, Thiamine Mononitrate 1.00 mg, Vitamin B2 1.20 mg, Vitamin B6 1.20 mg, Vitamin B12 2.20 mcg, Vitamin B3 1.20 mg",
-      "Shelf Life": "2 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "Not recommended unless advised by a physician",
-      "Dosage - Adults": "1 capsule twice daily after meals",
-      "Indications": "Liver dysfunction; Vitamin B deficiency; Fatigue or stress-related weakness",
-      "Usage Instructions": "Swallow with water post-meal. Do not chew.",
-      "Precautions": "Consult a healthcare professional for long-term use."
-    }
-  },
-  {
-    "id": "i-moxy",
-    "name": "I-MOXY",
-    "category": "Suspension",
-    "image": "/products/i-moxy.jpg",
-    "shortDescription": "Suspension formulation with Amoxicillin Trihydrate USP Eq. to Amoxicillin 200 mg, Clavulanate Potassium USP Eq. to Clavulanic Acid 28.5 mg.",
-    "description": "I-MOXY is a suspension product supplied in 30 ML Bottle. Composition: Each 5 ml reconstituted suspension contains: Amoxicillin Trihydrate USP Eq. to Amoxicillin 200 mg, Clavulanate Potassium USP Eq. to Clavulanic Acid 28.5 mg Indications: Pneumonia, Otitis media, Tonsillitis, Urinary tract infections. Usage: Shake well before use. Take after food.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Broad-spectrum antibacterial activity",
-      "Effective in treating respiratory and ENT infections",
-      "Combines bactericidal and beta-lactamase inhibition"
-    ],
-    "tags": [
-      "suspension",
-      "moxy",
-      "reconstituted",
-      "amoxicillin",
-      "trihydrate",
-      "200",
-      "clavulanate",
-      "potassium",
-      "clavulanic",
-      "acid"
-    ],
-    "price": 92,
-    "specifications": {
-      "Product Type": "Suspension",
-      "Packing": "30 ML Bottle",
-      "Composition": "Each 5 ml reconstituted suspension contains: Amoxicillin Trihydrate USP Eq. to Amoxicillin 200 mg, Clavulanate Potassium USP Eq. to Clavulanic Acid 28.5 mg",
-      "Shelf Life": "30 months",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As prescribed based on body weight and infection type",
-      "Dosage - Adults": "Not applicable (pediatric formulation)",
-      "Indications": "Pneumonia; Otitis media; Tonsillitis; Urinary tract infections",
-      "Usage Instructions": "Shake well before use. Take after food.",
-      "Precautions": "Store in refrigerator after reconstitution and discard unused portion after 7 days."
     }
   },
   {
@@ -1985,81 +1547,6 @@ export const medicines = [
       "Possible Side Effects": "Mild side effects may occur",
       "Storage": "Store in a cool, dry place below 25°C; Keep out of reach of children",
       "Disclaimer": "This is a prescription medicine. Do not self-medicate. Always consult your doctor before use."
-    }
-  },
-  {
-    "id": "isshagra-zing-plus",
-    "name": "ISSHAGRA ZING PLUS",
-    "category": "Tablet",
-    "image": "/products/isshagra-zing-plus.jpg",
-    "shortDescription": "Tablet formulation with Sildenafil Citrate equivalent to Sildenafil 100 mg, Ginseng 10 mg.",
-    "description": "ISSHAGRA ZING PLUS is a tablet product supplied in 1 X 7 TAB.. Composition: Each effervescent tablet contains: Sildenafil Citrate equivalent to Sildenafil 100 mg, Ginseng 10 mg Indications: Erectile dysfunction, Low sexual stamina. Usage: Dissolve tablet in water and consume immediately.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Improves erectile function",
-      "Boosts energy and vitality",
-      "Effervescent for faster onset"
-    ],
-    "tags": [
-      "tablet",
-      "isshagra",
-      "zing",
-      "plus",
-      "effervescent",
-      "sildenafil",
-      "citrate",
-      "equivalent",
-      "100",
-      "ginseng"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "1 X 7 TAB.",
-      "Composition": "Each effervescent tablet contains: Sildenafil Citrate equivalent to Sildenafil 100 mg, Ginseng 10 mg",
-      "Shelf Life": "2 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Tajikistan",
-      "Dosage - Children": "Not applicable",
-      "Dosage - Adults": "1 tablet dissolved in water 30 minutes before intercourse",
-      "Indications": "Erectile dysfunction; Low sexual stamina",
-      "Usage Instructions": "Dissolve tablet in water and consume immediately.",
-      "Precautions": "Avoid nitrates or alcohol. Use under medical guidance."
-    }
-  },
-  {
-    "id": "isshagra-100-tablet",
-    "name": "ISSHAGRA-100 TABLET",
-    "category": "Tablet",
-    "image": "/products/isshagra-100-tablet.jpg",
-    "shortDescription": "Tablet formulation with Sildenafil Citrate BP 100 mg.",
-    "description": "ISSHAGRA-100 TABLET is a tablet product supplied in 4 TAB.. Composition: Each film coated tablet contains: Sildenafil Citrate BP 100 mg Indications: Erectile dysfunction. Usage: Do not exceed 1 tablet per day. Take with water.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Enhances blood flow to penile tissue",
-      "Improves erection quality",
-      "Clinically proven efficacy"
-    ],
-    "tags": [
-      "tablet",
-      "isshagra",
-      "100",
-      "sildenafil",
-      "citrate",
-      "tab",
-      "uzbekistan"
-    ],
-    "price": 183,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "4 TAB.",
-      "Composition": "Each film coated tablet contains: Sildenafil Citrate BP 100 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Not applicable",
-      "Dosage - Adults": "1 tablet orally 30–60 minutes before sexual activity",
-      "Indications": "Erectile dysfunction",
-      "Usage Instructions": "Do not exceed 1 tablet per day. Take with water.",
-      "Precautions": "Not for cardiac patients or those on nitrate therapy."
     }
   },
   {
@@ -2338,78 +1825,6 @@ export const medicines = [
     }
   },
   {
-    "id": "lactidiar-suspension",
-    "name": "LACTIDIAR SUSPENSION",
-    "category": "Suspension",
-    "image": "/products/lactidiar-suspension.jpg",
-    "shortDescription": "Suspension formulation with Bacillus clausii CFU 2/4 billion, Purified Water q.s..",
-    "description": "LACTIDIAR SUSPENSION is a suspension product supplied in 10 x 5 ml. Composition: Bacillus clausii CFU 2/4 billion, Purified Water q.s. Indications: Pediatric diarrhea, Post-antibiotic use. Usage: Shake well, Do not refrigerate. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Restores gut flora",
-      "Treats acute diarrhea"
-    ],
-    "tags": [
-      "suspension",
-      "lactidiar",
-      "bacillus",
-      "clausii",
-      "cfu",
-      "billion",
-      "purified",
-      "uzbekistan"
-    ],
-    "price": 190,
-    "specifications": {
-      "Product Type": "Suspension",
-      "Packing": "10 x 5 ml",
-      "Composition": "Bacillus clausii CFU 2/4 billion, Purified Water q.s.",
-      "Shelf Life": "24 months",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "1 bottle daily",
-      "Dosage - Adults": "1 bottle twice daily",
-      "Indications": "Pediatric diarrhea; Post-antibiotic use",
-      "Usage Instructions": "Shake well; Do not refrigerate",
-      "Precautions": "Use within 24 hours once opened"
-    }
-  },
-  {
-    "id": "levofev-250-tablet",
-    "name": "LEVOFEV-250 TABLET",
-    "category": "Tablet",
-    "image": "/products/levofev-250-tablet.jpg",
-    "shortDescription": "Tablet formulation with Levofloxacin Hemihydrate Eq. to Levofloxacin 250mg.",
-    "description": "LEVOFEV-250 TABLET is a tablet product supplied in 3 TAB.. Composition: Levofloxacin Hemihydrate Eq. to Levofloxacin 250mg Indications: UTI, RTI, Skin infections. Usage: Take with water, Do not skip doses. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Broad-spectrum antibiotic",
-      "Treats respiratory and urinary infections"
-    ],
-    "tags": [
-      "tablet",
-      "levofev",
-      "250",
-      "levofloxacin",
-      "hemihydrate",
-      "250mg",
-      "tab",
-      "uzbekistan"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "3 TAB.",
-      "Composition": "Levofloxacin Hemihydrate Eq. to Levofloxacin 250mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Not recommended under 18",
-      "Dosage - Adults": "1 tablet once daily",
-      "Indications": "UTI; RTI; Skin infections",
-      "Usage Instructions": "Take with water; Do not skip doses",
-      "Precautions": "Avoid sun exposure; Not for children"
-    }
-  },
-  {
     "id": "levofev-500-tablet",
     "name": "LEVOFEV-500 TABLET",
     "category": "Tablet",
@@ -2484,44 +1899,6 @@ export const medicines = [
       "Indications": "Severe pneumonia; Complicated urinary tract infections; Skin infections requiring IV antibiotics",
       "Usage Instructions": "Administered by healthcare professional; Ensure IV compatibility; Do not freeze",
       "Precautions": "Monitor kidney function in elderly; Avoid in patients with epilepsy unless advised; May cause tendon inflammation"
-    }
-  },
-  {
-    "id": "losamax",
-    "name": "LOSAMAX",
-    "category": "Tablet",
-    "image": "/products/losamax.jpg",
-    "shortDescription": "Tablet formulation with Amlodipine Besilate BP equivalent to Amlodipine 5 mg, Losartan Potassium BP 50 mg.",
-    "description": "LOSAMAX is a tablet product supplied in 30 Tablets. Composition: Each film coated tablet contains: Amlodipine Besilate BP equivalent to Amlodipine 5 mg, Losartan Potassium BP 50 mg Indications: Hypertension, Cardiac protection, Renal protection in diabetic patients. Usage: Take at the same time each day, Do not skip doses, Monitor blood pressure regularly. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Controls high blood pressure",
-      "Reduces risk of heart attacks and strokes",
-      "Combination therapy for better effectiveness"
-    ],
-    "tags": [
-      "tablet",
-      "losamax",
-      "amlodipine",
-      "besilate",
-      "equivalent",
-      "losartan",
-      "potassium",
-      "tablets",
-      "uzbekistan"
-    ],
-    "price": 99,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "30 Tablets",
-      "Composition": "Each film coated tablet contains: Amlodipine Besilate BP equivalent to Amlodipine 5 mg, Losartan Potassium BP 50 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Not recommended",
-      "Dosage - Adults": "One tablet daily or as prescribed by the physician",
-      "Indications": "Hypertension; Cardiac protection; Renal protection in diabetic patients",
-      "Usage Instructions": "Take at the same time each day; Do not skip doses; Monitor blood pressure regularly",
-      "Precautions": "Avoid alcohol; Inform doctor if pregnant or planning pregnancy; Watch for dizziness during initial days"
     }
   },
   {
@@ -2606,190 +1983,6 @@ export const medicines = [
     }
   },
   {
-    "id": "nevocarn-injection",
-    "name": "NEVOCARN INJECTION",
-    "category": "Injection",
-    "image": "/products/nevocarn-injection.jpg",
-    "shortDescription": "Injection formulation with Levocarnitine USP 1 gm, Water for Injection BP q.s..",
-    "description": "NEVOCARN INJECTION is a injection product supplied in 5x5ML AMP.. Composition: Each 5 ml contains: Levocarnitine USP 1 gm, Water for Injection BP q.s. Indications: Primary and secondary carnitine deficiency, Chronic kidney disease support, Metabolic disorders. Usage: Administer under medical supervision, Inspect vial before use, Do not use if discolored. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Supports energy production in cells",
-      "Used in carnitine deficiency",
-      "May aid in muscle metabolism"
-    ],
-    "tags": [
-      "injection",
-      "nevocarn",
-      "levocarnitine",
-      "5x5ml",
-      "amp",
-      "uzbekistan"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Injection",
-      "Packing": "5x5ML AMP.",
-      "Composition": "Each 5 ml contains: Levocarnitine USP 1 gm, Water for Injection BP q.s.",
-      "Shelf Life": "30 months",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As advised by healthcare provider",
-      "Dosage - Adults": "As prescribed by healthcare provider",
-      "Indications": "Primary and secondary carnitine deficiency; Chronic kidney disease support; Metabolic disorders",
-      "Usage Instructions": "Administer under medical supervision; Inspect vial before use; Do not use if discolored",
-      "Precautions": "Not for self-administration; Monitor cardiac status; Store in original container"
-    }
-  },
-  {
-    "id": "nispazolex",
-    "name": "NISPAZOLEX",
-    "category": "Injection",
-    "image": "/products/nispazolex.jpg",
-    "shortDescription": "Injection formulation with Pantoprazole for Injection BP 40 mg, Sodium Chloride BP (0.9% w/v) 9.0 mg.",
-    "description": "NISPAZOLEX is a injection product supplied in 40MG/VIAL. Composition: Each Combipack contains: Pantoprazole for Injection BP 40 mg, Sodium Chloride BP (0.9% w/v) 9.0 mg Indications: GERD, Peptic ulcers, Zollinger-Ellison syndrome. Usage: Reconstitute before use, Use under medical supervision, Store in a cool place. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Reduces stomach acid effectively",
-      "Prevents stress ulcers",
-      "Useful in treating GERD and ulcers"
-    ],
-    "tags": [
-      "injection",
-      "nispazolex",
-      "combipack",
-      "pantoprazole",
-      "sodium",
-      "chloride",
-      "40mg",
-      "vial",
-      "uzbekistan",
-      "turkmenistan"
-    ],
-    "price": 120,
-    "specifications": {
-      "Product Type": "Injection",
-      "Packing": "40MG/VIAL",
-      "Composition": "Each Combipack contains: Pantoprazole for Injection BP 40 mg, Sodium Chloride BP (0.9% w/v) 9.0 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "Not recommended",
-      "Dosage - Adults": "One vial once daily IV or as prescribed",
-      "Indications": "GERD; Peptic ulcers; Zollinger-Ellison syndrome",
-      "Usage Instructions": "Reconstitute before use; Use under medical supervision; Store in a cool place",
-      "Precautions": "Avoid prolonged use without advice; May interfere with B12 absorption; Do not freeze"
-    }
-  },
-  {
-    "id": "omeshan",
-    "name": "OMESHAN",
-    "category": "Capsule",
-    "image": "/products/omeshan.jpg",
-    "shortDescription": "Capsule formulation with Omeprazole BP 20 mg (As enteric coated granules).",
-    "description": "OMESHAN is a capsule product supplied in 100 Capsules. Composition: Each capsule contains: Omeprazole BP 20 mg (As enteric coated granules) Indications: Gastroesophageal reflux disease (GERD), Stomach and duodenal ulcers, Helicobacter pylori eradication. Usage: Swallow whole with water, Take before meals, Store in dry conditions. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Effective in acid reflux and heartburn",
-      "Long-lasting gastric acid suppression",
-      "Convenient once-daily dosing"
-    ],
-    "tags": [
-      "capsule",
-      "omeshan",
-      "omeprazole",
-      "enteric",
-      "granules",
-      "100",
-      "capsules",
-      "uzbekistan"
-    ],
-    "price": 99,
-    "specifications": {
-      "Product Type": "Capsule",
-      "Packing": "100 Capsules",
-      "Composition": "Each capsule contains: Omeprazole BP 20 mg (As enteric coated granules)",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Only as advised",
-      "Dosage - Adults": "One capsule daily before breakfast",
-      "Indications": "Gastroesophageal reflux disease (GERD); Stomach and duodenal ulcers; Helicobacter pylori eradication",
-      "Usage Instructions": "Swallow whole with water; Take before meals; Store in dry conditions",
-      "Precautions": "Consult if taking long-term; Not for immediate symptom relief; Avoid crushing capsules"
-    }
-  },
-  {
-    "id": "oflidiar-oz-tablet",
-    "name": "OFLIDIAR-OZ TABLET",
-    "category": "Tablet",
-    "image": "/products/oflidiar-oz-tablet.jpg",
-    "shortDescription": "Tablet formulation with Ofloxacin USP 200 mg, Ornidazole 500 mg.",
-    "description": "OFLIDIAR-OZ TABLET is a tablet product supplied in 10X10 TAB.. Composition: Each film-coated tablet contains: Ofloxacin USP 200 mg, Ornidazole 500 mg Indications: Acute diarrhea, Dysentery, Mixed bacterial and protozoal infections. Usage: Take after meals, Complete full course, Keep in original pack. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Broad-spectrum antibacterial and antiprotozoal action",
-      "Quick symptom relief in gut infections"
-    ],
-    "tags": [
-      "tablet",
-      "oflidiar",
-      "ofloxacin",
-      "200",
-      "ornidazole",
-      "500",
-      "10x10",
-      "tab",
-      "uzbekistan"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "10X10 TAB.",
-      "Composition": "Each film-coated tablet contains: Ofloxacin USP 200 mg, Ornidazole 500 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Not recommended",
-      "Dosage - Adults": "One tablet twice daily or as directed",
-      "Indications": "Acute diarrhea; Dysentery; Mixed bacterial and protozoal infections",
-      "Usage Instructions": "Take after meals; Complete full course; Keep in original pack",
-      "Precautions": "Avoid alcohol during course; Consult doctor if you have liver issues; May cause dizziness"
-    }
-  },
-  {
-    "id": "prigishan-tablet",
-    "name": "PRIGISHAN TABLET",
-    "category": "Tablet",
-    "image": "/products/prigishan-tablet.jpg",
-    "shortDescription": "Tablet formulation with Allylestrenol BP 5 mg.",
-    "description": "PRIGISHAN TABLET is a tablet product supplied in 3X10 TAB.. Composition: Each film coated tablet contains: Allylestrenol BP 5 mg Indications: Threatened miscarriage, Habitual abortion, Preterm labor prevention. Usage: Take regularly at prescribed intervals, Follow duration strictly, Consult doctor before stopping. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Supports pregnancy",
-      "Helps prevent premature labor",
-      "Maintains uterine health"
-    ],
-    "tags": [
-      "tablet",
-      "prigishan",
-      "allylestrenol",
-      "3x10",
-      "tab",
-      "tajikistan",
-      "turkmenistan"
-    ],
-    "price": 162,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "3X10 TAB.",
-      "Composition": "Each film coated tablet contains: Allylestrenol BP 5 mg",
-      "Shelf Life": "4 years",
-      "Status": "Registered",
-      "Registered Countries": "Tajikistan, Turkmenistan",
-      "Dosage - Children": "Not applicable",
-      "Dosage - Adults": "One tablet two to three times daily or as prescribed",
-      "Indications": "Threatened miscarriage; Habitual abortion; Preterm labor prevention",
-      "Usage Instructions": "Take regularly at prescribed intervals; Follow duration strictly; Consult doctor before stopping",
-      "Precautions": "Not for use without doctor consultation; Inform doctor about any hormonal conditions; Monitor progress regularly"
-    }
-  },
-  {
     "id": "remeptol",
     "name": "REMEPTOL",
     "category": "Tablet",
@@ -2868,44 +2061,6 @@ export const medicines = [
     }
   },
   {
-    "id": "remizone-injection",
-    "name": "REMIZONE INJECTION",
-    "category": "Injection",
-    "image": "/products/remizone-injection.jpg",
-    "shortDescription": "Injection formulation with Cefoperazone 1000 mg, Sulbactam 500 mg.",
-    "description": "REMIZONE INJECTION is a injection product supplied in Vial. Composition: Cefoperazone 1000 mg, Sulbactam 500 mg Indications: Respiratory tract infections, Urinary tract infections, Intra-abdominal infections. Usage: Administer via IM or IV injection, Use immediately after reconstitution. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Effective against a broad range of bacterial infections",
-      "Combines beta-lactam antibiotic with beta-lactamase inhibitor"
-    ],
-    "tags": [
-      "injection",
-      "remizone",
-      "cefoperazone",
-      "1000",
-      "sulbactam",
-      "500",
-      "vial",
-      "uzbekistan"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Injection",
-      "Packing": "Vial",
-      "Composition": "Cefoperazone 1000 mg, Sulbactam 500 mg",
-      "Shelf Life": "30 months",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Adults": "As prescribed by the physician; typically 1-2 gm twice daily",
-      "Indications": "Respiratory tract infections; Urinary tract infections; Intra-abdominal infections",
-      "Usage Instructions": "Administer via IM or IV injection; Use immediately after reconstitution",
-      "Precautions": "Perform sensitivity test before use; Use with caution in renal impairment",
-      "Possible Side Effects": "Diarrhea; Rash; Injection site reactions",
-      "Storage": "Store below 25°C; Protect from light",
-      "Disclaimer": "To be used under supervision of a registered medical practitioner."
-    }
-  },
-  {
     "id": "rivishan-capsule",
     "name": "RIVISHAN CAPSULE",
     "category": "Capsule",
@@ -2942,85 +2097,6 @@ export const medicines = [
       "Possible Side Effects": "Nausea; Mild headache",
       "Storage": "Store in a cool dry place; Keep out of reach of children",
       "Disclaimer": "Health supplement, not for medicinal use."
-    }
-  },
-  {
-    "id": "rostishan-herbal-syrup",
-    "name": "ROSTISHAN HERBAL SYRUP",
-    "category": "Syrup",
-    "image": "/products/rostishan-herbal-syrup.jpg",
-    "shortDescription": "Syrup formulation with Herbal extracts including Zingiber officinale, Emblica officinalis, Mentha spicata etc..",
-    "description": "ROSTISHAN HERBAL SYRUP is a syrup product supplied in 100 ML/200ML. Composition: Herbal extracts including Zingiber officinale, Emblica officinalis, Mentha spicata etc. Indications: Indigestion, Loss of appetite, Abdominal discomfort. Usage: Shake well before use, Take after meals. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Supports digestive health",
-      "Relieves bloating and flatulence",
-      "Improves appetite"
-    ],
-    "tags": [
-      "syrup",
-      "rostishan",
-      "herbal",
-      "extracts",
-      "including",
-      "zingiber",
-      "officinale",
-      "emblica",
-      "officinalis",
-      "mentha"
-    ],
-    "price": 204,
-    "specifications": {
-      "Product Type": "Syrup",
-      "Packing": "100 ML/200ML",
-      "Composition": "Herbal extracts including Zingiber officinale, Emblica officinalis, Mentha spicata etc.",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Tajikistan, Turkmenistan, Kyrgyzstan",
-      "Dosage - Children": "1 tsp twice daily",
-      "Dosage - Adults": "2 tsp twice daily",
-      "Indications": "Indigestion; Loss of appetite; Abdominal discomfort",
-      "Usage Instructions": "Shake well before use; Take after meals",
-      "Precautions": "Use under supervision of Ayurvedic practitioner; Not recommended in children under 2 years",
-      "Possible Side Effects": "Generally well tolerated; Mild nausea (rare)",
-      "Storage": "Keep in a cool dry place; Use within 30 days after opening",
-      "Disclaimer": "Herbal formulation. Not a substitute for medical advice."
-    }
-  },
-  {
-    "id": "serishaan-tablet",
-    "name": "SERISHAAN TABLET",
-    "category": "Tablet",
-    "image": "/products/serishaan-tablet.jpg",
-    "shortDescription": "Tablet formulation with Serratiopeptidase 10 mg.",
-    "description": "SERISHAAN TABLET is a tablet product supplied in 10X10 TAB.. Composition: Serratiopeptidase 10 mg Indications: Post-operative inflammation, Edema, Muscle pain. Usage: Take on an empty stomach, Do not crush or chew. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Reduces inflammation and swelling",
-      "Speeds recovery from injuries and surgeries"
-    ],
-    "tags": [
-      "tablet",
-      "serishaan",
-      "serratiopeptidase",
-      "10x10",
-      "tab",
-      "uzbekistan",
-      "turkmenistan"
-    ],
-    "price": 162,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "10X10 TAB.",
-      "Composition": "Serratiopeptidase 10 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Adults": "1 tablet 2-3 times daily or as directed by physician",
-      "Indications": "Post-operative inflammation; Edema; Muscle pain",
-      "Usage Instructions": "Take on an empty stomach; Do not crush or chew",
-      "Precautions": "Not for use in bleeding disorders; Avoid in pregnancy and lactation",
-      "Possible Side Effects": "Gastrointestinal discomfort; Allergic reaction (rare)",
-      "Storage": "Store at room temperature; Keep in original packaging",
-      "Disclaimer": "Use under medical supervision only."
     }
   },
   {
@@ -3152,47 +2228,6 @@ export const medicines = [
     }
   },
   {
-    "id": "travrelax-lozenges",
-    "name": "TRAVRELAX LOZENGES",
-    "category": "Lozenges",
-    "image": "/products/travrelax-lozenges.jpg",
-    "shortDescription": "Lozenges formulation with Mentha Sylvestris, Ginger, Liquorice, Amla.",
-    "description": "TRAVRELAX LOZENGES is a lozenges product supplied in 100 LOZENGES, 50 LOZENGES. Composition: Mentha Sylvestris, Ginger, Liquorice, Amla Indications: Sore throat, Cough and cold, Voice hoarseness. Usage: Dissolve slowly in mouth, Do not chew. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Provides instant throat relief",
-      "Soothes dry cough",
-      "Freshens breath"
-    ],
-    "tags": [
-      "travrelax",
-      "lozenges",
-      "mentha",
-      "sylvestris",
-      "ginger",
-      "liquorice",
-      "amla",
-      "100",
-      "uzbekistan"
-    ],
-    "price": 176,
-    "specifications": {
-      "Product Type": "Lozenges",
-      "Packing": "100 LOZENGES, 50 LOZENGES",
-      "Composition": "Mentha Sylvestris, Ginger, Liquorice, Amla",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "As advised by physician",
-      "Dosage - Adults": "1 lozenge 3-4 times daily",
-      "Indications": "Sore throat; Cough and cold; Voice hoarseness",
-      "Usage Instructions": "Dissolve slowly in mouth; Do not chew",
-      "Precautions": "Not for children below 5 years; Do not exceed 5 lozenges a day",
-      "Possible Side Effects": "None known",
-      "Storage": "Store in dry cool place; Keep sealed in jar",
-      "Disclaimer": "Over-the-counter herbal remedy. Safe if used as directed."
-    }
-  },
-  {
     "id": "vitashan-gummies",
     "name": "VITASHAN GUMMIES",
     "category": "Gummy",
@@ -3312,43 +2347,6 @@ export const medicines = [
     }
   },
   {
-    "id": "vragglist-plus-suspension",
-    "name": "VRAGGLIST PLUS SUSPENSION",
-    "category": "Suspension",
-    "image": "/products/vragglist-plus-suspension.jpg",
-    "shortDescription": "Suspension formulation with Ivermectin BP 1.5 mg, Albendazole USP 200 mg.",
-    "description": "VRAGGLIST PLUS SUSPENSION is a suspension product supplied in 10 ML. Composition: Each 5 ml contains: Ivermectin BP 1.5 mg, Albendazole USP 200 mg Indications: Helminthic infestations, Mixed worm infections. Usage: Shake well before use, Consume on an empty stomach. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Combats both roundworm and tapeworm infections",
-      "Single-dose treatment for effective deworming"
-    ],
-    "tags": [
-      "suspension",
-      "vragglist",
-      "plus",
-      "ivermectin",
-      "albendazole",
-      "200",
-      "uzbekistan"
-    ],
-    "price": 225,
-    "specifications": {
-      "Product Type": "Suspension",
-      "Packing": "10 ML",
-      "Composition": "Each 5 ml contains: Ivermectin BP 1.5 mg, Albendazole USP 200 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "5 ml single dose or as prescribed",
-      "Indications": "Helminthic infestations; Mixed worm infections",
-      "Usage Instructions": "Shake well before use; Consume on an empty stomach",
-      "Precautions": "Avoid in pregnancy unless prescribed; Use under medical advice in young children",
-      "Possible Side Effects": "Abdominal discomfort; Nausea",
-      "Storage": "Store at room temperature. Protect from light.",
-      "Disclaimer": "To be taken under strict medical supervision."
-    }
-  },
-  {
     "id": "vragglist-plus-tablet",
     "name": "VRAGGLIST PLUS TABLET",
     "category": "Tablet",
@@ -3385,80 +2383,6 @@ export const medicines = [
       "Possible Side Effects": "Nausea; Fatigue; Mild rash",
       "Storage": "Keep in original container at room temperature.",
       "Disclaimer": "Do not use without medical guidance."
-    }
-  },
-  {
-    "id": "vragglist-suspension",
-    "name": "VRAGGLIST SUSPENSION",
-    "category": "Suspension",
-    "image": "/products/vragglist-suspension.jpg",
-    "shortDescription": "Suspension formulation with Albendazole BP 200 mg.",
-    "description": "VRAGGLIST SUSPENSION is a suspension product supplied in 10 ML. Composition: Each 5ml suspension contains: Albendazole BP 200 mg Indications: Helminthic infections. Usage: Shake well, Take on an empty stomach. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Effective dewormer",
-      "Works on various parasitic worms"
-    ],
-    "tags": [
-      "suspension",
-      "vragglist",
-      "5ml",
-      "albendazole",
-      "200",
-      "turkmenistan",
-      "kyrgyzstan"
-    ],
-    "price": 190,
-    "specifications": {
-      "Product Type": "Suspension",
-      "Packing": "10 ML",
-      "Composition": "Each 5ml suspension contains: Albendazole BP 200 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Turkmenistan, Kyrgyzstan",
-      "Dosage - Children": "5 ml single dose",
-      "Indications": "Helminthic infections",
-      "Usage Instructions": "Shake well; Take on an empty stomach",
-      "Precautions": "Avoid repeated use without doctor's advice",
-      "Possible Side Effects": "Headache; Dizziness; Nausea",
-      "Storage": "Protect from moisture and heat.",
-      "Disclaimer": "Medical supervision required."
-    }
-  },
-  {
-    "id": "vragglist-tablet",
-    "name": "VRAGGLIST TABLET",
-    "category": "Tablet",
-    "image": "/products/vragglist-tablet.jpg",
-    "shortDescription": "Tablet formulation with Albendazole BP 400 mg.",
-    "description": "VRAGGLIST TABLET is a tablet product supplied in 1 TAB.. Composition: Each film coated tablet contains: Albendazole BP 400 mg Indications: Roundworm, hookworm infections. Usage: Take after food, Do not repeat without consultation. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Powerful anti-worm treatment",
-      "Convenient single-dose therapy"
-    ],
-    "tags": [
-      "tablet",
-      "vragglist",
-      "albendazole",
-      "400",
-      "tab",
-      "turkmenistan",
-      "kyrgyzstan"
-    ],
-    "price": 162,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "1 TAB.",
-      "Composition": "Each film coated tablet contains: Albendazole BP 400 mg",
-      "Shelf Life": "3 years",
-      "Status": "Registered",
-      "Registered Countries": "Turkmenistan, Kyrgyzstan",
-      "Dosage - Adults": "1 tablet single dose",
-      "Indications": "Roundworm, hookworm infections",
-      "Usage Instructions": "Take after food; Do not repeat without consultation",
-      "Precautions": "Contraindicated in pregnancy; Monitor liver function on prolonged use",
-      "Possible Side Effects": "Dizziness; Nausea",
-      "Storage": "Store in dry, cool place.",
-      "Disclaimer": "Follow doctor's advice strictly."
     }
   },
   {
@@ -3588,92 +2512,6 @@ export const medicines = [
     }
   },
   {
-    "id": "vragripp-p-syrup",
-    "name": "VRAGRIPP-P SYRUP",
-    "category": "Syrup",
-    "image": "/products/vragripp-p-syrup.jpg",
-    "shortDescription": "Syrup formulation with Paracetamol B.P. 125 mg, Phenylephrine Hydrochloride B.P. 5 mg, Chlorphenamine Maleate B.P. 2 mg, in a flavored syr.",
-    "description": "VRAGRIPP-P SYRUP is a syrup product supplied in 100 ml bottle with a measuring cup. Composition: Each 5 ml of syrup contains: Paracetamol B.P. 125 mg, Phenylephrine Hydrochloride B.P. 5 mg, Chlorphenamine Maleate B.P. 2 mg, in a flavored syrup base. Indications: For the symptomatic relief of colds and flu in children., To reduce fever and relieve associated body aches and headaches., Treatment of nasal and sinus congestion., Relief of sneezing, runny nose and watery eyes (allergic rhinitis).. Usage: Shake the bottle well before each use to ensure all ingredients are evenly mixed., Always use the measuring spoon or cup provided with the package for accurate dosage. Do not use a regular kitchen spoon., Can be given to a child with or without food., Make sure there is a gap of at least 6 hours between doses and do not exceed the recommended daily dose.. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Comprehensive relief of cold symptoms: A comprehensive formula that simultaneously fights several cold symptoms: Paracetamol reduces fever and pain, Phenylephrine relieves nasal congestion, and Chlorphenamine relieves sneezing and runny nose.",
-      "Pleasant taste for children: It has a pleasant, appetizing taste, which helps children take the full prescribed dose without whims, which leads to better treatment results.",
-      "Clears a stuffy nose: The vasoconstrictor action of phenylephrine helps to unblock stuffy nasal passages, making it easier for the child to breathe.",
-      "Relieves allergy symptoms: Chlorphenamine, an antihistamine, effectively copes with allergic cold symptoms such as sneezing, watery eyes and runny nose."
-    ],
-    "tags": [
-      "syrup",
-      "vragripp",
-      "paracetamol",
-      "125",
-      "phenylephrine",
-      "hydrochloride",
-      "chlorphenamine",
-      "maleate",
-      "flavored",
-      "base"
-    ],
-    "price": 162,
-    "specifications": {
-      "Product Type": "Syrup",
-      "Packing": "100 ml bottle with a measuring cup",
-      "Composition": "Each 5 ml of syrup contains: Paracetamol B.P. 125 mg, Phenylephrine Hydrochloride B.P. 5 mg, Chlorphenamine Maleate B.P. 2 mg, in a flavored syrup base.",
-      "Shelf Life": "3 years from the date of manufacture",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Tajikistan, Turkmenistan",
-      "Dosage - Children": "For children from 1 year of age, the dosage should be determined by a pediatrician depending on age and weight. The general recommendation is 2.5-5 ml every 6-8 hours.",
-      "Dosage - Adults": "5-10 ml every 6-8 hours or as directed by a physician.",
-      "Indications": "For the symptomatic relief of colds and flu in children.; To reduce fever and relieve associated body aches and headaches.; Treatment of nasal and sinus congestion.; Relief of sneezing, runny nose and watery eyes (allergic rhinitis).",
-      "Usage Instructions": "Shake the bottle well before each use to ensure all ingredients are evenly mixed.; Always use the measuring spoon or cup provided with the package for accurate dosage. Do not use a regular kitchen spoon.; Can be given to a child with or without food.; Make sure there is a gap of at least 6 hours between doses and do not exceed the recommended daily dose.",
-      "Precautions": "Contains Paracetamol: Do not give with other products containing paracetamol to avoid the risk of serious liver damage from overdose.; May cause drowsiness: Chlorphenamine may cause drowsiness. Supervise the child and avoid activities requiring mental alertness.; Consult a doctor: Do not give to infants under 1 year of age. Consult a doctor before use if the child has high blood pressure, heart, liver or kidney problems.; Duration of use: If symptoms do not improve after 3-4 days or are accompanied by high fever, consult a pediatrician.",
-      "Possible Side Effects": "The most common side effect is drowsiness or lethargy. Mild gastrointestinal discomfort such as nausea or upset stomach may also occur.; Discontinue use and seek medical attention if the child develops nervousness, dizziness, insomnia, or any signs of an allergic reaction.",
-      "Storage": "Store in a cool, dry place at room temperature, away from direct sunlight.; Keep the bottle tightly closed after each use. No refrigeration is required.; Keep out of the reach of children to avoid accidental ingestion.",
-      "Disclaimer": "This is a medicated syrup for pediatric use. The dosage should be strictly followed as directed by a physician. Overdose can be harmful. Do not use to make a child sleepy."
-    }
-  },
-  {
-    "id": "vraggripp-plus-sachet",
-    "name": "VRAGGRIPP PLUS SACHET",
-    "category": "Sachet",
-    "image": "/products/vraggripp-plus-sachet.jpg",
-    "shortDescription": "Sachet formulation with Paracetamol BP 500 mg, Phenylephrine Hydrochloride BP 10 mg, Caffeine (Anhydrous) BP 30 mg, Pheniramine Maleate BP.",
-    "description": "VRAGGRIPP PLUS SACHET is a sachet product supplied in 10 x 5GM SACHET. Composition: Each sachet Contains: Paracetamol BP 500 mg, Phenylephrine Hydrochloride BP 10 mg, Caffeine (Anhydrous) BP 30 mg, Pheniramine Maleate BP 20 mg Indications: Common cold, Fever, Nasal congestion, Headache, Seasonal flu. Usage: Dissolve the contents in a glass of warm water and consume immediately, Do not exceed recommended dosage. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Relieves cold and flu symptoms effectively",
-      "Reduces nasal congestion and sinus pressure",
-      "Helps reduce fever and body aches",
-      "Eases throat discomfort"
-    ],
-    "tags": [
-      "vraggripp",
-      "plus",
-      "sachet",
-      "paracetamol",
-      "500",
-      "phenylephrine",
-      "hydrochloride",
-      "caffeine",
-      "anhydrous",
-      "pheniramine"
-    ],
-    "price": 197,
-    "specifications": {
-      "Product Type": "Sachet",
-      "Packing": "10 x 5GM SACHET",
-      "Composition": "Each sachet Contains: Paracetamol BP 500 mg, Phenylephrine Hydrochloride BP 10 mg, Caffeine (Anhydrous) BP 30 mg, Pheniramine Maleate BP 20 mg",
-      "Shelf Life": "2 years",
-      "Status": "Registered",
-      "Registered Countries": "Uzbekistan, Turkmenistan",
-      "Dosage - Children": "Not recommended unless prescribed by the physician",
-      "Dosage - Adults": "1 sachet dissolved in warm water twice daily or as prescribed",
-      "Indications": "Common cold; Fever; Nasal congestion; Headache; Seasonal flu",
-      "Usage Instructions": "Dissolve the contents in a glass of warm water and consume immediately; Do not exceed recommended dosage",
-      "Precautions": "Avoid alcohol while taking this medication; Not suitable for children without medical advice; Consult your doctor if you have liver or kidney issues",
-      "Possible Side Effects": "Drowsiness; Dry mouth; Mild nausea; Increased heart rate (rare)",
-      "Storage": "Store in a cool, dry place below 25°C. Protect from light and moisture.",
-      "Disclaimer": "To be sold by retail on the prescription of a registered medical practitioner only."
-    }
-  },
-  {
     "id": "vrakgripp-oral-drops",
     "name": "VRAKGRIPP ORAL DROPS",
     "category": "Oral Drops",
@@ -3712,42 +2550,6 @@ export const medicines = [
       "Possible Side Effects": "Mild drowsiness; Dry mouth; Irritability in rare cases",
       "Storage": "Store in a cool, dry place. Keep out of reach of children.",
       "Disclaimer": "Use only as directed by a registered pediatrician. For pediatric use only."
-    }
-  },
-  {
-    "id": "yelmicard-20-tablet",
-    "name": "YELMICARD-20 TABLET",
-    "category": "Tablet",
-    "image": "/products/yelmicard-20-tablet.jpg",
-    "shortDescription": "Tablet formulation with Telmisartan USP 20 mg.",
-    "description": "YELMICARD-20 TABLET is a tablet product supplied in 3 x 10 tablets. Composition: Each uncoated Tablet contains: Telmisartan USP 20 mg Indications: Hypertension, Cardiovascular risk reduction. Usage: Take with or without food, Do not skip doses. Use only under the guidance of a qualified healthcare professional.",
-    "benefits": [
-      "Helps in managing high blood pressure",
-      "Reduces the risk of cardiovascular complications"
-    ],
-    "tags": [
-      "tablet",
-      "yelmicard",
-      "telmisartan",
-      "tablets",
-      "uzbekistan"
-    ],
-    "price": 183,
-    "specifications": {
-      "Product Type": "Tablet",
-      "Packing": "3 x 10 tablets",
-      "Composition": "Each uncoated Tablet contains: Telmisartan USP 20 mg",
-      "Shelf Life": "3 years",
-      "Status": "On Process",
-      "Registered Countries": "Uzbekistan",
-      "Dosage - Children": "Not recommended",
-      "Dosage - Adults": "One tablet once daily or as directed by the physician",
-      "Indications": "Hypertension; Cardiovascular risk reduction",
-      "Usage Instructions": "Take with or without food; Do not skip doses",
-      "Precautions": "Monitor blood pressure regularly; Avoid if pregnant or breastfeeding; Consult doctor if you have kidney/liver issues",
-      "Possible Side Effects": "Dizziness; Fatigue; Upper respiratory tract infection",
-      "Storage": "Store in a dry place below 30°C. Keep away from sunlight.",
-      "Disclaimer": "To be taken only on medical advice. Prescription drug."
     }
   },
   {
@@ -3876,12 +2678,11 @@ export const medicines = [
     "id": "real-1mg-dolo-650-tablet",
     "name": "Dolo 650 Tablet",
     "price": 34,
-    "image": "/products/real-1mg-dolo-650-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161055.png",
     "description": "Dolo 650 Tablet helps relieve pain and fever by blocking the release of certain chemical messengers responsible for fever and pain. It is used to treat headaches, migraine, nerve pain, toothache, sore throat, period (menstrual) pains, arthritis, muscle aches, and the common cold.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.826531018597179
@@ -3894,8 +2695,7 @@ export const medicines = [
     "description": "Pan 40 Tablet is a medicine that reduces the amount of acid produced in your stomach. It is used for treating acid-related diseases of the stomach and intestine such as heartburn, acid reflux, peptic ulcer disease, and some other stomach conditions associated with excessive acid production.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.798759814677412
@@ -3904,12 +2704,11 @@ export const medicines = [
     "id": "real-1mg-shelcal-500-tablet",
     "name": "Shelcal 500 Tablet",
     "price": 119,
-    "image": "/products/real-1mg-shelcal-500-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161126.png",
     "description": "Shelcal 500 Tablet is a dietary supplement used to treat low blood calcium levels in people who do not get enough calcium from their diets. It is used to treat conditions caused by low calcium levels such as bone loss (osteoporosis), weak bones (osteomalacia/rickets), decreased activity of the parathyroid gland (hypoparathyroidism), and a certain muscle disease (latent tetany).",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.605877646068123
@@ -3922,8 +2721,7 @@ export const medicines = [
     "description": "Calpol 500+ Tablet helps relieve pain and fever by blocking the release of certain chemical messengers responsible for fever and pain.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.815945397086172
@@ -3932,12 +2730,11 @@ export const medicines = [
     "id": "real-1mg-augmentin-625-duo-tablet",
     "name": "Augmentin 625 Duo Tablet",
     "price": 204,
-    "image": "/products/real-1mg-augmentin-625-duo-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161211.png",
     "description": "Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.777382384322529
@@ -3950,8 +2747,7 @@ export const medicines = [
     "description": "Allegra 120mg Tablet is an anti-allergy medicine used in the treatment of allergic symptoms such as runny nose, congestion or stuffiness, sneezing, itching, swelling, and watery eyes.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.821171746821212
@@ -3960,12 +2756,11 @@ export const medicines = [
     "id": "real-1mg-volini-pain-relief-gel",
     "name": "Volini Pain Relief Gel",
     "price": 115,
-    "image": "/products/real-1mg-volini-pain-relief-gel.jpg",
+    "image": "/products/Screenshot 2026-06-10 161238.png",
     "description": "Volini Pain Relief Gel is a pain relief gel which provides effective relief from muscle pain, strains, sprains, spasms and cramps. Formulated with ingredients such as Diclofenac diethylamine, Methyl Salicylate, Menthol and Linseed oil.",
     "category": "Gel",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.8231323098351435
@@ -3978,8 +2773,7 @@ export const medicines = [
     "description": "Thyronorm 50mcg Tablet is used to treat an underactive thyroid gland (hypothyroidism). It replaces the hormone which is not being produced by your thyroid gland in sufficient quantity.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.509838152870985
@@ -3988,12 +2782,11 @@ export const medicines = [
     "id": "real-1mg-ecosprin-75-tablet",
     "name": "Ecosprin 75 Tablet",
     "price": 5.5,
-    "image": "/products/real-1mg-ecosprin-75-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161306.png",
     "description": "Ecosprin 75 Tablet is an antiplatelet medicine or a blood thinner that helps to prevent the formation of harmful blood clots in your blood vessels.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.58733692157784
@@ -4006,8 +2799,7 @@ export const medicines = [
     "description": "Telma 40 Tablet is a medicine used to treat high blood pressure and heart failure. Lowering blood pressure helps to prevent future heart attacks and strokes.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.784988285562412
@@ -4016,12 +2808,11 @@ export const medicines = [
     "id": "real-1mg-electral-powder--ors-",
     "name": "Electral Powder (ORs)",
     "price": 21,
-    "image": "/products/real-1mg-electral-powder--ors-.jpg",
+    "image": "/products/Screenshot 2026-06-10 161333.png",
     "description": "Electral Powder is a WHO-based ORS (Oral Rehydration Salt) formula. Oral rehydration salt is a combination of Dextrose and a number of essential electrolytes.",
     "category": "Granules",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.8138125556218725
@@ -4034,8 +2825,7 @@ export const medicines = [
     "description": "Zincovit Tablet is a nutritional supplement that contains a combination of multivitamins and multimineral. It is used to prevent or treat vitamin and mineral deficiency.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.622336635174664
@@ -4044,12 +2834,11 @@ export const medicines = [
     "id": "real-1mg-benadryl-cough-syrup",
     "name": "Benadryl Cough Syrup",
     "price": 135,
-    "image": "/products/real-1mg-benadryl-cough-syrup.jpg",
+    "image": "/products/Screenshot 2026-06-10 161358.png",
     "description": "Benadryl Cough Syrup is used in the treatment of cough. It relieves allergy symptoms such as runny nose, stuffy nose, sneezing, watery eyes and congestion or stuffiness.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.769132431342058
@@ -4062,8 +2851,7 @@ export const medicines = [
     "description": "Mucaine Gel Mint is a prescription medicine used in the treatment of acidity, heartburn and stomach ulcers.",
     "category": "Gel",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.854858589435352
@@ -4072,12 +2860,11 @@ export const medicines = [
     "id": "real-1mg-sorbiline-syrup",
     "name": "Sorbiline Syrup",
     "price": 141,
-    "image": "/products/real-1mg-sorbiline-syrup.jpg",
+    "image": "/products/Screenshot 2026-06-10 161425.png",
     "description": "Sorbiline Syrup is a combination medicine used in the treatment of fatty liver disease.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.744145575796052
@@ -4090,8 +2877,7 @@ export const medicines = [
     "description": "Ascoril LS Syrup is a combination medicine used in the treatment of cough with mucus.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.705115174521716
@@ -4100,12 +2886,11 @@ export const medicines = [
     "id": "real-1mg-becosules-capsules",
     "name": "Becosules Capsules",
     "price": 50,
-    "image": "/products/real-1mg-becosules-capsules.jpg",
+    "image": "/products/Screenshot 2026-06-10 161511.png",
     "description": "Becosules Capsule is a vitamin B-complex supplement. It contains a combination of Vitamin B1, B2, B3, B6, B9, B12, and Vitamin C.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.727992561259171
@@ -4118,8 +2903,7 @@ export const medicines = [
     "description": "Cremaffin Plus Syrup is a combination medicine used in the treatment of constipation.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.659122012458719
@@ -4128,12 +2912,11 @@ export const medicines = [
     "id": "real-1mg-liv-52-ds-tablet",
     "name": "Liv.52 DS Tablet",
     "price": 170,
-    "image": "/products/real-1mg-liv-52-ds-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161543.png",
     "description": "Liv.52 DS Tablet is a hepatoprotective herbal-mineral remedy beneficial in liver diseases and improves liver function.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.7197743163643535
@@ -4146,8 +2929,7 @@ export const medicines = [
     "description": "Honitus Cough Syrup is an ayurvedic medicine for cough that provides fast relief from cough and cold.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": 4.5837570601928155
@@ -4156,12 +2938,11 @@ export const medicines = [
     "id": "real-1mg-batch2-azithral-500-tablet",
     "name": "Azithral 500 Tablet",
     "price": 132,
-    "image": "/products/real-1mg-batch2-azithral-500-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161611.png",
     "description": "Azithral 500 Tablet is an antibiotic used to treat various types of bacterial infections of the respiratory tract, ear, nose, throat, lungs, skin, and eye in adults and children.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4174,8 +2955,7 @@ export const medicines = [
     "description": "Monocef-O 200 Tablet is an antibiotic belonging to the cephalosporin group, which is used to treat a variety of bacterial infections in the body.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4184,12 +2964,11 @@ export const medicines = [
     "id": "real-1mg-batch2-cheston-cold-tablet",
     "name": "Cheston Cold Tablet",
     "price": 45,
-    "image": "/products/real-1mg-batch2-cheston-cold-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161638.png",
     "description": "Cheston Cold Tablet is used to treat common cold symptoms. It provides temporary relief from stuffiness in the nose, helps to clear blocked nose and reduces fever and pain.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.9"
@@ -4202,8 +2981,7 @@ export const medicines = [
     "description": "Montair LC Tablet is a combination medicine used in the treatment of allergic symptoms such as runny nose, stuffy nose, sneezing, itching, swelling, watery eyes and congestion.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4212,12 +2990,11 @@ export const medicines = [
     "id": "real-1mg-batch2-azee-500-tablet",
     "name": "Azee 500 Tablet",
     "price": 132,
-    "image": "/products/real-1mg-batch2-azee-500-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161703.png",
     "description": "Azee 500 Tablet is an antibiotic used to treat various types of bacterial infections of the respiratory tract, ear, nose, throat, lungs, skin, and eye.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.1"
@@ -4230,8 +3007,7 @@ export const medicines = [
     "description": "Aciloc 150 Tablet is an antacid. It reduces the amount of acid produced in your stomach and is used to treat and prevent heartburn, indigestion and other symptoms caused by too much acid in the stomach.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4240,12 +3016,11 @@ export const medicines = [
     "id": "real-1mg-batch2-crocin-advance-tablet",
     "name": "Crocin Advance Tablet",
     "price": 20,
-    "image": "/products/real-1mg-batch2-crocin-advance-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161729.png",
     "description": "Crocin Advance Tablet helps relieve pain and fever by blocking the release of certain chemical messengers responsible for fever and pain.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4258,8 +3033,7 @@ export const medicines = [
     "description": "Meftal-Spas Tablet is a prescription medicine that helps to provide symptomatic relief from menstrual (period-related) pain and cramps.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4268,12 +3042,11 @@ export const medicines = [
     "id": "real-1mg-batch2-omee-capsule",
     "name": "Omee Capsule",
     "price": 61,
-    "image": "/products/real-1mg-batch2-omee-capsule.jpg",
+    "image": "/products/Screenshot 2026-06-10 161802.png",
     "description": "Omee Capsule is a medicine that reduces the amount of acid produced in your stomach. It is used for treating acid-related diseases of the stomach and intestine.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4286,8 +3059,7 @@ export const medicines = [
     "description": "Digene Gel provides relief from acidity and gas whenever acidity strikes. It is a sugar-free syrup that provides effective action against acidity, reduces stomach pain and protects the stomach from making excess acid for long-lasting relief.",
     "category": "Gel",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4296,12 +3068,11 @@ export const medicines = [
     "id": "real-1mg-batch2-betadine-2--ointment",
     "name": "Betadine 2% Ointment",
     "price": 125,
-    "image": "/products/real-1mg-batch2-betadine-2--ointment.jpg",
+    "image": "/products/Screenshot 2026-06-10 161829.png",
     "description": "Betadine 2% Ointment is a versatile broad-spectrum antiseptic that is used for the treatment or prevention of infection in minor cuts and abrasions.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.3"
@@ -4314,8 +3085,7 @@ export const medicines = [
     "description": "Neosporin Ointment is an antibiotic used to treat bacterial skin infections. It is effective in treating infected cuts, wounds, and minor burns.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4324,12 +3094,11 @@ export const medicines = [
     "id": "real-1mg-batch2-zifi-200-tablet",
     "name": "Zifi 200 Tablet",
     "price": 118,
-    "image": "/products/real-1mg-batch2-zifi-200-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 161853.png",
     "description": "Zifi 200 Tablet is an antibiotic belonging to the cephalosporin group, which is used to treat a variety of bacterial infections in the body.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4342,8 +3111,7 @@ export const medicines = [
     "description": "Taxim-O 200 Tablet is an antibiotic belonging to the cephalosporin group, which is used to treat a variety of bacterial infections.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4352,12 +3120,11 @@ export const medicines = [
     "id": "real-1mg-batch2-gelusil-mps-liquid",
     "name": "Gelusil MPS Liquid",
     "price": 137,
-    "image": "/products/real-1mg-batch2-gelusil-mps-liquid.jpg",
+    "image": "/products/Screenshot 2026-06-10 161916.png",
     "description": "Gelusil MPS Liquid is an antacid liquid that gives quick relief from acidity, heartburn and gas.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4370,8 +3137,7 @@ export const medicines = [
     "description": "Voveran SR 100 Tablet is a pain relieving medicine. It is used to treat pain, swelling, stiffness, and joint pain in conditions like rheumatoid arthritis, osteoarthritis, and acute musculoskeletal injuries.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4380,12 +3146,11 @@ export const medicines = [
     "id": "real-1mg-batch2-calpol-250-paediatric-drops",
     "name": "Calpol 250 Paediatric Drops",
     "price": 45,
-    "image": "/products/real-1mg-batch2-calpol-250-paediatric-drops.jpg",
+    "image": "/products/Screenshot 2026-06-10 161942.png",
     "description": "Calpol 250 Paediatric Drops helps relieve pain and fever by blocking the release of certain chemical messengers responsible for fever and pain in children.",
     "category": "Oral Drops",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4398,8 +3163,7 @@ export const medicines = [
     "description": "Norflox TZ Tablet is a combination medicine that is used to treat gynecological infections, teeth and urine infections, lung infections, and abdominal infections such as acute diarrhea or dysentery.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4408,12 +3172,11 @@ export const medicines = [
     "id": "real-1mg-batch2-sporlac-ds-tablet",
     "name": "Sporlac DS Tablet",
     "price": 140,
-    "image": "/products/real-1mg-batch2-sporlac-ds-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 162006.png",
     "description": "Sporlac DS Tablet is a probiotic used to treat diarrhea caused due to infections, antibiotics, etc. It helps restore the normal flora in the intestines.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.3"
@@ -4426,8 +3189,7 @@ export const medicines = [
     "description": "Enterogermina Oral Suspension is a probiotic medicine that helps treat diarrhea caused due to infections, medicines, etc.",
     "category": "Suspension",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4436,12 +3198,11 @@ export const medicines = [
     "id": "real-1mg-batch2-cetzine-tablet",
     "name": "Cetzine Tablet",
     "price": 45,
-    "image": "/products/real-1mg-batch2-cetzine-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 162032.png",
     "description": "Cetzine Tablet belongs to a group of medicines called antihistamines. It is used to treat various allergic conditions such as hay fever, conjunctivitis and some skin reactions, and reactions to bites and stings.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4454,8 +3215,7 @@ export const medicines = [
     "description": "Okacet Tablet belongs to a group of medicines called antihistamines. It is used to treat various allergic conditions.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4464,12 +3224,11 @@ export const medicines = [
     "id": "real-1mg-batch2-levocet-m-tablet",
     "name": "Levocet M Tablet",
     "price": 145,
-    "image": "/products/real-1mg-batch2-levocet-m-tablet.jpg",
+    "image": "/products/Screenshot 2026-06-10 162056.png",
     "description": "Levocet M Tablet is a combination medicine used in the treatment of allergic symptoms such as runny nose, stuffy nose, sneezing, itching, swelling, watery eyes and congestion.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4482,8 +3241,7 @@ export const medicines = [
     "description": "Combiflam Tablet contains two painkiller medicines. They work together to reduce pain, fever, and inflammation. It is used to treat many conditions such as headache, muscle pain, pain during periods, toothache and joint pain.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.6"
@@ -4496,8 +3254,7 @@ export const medicines = [
     "description": "Zerodol-SP Tablet is a combination medicine used to relieve pain and swelling in various conditions like muscle pain, joint pain, and postoperative pain.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.6"
@@ -4510,8 +3267,7 @@ export const medicines = [
     "description": "Hifenac-P Tablet is a pain relieving medicine. It is used to reduce pain and inflammation in conditions like rheumatoid arthritis, ankylosing spondylitis, and osteoarthritis.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4524,8 +3280,7 @@ export const medicines = [
     "description": "Pantocid DSR Capsule is a prescription medicine used to treat gastroesophageal reflux disease (Acid reflux) and peptic ulcer disease by relieving the symptoms of acidity such as heartburn, stomach pain, or irritation.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4538,8 +3293,7 @@ export const medicines = [
     "description": "Rablet D Capsule is a prescription medicine used to treat gastroesophageal reflux disease (Acid reflux) and indigestion.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4552,8 +3306,7 @@ export const medicines = [
     "description": "Evion 400 Capsule contains Vitamin E which is known as a fat-soluble vitamin with antioxidant properties. It helps to maintain healthy skin, hair, and eyes.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4566,8 +3319,7 @@ export const medicines = [
     "description": "Supradyn Daily Tablet is a multivitamin and multimineral supplement which improves energy levels and boosts immunity.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4580,8 +3332,7 @@ export const medicines = [
     "description": "Limcee Chewable Tablet Orange is a nutritional supplement that contains Vitamin C. It helps the body absorb iron from the diet and prevents and treats Vitamin C deficiency.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4594,8 +3345,7 @@ export const medicines = [
     "description": "Neurobion Forte Tablet is a vitamin supplement that is used to treat or prevent vitamin deficiency due to poor diet, certain illnesses, or during pregnancy.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4608,8 +3358,7 @@ export const medicines = [
     "description": "Dexorange Syrup is a nutritional supplement used to treat and prevent iron deficiency anemia.",
     "category": "Syrup",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4622,8 +3371,7 @@ export const medicines = [
     "description": "T-Bact Ointment is an antibiotic medicine used to treat certain skin infections such as impetigo (red sores), recurring boils, and others.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4636,8 +3384,7 @@ export const medicines = [
     "description": "Soframycin Skin Cream is an antibiotic used to treat bacterial skin infections. It is effective in treating infected cuts, wounds, and minor burns.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4650,8 +3397,7 @@ export const medicines = [
     "description": "Candid-B Cream is a combination medicine used to treat various types of skin infections, usually the fungal type of skin infections.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.8"
@@ -4664,8 +3410,7 @@ export const medicines = [
     "description": "Quadriderm RF Cream is a combination medicine used in the treatment of various types of skin infections.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.1"
@@ -4678,8 +3423,7 @@ export const medicines = [
     "description": "Clocip Dusting Powder is an antifungal medicine. It is used in the treatment of fungal skin infections such as ringworm, athlete’s foot, nappy rash, sweat rash, and vaginal thrush.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4692,8 +3436,7 @@ export const medicines = [
     "description": "Itracoe 100 Capsule belongs to a group of medicines called antifungals. It works by stopping the growth of fungi and is used to treat infections of the mouth, throat, vagina, and other parts of the body including fingernails and toenails.",
     "category": "Capsule",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4706,8 +3449,7 @@ export const medicines = [
     "description": "Lulifin Cream is an antifungal medicine used to treat fungal infections of the skin such as athlete’s foot, Dhobie Itch, thrush, ringworm, and dry, flaky skin.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4720,8 +3462,7 @@ export const medicines = [
     "description": "Ketomac Shampoo is an antifungal medicine that is used to treat fungal infections of the scalp.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4734,8 +3475,7 @@ export const medicines = [
     "description": "Scalpe Plus Anti-Dandruff Shampoo is used to treat dandruff and seborrheic dermatitis of the scalp.",
     "category": "Other",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4748,8 +3488,7 @@ export const medicines = [
     "description": "Folvite 5mg Tablet is a folic acid supplement. It is used to treat a type of anemia where you have too few red blood cells because you have too little folic acid in your body.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.2"
@@ -4762,8 +3501,7 @@ export const medicines = [
     "description": "Orofer XT Tablet is a hematinic which is primarily used to manage iron deficiency anemia and nutritional anemias that occur especially during pregnancy and lactation.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4776,8 +3514,7 @@ export const medicines = [
     "description": "Concor 5 Tablet belongs to a group of medicines called beta-blockers. It is used to treat high blood pressure (hypertension), angina (heart-related chest pain), and irregular heart rhythms (arrhythmia).",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.7"
@@ -4790,8 +3527,7 @@ export const medicines = [
     "description": "Amlokind-AT Tablet is used to treat hypertension (high blood pressure). This is a combination of two medicines that controls blood pressure when a single medication is not effective.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.6"
@@ -4804,8 +3540,7 @@ export const medicines = [
     "description": "Gluconorm-G 1 Tablet belongs to a category of medicines known as anti-diabetic drugs. It is a combination of two medicines used to treat type 2 diabetes mellitus in adults.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.5"
@@ -4818,8 +3553,7 @@ export const medicines = [
     "description": "Glycomet-GP 1 Tablet belongs to a category of medicines known as anti-diabetic drugs. It is a combination of two medicines used to treat type 2 diabetes mellitus in adults.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.0"
@@ -4832,8 +3566,7 @@ export const medicines = [
     "description": "Rosuvas 10 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and to reduce the risk of heart disease.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.4"
@@ -4846,10 +3579,370 @@ export const medicines = [
     "description": "Atorva 20 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and to reduce the risk of heart disease.",
     "category": "Tablet",
     "specifications": {
-      "Product Type": "Healthcare",
-      "Source": "1mg Catalog"
+      "Product Type": "Healthcare"
     },
     "inStock": true,
     "rating": "4.9"
-  }
-];
+  },
+  {
+    "id": "sinarest-new-tablet",
+    "name": "Sinarest New Tablet",
+    "category": "Tablet",
+    "image": "/products/sinarest-new-tablet.jpg",
+    "shortDescription": "Tablet formulation with Paracetamol 500 mg, Phenylephrine 10 mg, Chlorpheniramine Maleate 2 mg, Caffeine 30 mg.",
+    "description": "Sinarest New Tablet is a combination cold and flu remedy. Each tablet contains Paracetamol 500 mg, Phenylephrine Hydrochloride 10 mg, Chlorpheniramine Maleate 2 mg, and Caffeine 30 mg. It provides relief from symptoms of common cold, flu, and allergic conditions including headache, body ache, nasal congestion, sneezing, and watery eyes.",
+    "benefits": [
+        "Fast relief from cold and flu symptoms",
+        "Reduces nasal congestion and sneezing",
+        "Alleviates headache and body pain",
+        "Caffeine helps combat drowsiness and fatigue"
+    ],
+    "tags": [
+        "tablet",
+        "sinarest",
+        "cold",
+        "flu",
+        "paracetamol",
+        "phenylephrine",
+        "chlorpheniramine",
+        "caffeine",
+        "otc"
+    ],
+    "price": 42,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "10 Tablets per strip",
+        "Composition": "Paracetamol 500 mg, Phenylephrine HCl 10 mg, Chlorpheniramine Maleate 2 mg, Caffeine 30 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Common cold, Flu, Nasal congestion, Sneezing, Headache, Body ache",
+        "Usage Instructions": "Take 1 tablet every 4-6 hours as needed. Do not exceed 4 tablets in 24 hours.",
+        "Precautions": "May cause drowsiness. Avoid driving or operating heavy machinery.",
+        "Storage": "Store below 25°C in a dry place. Keep out of reach of children.",
+        "Disclaimer": "Read the label carefully before use. This is an over-the-counter medicine."
+    }
+},
+  {
+    "id": "disprin-tablet",
+    "name": "Disprin Tablet",
+    "category": "Tablet",
+    "image": "/products/disprin-tablet.jpg",
+    "shortDescription": "Soluble tablet with Aspirin 350 mg for pain relief and fever reduction.",
+    "description": "Disprin Tablet contains Aspirin (Acetylsalicylic Acid) 350 mg. It is a soluble effervescent tablet used for the relief of mild to moderate pain including headache, toothache, and muscle pain. It also helps in reducing fever. Disprin dissolves quickly in water for faster absorption and action.",
+    "benefits": [
+        "Quick pain relief from headache and toothache",
+        "Effective fever reducer",
+        "Fast-dissolving effervescent formula",
+        "Widely trusted brand for over-the-counter pain relief"
+    ],
+    "tags": [
+        "tablet",
+        "disprin",
+        "aspirin",
+        "pain",
+        "headache",
+        "fever",
+        "effervescent",
+        "otc"
+    ],
+    "price": 18,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "10 Tablets per strip",
+        "Composition": "Aspirin (Acetylsalicylic Acid) 350 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Headache, Toothache, Muscle pain, Fever, Body aches",
+        "Usage Instructions": "Dissolve 1-2 tablets in half a glass of water. Take every 4-6 hours as needed.",
+        "Precautions": "Not recommended for children under 12 years. Not for patients with bleeding disorders.",
+        "Storage": "Store in a cool, dry place below 25°C.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "avil-25-tablet",
+    "name": "Avil 25 Tablet",
+    "category": "Tablet",
+    "image": "/products/avil-25-tablet.jpg",
+    "shortDescription": "Tablet formulation with Pheniramine Maleate 25 mg for allergy relief.",
+    "description": "Avil 25 Tablet contains Pheniramine Maleate 25 mg, an antihistamine. It is used for the symptomatic relief of allergic conditions such as hay fever, urticaria (hives), skin rashes, insect bites, and allergic rhinitis. It helps relieve itching, sneezing, runny nose, and watery eyes caused by allergies.",
+    "benefits": [
+        "Effective relief from allergic reactions",
+        "Reduces itching, sneezing, and runny nose",
+        "Fast-acting antihistamine",
+        "Useful for skin allergies and insect bites"
+    ],
+    "tags": [
+        "tablet",
+        "avil",
+        "allergy",
+        "antihistamine",
+        "pheniramine",
+        "itching",
+        "hives"
+    ],
+    "price": 22,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "15 Tablets per strip",
+        "Composition": "Pheniramine Maleate 25 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Allergic rhinitis, Urticaria, Skin allergies, Insect bites",
+        "Usage Instructions": "Take 1 tablet 2-3 times daily as directed by the physician.",
+        "Precautions": "May cause drowsiness. Avoid driving after taking this medicine.",
+        "Storage": "Store in a cool, dry place below 25°C.",
+        "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
+    }
+},
+  {
+    "id": "eno-fruit-salt",
+    "name": "Eno Fruit Salt",
+    "category": "Sachet",
+    "image": "/products/eno-fruit-salt.jpg",
+    "shortDescription": "Antacid powder with Sodium Bicarbonate and Citric Acid for quick acidity relief.",
+    "description": "Eno Fruit Salt is a fast-acting antacid available as an effervescent powder. It contains Sodium Bicarbonate and Citric Acid. It provides quick relief from acidity, heartburn, acid indigestion, and sour stomach. Simply mix with water for instant fizz and fast action. Trusted by millions for over 100 years.",
+    "benefits": [
+        "Provides relief from acidity in just 6 seconds",
+        "Fast-acting effervescent formula",
+        "Pleasant lemon flavour",
+        "Trusted household antacid brand"
+    ],
+    "tags": [
+        "sachet",
+        "eno",
+        "antacid",
+        "acidity",
+        "heartburn",
+        "sodium",
+        "bicarbonate",
+        "citric",
+        "acid",
+        "otc"
+    ],
+    "price": 10,
+    "specifications": {
+        "Product Type": "Sachet",
+        "Packing": "5g Sachet",
+        "Composition": "Sodium Bicarbonate, Citric Acid Anhydrous, Sodium Carbonate",
+        "Shelf Life": "3 years",
+        "Indications": "Acidity, Heartburn, Acid indigestion, Sour stomach",
+        "Usage Instructions": "Mix one sachet in half a glass of water and drink when the fizz settles.",
+        "Precautions": "Consult a doctor if symptoms persist beyond 14 days.",
+        "Storage": "Store in a cool, dry place. Protect from moisture.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "vicks-action-500-tablet",
+    "name": "Vicks Action 500 Advanced Tablet",
+    "category": "Tablet",
+    "image": "/products/vicks-action-500-tablet.jpg",
+    "shortDescription": "Tablet formulation with Paracetamol 500 mg, Phenylephrine 5 mg, Caffeine 25 mg for cold and flu.",
+    "description": "Vicks Action 500 Advanced Tablet is a multi-symptom cold and flu relief medicine. Each tablet contains Paracetamol 500 mg, Phenylephrine Hydrochloride 5 mg, and Caffeine 25 mg. It provides targeted relief from headache, body ache, fever, nasal congestion and sinus pressure associated with cold and flu.",
+    "benefits": [
+        "Multi-symptom cold and flu relief",
+        "Reduces fever and body ache effectively",
+        "Clears nasal and sinus congestion",
+        "Non-drowsy formula with caffeine"
+    ],
+    "tags": [
+        "tablet",
+        "vicks",
+        "action",
+        "500",
+        "cold",
+        "flu",
+        "paracetamol",
+        "phenylephrine",
+        "caffeine"
+    ],
+    "price": 55,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "10 Tablets per strip",
+        "Composition": "Paracetamol 500 mg, Phenylephrine HCl 5 mg, Caffeine 25 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Cold, Flu, Fever, Headache, Body ache, Nasal congestion",
+        "Usage Instructions": "Adults: 1-2 tablets every 4-6 hours. Do not exceed 8 tablets in 24 hours.",
+        "Precautions": "Do not use with other paracetamol-containing products.",
+        "Storage": "Store below 25°C in a dry place.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "strepsils-lozenges",
+    "name": "Strepsils Original Lozenges",
+    "category": "Lozenges",
+    "image": "/products/strepsils-lozenges.jpg",
+    "shortDescription": "Lozenges with Dichlorobenzyl Alcohol 1.2 mg and Amylmetacresol 0.6 mg for sore throat relief.",
+    "description": "Strepsils Original Lozenges provide effective relief from sore throat and mouth infections. Each lozenge contains 2,4-Dichlorobenzyl Alcohol 1.2 mg and Amylmetacresol 0.6 mg, which are mild antiseptics that help kill bacteria causing sore throat. They soothe the throat and provide a warming sensation.",
+    "benefits": [
+        "Effective relief from sore throat pain",
+        "Dual antiseptic action fights throat infections",
+        "Soothes irritated throat",
+        "Convenient lozenge form"
+    ],
+    "tags": [
+        "lozenges",
+        "strepsils",
+        "sore",
+        "throat",
+        "antiseptic",
+        "cough",
+        "cold",
+        "otc"
+    ],
+    "price": 45,
+    "specifications": {
+        "Product Type": "Lozenges",
+        "Packing": "8 Lozenges per pack",
+        "Composition": "2,4-Dichlorobenzyl Alcohol 1.2 mg, Amylmetacresol 0.6 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Sore throat, Mouth infections, Throat irritation",
+        "Usage Instructions": "Dissolve 1 lozenge slowly in the mouth every 2-3 hours. Maximum 12 lozenges in 24 hours.",
+        "Precautions": "Not recommended for children under 6 years without medical advice.",
+        "Storage": "Store below 25°C. Protect from moisture and heat.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "imodium-capsule",
+    "name": "Imodium Capsule",
+    "category": "Capsule",
+    "image": "/products/imodium-capsule.jpg",
+    "shortDescription": "Capsule formulation with Loperamide Hydrochloride 2 mg for diarrhea relief.",
+    "description": "Imodium Capsule contains Loperamide Hydrochloride 2 mg, an anti-diarrheal medicine. It works by slowing down the movement of the gut, reducing the number of bowel movements and making the stool less watery. Imodium provides effective relief from acute and chronic diarrhea.",
+    "benefits": [
+        "Fast relief from acute diarrhea",
+        "Reduces frequency of bowel movements",
+        "Makes stools less watery",
+        "Well-established anti-diarrheal brand"
+    ],
+    "tags": [
+        "capsule",
+        "imodium",
+        "loperamide",
+        "diarrhea",
+        "anti-diarrheal",
+        "stomach"
+    ],
+    "price": 32,
+    "specifications": {
+        "Product Type": "Capsule",
+        "Packing": "4 Capsules per strip",
+        "Composition": "Loperamide Hydrochloride 2 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Acute diarrhea, Chronic diarrhea, Traveller's diarrhea",
+        "Usage Instructions": "Adults: 2 capsules initially, then 1 capsule after each loose stool. Maximum 8 capsules in 24 hours.",
+        "Precautions": "Not recommended for children under 12 years. Consult doctor if diarrhea persists beyond 48 hours.",
+        "Storage": "Store below 25°C in a dry place.",
+        "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
+    }
+},
+  {
+    "id": "dulcolax-tablet",
+    "name": "Dulcolax Tablet",
+    "category": "Tablet",
+    "image": "/products/dulcolax-tablet.jpg",
+    "shortDescription": "Tablet formulation with Bisacodyl 5 mg for relief from constipation.",
+    "description": "Dulcolax Tablet contains Bisacodyl 5 mg, a stimulant laxative. It works by stimulating the bowel muscles to cause a bowel movement. Dulcolax provides predictable, overnight relief from constipation. It is enteric-coated to ensure the active ingredient is released in the intestine for gentle yet effective action.",
+    "benefits": [
+        "Predictable overnight relief from constipation",
+        "Gentle stimulant laxative action",
+        "Enteric-coated for targeted release",
+        "Trusted brand for bowel regularity"
+    ],
+    "tags": [
+        "tablet",
+        "dulcolax",
+        "bisacodyl",
+        "laxative",
+        "constipation",
+        "bowel"
+    ],
+    "price": 48,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "10 Tablets per strip",
+        "Composition": "Bisacodyl 5 mg (enteric-coated)",
+        "Shelf Life": "3 years",
+        "Indications": "Constipation, Bowel preparation before medical procedures",
+        "Usage Instructions": "Adults: 1-2 tablets at bedtime. Swallow whole with water, do not chew or crush.",
+        "Precautions": "Do not use daily for more than 7 days without medical advice. Not for children under 10 years.",
+        "Storage": "Store below 25°C in a dry place.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "saridon-tablet",
+    "name": "Saridon Tablet",
+    "category": "Tablet",
+    "image": "/products/saridon-tablet.jpg",
+    "shortDescription": "Tablet formulation with Paracetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg for headache relief.",
+    "description": "Saridon Tablet is a triple-action headache relief formula. Each tablet contains Paracetamol 250 mg, Propyphenazone 150 mg, and Caffeine 50 mg. It provides fast and effective relief from headaches, including tension headaches and migraines. The combination of three active ingredients works synergistically for superior pain relief.",
+    "benefits": [
+        "Triple-action formula for fast headache relief",
+        "Works on tension headaches and migraines",
+        "Caffeine enhances pain-relieving effect",
+        "Trusted headache specialist brand"
+    ],
+    "tags": [
+        "tablet",
+        "saridon",
+        "headache",
+        "paracetamol",
+        "propyphenazone",
+        "caffeine",
+        "migraine",
+        "pain"
+    ],
+    "price": 30,
+    "specifications": {
+        "Product Type": "Tablet",
+        "Packing": "10 Tablets per strip",
+        "Composition": "Paracetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg",
+        "Shelf Life": "3 years",
+        "Indications": "Headache, Tension headache, Migraine, Toothache, Body pain",
+        "Usage Instructions": "Adults: 1-2 tablets with water as needed. Do not exceed 6 tablets in 24 hours.",
+        "Precautions": "Not recommended for children under 12 years. Avoid with alcohol.",
+        "Storage": "Store below 25°C in a dry place.",
+        "Disclaimer": "Read the label carefully before use."
+    }
+},
+  {
+    "id": "dabur-honitus-madhuvaani",
+    "name": "Dabur Honitus Madhuvaani",
+    "category": "Syrup",
+    "image": "/products/dabur-honitus-madhuvaani.jpg",
+    "shortDescription": "Ayurvedic cough syrup with Honey, Tulsi, Mulethi and Banaphsha for cough and cold relief.",
+    "description": "Dabur Honitus Madhuvaani is an ayurvedic cough and cold remedy. It is formulated with natural ingredients including Honey, Tulsi (Holy Basil), Mulethi (Licorice), Banaphsha (Viola), and other time-tested herbs. It provides relief from cough, cold, sore throat, and chest congestion. Being non-drowsy, it can be taken during the day without affecting daily activities.",
+    "benefits": [
+        "Natural ayurvedic formula for cough relief",
+        "Soothes sore throat and chest congestion",
+        "Non-drowsy and safe for daily use",
+        "Contains honey and natural herbs"
+    ],
+    "tags": [
+        "syrup",
+        "dabur",
+        "honitus",
+        "madhuvaani",
+        "ayurvedic",
+        "cough",
+        "cold",
+        "honey",
+        "tulsi",
+        "herbal"
+    ],
+    "price": 85,
+    "specifications": {
+        "Product Type": "Syrup",
+        "Packing": "150 ML Bottle",
+        "Composition": "Honey, Tulsi, Mulethi, Banaphsha, and other herbal extracts",
+        "Shelf Life": "3 years",
+        "Indications": "Cough, Cold, Sore throat, Chest congestion",
+        "Usage Instructions": "Adults: 2 teaspoons 3 times a day. Children: 1 teaspoon 3 times a day.",
+        "Precautions": "Consult a physician if symptoms persist beyond 7 days.",
+        "Storage": "Store in a cool, dry place. Keep the bottle tightly closed.",
+        "Disclaimer": "This is an ayurvedic proprietary medicine."
+    }
+}
+];;;
