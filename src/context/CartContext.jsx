@@ -17,12 +17,14 @@ const getStorageKey = (userId) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const [items, setItems] = useState([]);
   const [cartLoaded, setCartLoaded] = useState(false); // To prevent overwriting remote with empty local cart on mount
 
   // Load cart on mount or user change
   useEffect(() => {
+    if (authLoading) return;
+
     const loadCart = async () => {
       try {
         if (user?.uid) {
@@ -58,7 +60,7 @@ export const CartProvider = ({ children }) => {
     
     setCartLoaded(false);
     loadCart();
-  }, [user?.uid]);
+  }, [user?.uid, authLoading]);
 
   // Save cart on items change
   useEffect(() => {

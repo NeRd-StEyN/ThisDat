@@ -2688,19 +2688,6 @@ export const medicines = [
     "rating": 4.826531018597179
   },
   {
-    "id": "real-1mg-pan-40-tablet",
-    "name": "Pan 40 Tablet",
-    "price": 155,
-    "image": "/products/real-1mg-pan-40-tablet.jpg",
-    "description": "Pan 40 Tablet is a medicine that reduces the amount of acid produced in your stomach. It is used for treating acid-related diseases of the stomach and intestine such as heartburn, acid reflux, peptic ulcer disease, and some other stomach conditions associated with excessive acid production.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.798759814677412
-  },
-  {
     "id": "real-1mg-shelcal-500-tablet",
     "name": "Shelcal 500 Tablet",
     "price": 119,
@@ -2712,19 +2699,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": 4.605877646068123
-  },
-  {
-    "id": "real-1mg-calpol-500--tablet",
-    "name": "Calpol 500+ Tablet",
-    "price": 18,
-    "image": "/products/real-1mg-calpol-500--tablet.jpg",
-    "description": "Calpol 500+ Tablet helps relieve pain and fever by blocking the release of certain chemical messengers responsible for fever and pain.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.815945397086172
   },
   {
     "id": "real-1mg-augmentin-625-duo-tablet",
@@ -2740,19 +2714,6 @@ export const medicines = [
     "rating": 4.777382384322529
   },
   {
-    "id": "real-1mg-allegra-120mg-tablet",
-    "name": "Allegra 120mg Tablet",
-    "price": 219,
-    "image": "/products/real-1mg-allegra-120mg-tablet.jpg",
-    "description": "Allegra 120mg Tablet is an anti-allergy medicine used in the treatment of allergic symptoms such as runny nose, congestion or stuffiness, sneezing, itching, swelling, and watery eyes.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.821171746821212
-  },
-  {
     "id": "real-1mg-volini-pain-relief-gel",
     "name": "Volini Pain Relief Gel",
     "price": 115,
@@ -2764,19 +2725,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": 4.8231323098351435
-  },
-  {
-    "id": "real-1mg-thyronorm-50mcg-tablet",
-    "name": "Thyronorm 50mcg Tablet",
-    "price": 168,
-    "image": "/products/real-1mg-thyronorm-50mcg-tablet.jpg",
-    "description": "Thyronorm 50mcg Tablet is used to treat an underactive thyroid gland (hypothyroidism). It replaces the hormone which is not being produced by your thyroid gland in sufficient quantity.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.509838152870985
   },
   {
     "id": "real-1mg-ecosprin-75-tablet",
@@ -2792,19 +2740,6 @@ export const medicines = [
     "rating": 4.58733692157784
   },
   {
-    "id": "real-1mg-telma-40-tablet",
-    "name": "Telma 40 Tablet",
-    "price": 232,
-    "image": "/products/real-1mg-telma-40-tablet.jpg",
-    "description": "Telma 40 Tablet is a medicine used to treat high blood pressure and heart failure. Lowering blood pressure helps to prevent future heart attacks and strokes.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.784988285562412
-  },
-  {
     "id": "real-1mg-electral-powder--ors-",
     "name": "Electral Powder (ORs)",
     "price": 21,
@@ -2816,19 +2751,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": 4.8138125556218725
-  },
-  {
-    "id": "real-1mg-zincovit-tablet",
-    "name": "Zincovit Tablet",
-    "price": 105,
-    "image": "/products/real-1mg-zincovit-tablet.jpg",
-    "description": "Zincovit Tablet is a nutritional supplement that contains a combination of multivitamins and multimineral. It is used to prevent or treat vitamin and mineral deficiency.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.622336635174664
   },
   {
     "id": "real-1mg-benadryl-cough-syrup",
@@ -2844,19 +2766,6 @@ export const medicines = [
     "rating": 4.769132431342058
   },
   {
-    "id": "real-1mg-mucaine-gel-mint",
-    "name": "Mucaine Gel Mint",
-    "price": 185,
-    "image": "/products/real-1mg-mucaine-gel-mint.jpg",
-    "description": "Mucaine Gel Mint is a prescription medicine used in the treatment of acidity, heartburn and stomach ulcers.",
-    "category": "Gel",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.854858589435352
-  },
-  {
     "id": "real-1mg-sorbiline-syrup",
     "name": "Sorbiline Syrup",
     "price": 141,
@@ -2868,19 +2777,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": 4.744145575796052
-  },
-  {
-    "id": "real-1mg-ascoril-ls-syrup",
-    "name": "Ascoril LS Syrup",
-    "price": 118,
-    "image": "/products/real-1mg-ascoril-ls-syrup.jpg",
-    "description": "Ascoril LS Syrup is a combination medicine used in the treatment of cough with mucus.",
-    "category": "Syrup",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.705115174521716
   },
   {
     "id": "real-1mg-becosules-capsules",
@@ -2896,19 +2792,6 @@ export const medicines = [
     "rating": 4.727992561259171
   },
   {
-    "id": "real-1mg-cremaffin-plus-syrup",
-    "name": "Cremaffin Plus Syrup",
-    "price": 250,
-    "image": "/products/real-1mg-cremaffin-plus-syrup.jpg",
-    "description": "Cremaffin Plus Syrup is a combination medicine used in the treatment of constipation.",
-    "category": "Syrup",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.659122012458719
-  },
-  {
     "id": "real-1mg-liv-52-ds-tablet",
     "name": "Liv.52 DS Tablet",
     "price": 170,
@@ -2920,19 +2803,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": 4.7197743163643535
-  },
-  {
-    "id": "real-1mg-honitus-cough-syrup",
-    "name": "Honitus Cough Syrup",
-    "price": 95,
-    "image": "/products/real-1mg-honitus-cough-syrup.jpg",
-    "description": "Honitus Cough Syrup is an ayurvedic medicine for cough that provides fast relief from cough and cold.",
-    "category": "Syrup",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": 4.5837570601928155
   },
   {
     "id": "real-1mg-batch2-azithral-500-tablet",
@@ -2948,19 +2818,6 @@ export const medicines = [
     "rating": "4.2"
   },
   {
-    "id": "real-1mg-batch2-monocef-o-200-tablet",
-    "name": "Monocef-O 200 Tablet",
-    "price": 165,
-    "image": "/products/real-1mg-batch2-monocef-o-200-tablet.jpg",
-    "description": "Monocef-O 200 Tablet is an antibiotic belonging to the cephalosporin group, which is used to treat a variety of bacterial infections in the body.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.7"
-  },
-  {
     "id": "real-1mg-batch2-cheston-cold-tablet",
     "name": "Cheston Cold Tablet",
     "price": 45,
@@ -2972,19 +2829,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": "4.9"
-  },
-  {
-    "id": "real-1mg-batch2-montair-lc-tablet",
-    "name": "Montair LC Tablet",
-    "price": 320,
-    "image": "/products/real-1mg-batch2-montair-lc-tablet.jpg",
-    "description": "Montair LC Tablet is a combination medicine used in the treatment of allergic symptoms such as runny nose, stuffy nose, sneezing, itching, swelling, watery eyes and congestion.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.0"
   },
   {
     "id": "real-1mg-batch2-azee-500-tablet",
@@ -3000,19 +2844,6 @@ export const medicines = [
     "rating": "4.1"
   },
   {
-    "id": "real-1mg-batch2-aciloc-150-tablet",
-    "name": "Aciloc 150 Tablet",
-    "price": 42,
-    "image": "/products/real-1mg-batch2-aciloc-150-tablet.jpg",
-    "description": "Aciloc 150 Tablet is an antacid. It reduces the amount of acid produced in your stomach and is used to treat and prevent heartburn, indigestion and other symptoms caused by too much acid in the stomach.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.4"
-  },
-  {
     "id": "real-1mg-batch2-crocin-advance-tablet",
     "name": "Crocin Advance Tablet",
     "price": 20,
@@ -3024,19 +2855,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": "4.0"
-  },
-  {
-    "id": "real-1mg-batch2-meftal-spas-tablet",
-    "name": "Meftal-Spas Tablet",
-    "price": 52,
-    "image": "/products/real-1mg-batch2-meftal-spas-tablet.jpg",
-    "description": "Meftal-Spas Tablet is a prescription medicine that helps to provide symptomatic relief from menstrual (period-related) pain and cramps.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.4"
   },
   {
     "id": "real-1mg-batch2-omee-capsule",
@@ -3052,19 +2870,6 @@ export const medicines = [
     "rating": "4.4"
   },
   {
-    "id": "real-1mg-batch2-digene-antacid-gel",
-    "name": "Digene Antacid Gel",
-    "price": 145,
-    "image": "/products/real-1mg-batch2-digene-antacid-gel.jpg",
-    "description": "Digene Gel provides relief from acidity and gas whenever acidity strikes. It is a sugar-free syrup that provides effective action against acidity, reduces stomach pain and protects the stomach from making excess acid for long-lasting relief.",
-    "category": "Gel",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.2"
-  },
-  {
     "id": "real-1mg-batch2-betadine-2--ointment",
     "name": "Betadine 2% Ointment",
     "price": 125,
@@ -3076,19 +2881,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": "4.3"
-  },
-  {
-    "id": "real-1mg-batch2-neosporin-ointment",
-    "name": "Neosporin Ointment",
-    "price": 105,
-    "image": "/products/real-1mg-batch2-neosporin-ointment.jpg",
-    "description": "Neosporin Ointment is an antibiotic used to treat bacterial skin infections. It is effective in treating infected cuts, wounds, and minor burns.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.8"
   },
   {
     "id": "real-1mg-batch2-zifi-200-tablet",
@@ -3104,38 +2896,12 @@ export const medicines = [
     "rating": "4.5"
   },
   {
-    "id": "real-1mg-batch2-taxim-o-200-tablet",
-    "name": "Taxim-O 200 Tablet",
-    "price": 165,
-    "image": "/products/real-1mg-batch2-taxim-o-200-tablet.jpg",
-    "description": "Taxim-O 200 Tablet is an antibiotic belonging to the cephalosporin group, which is used to treat a variety of bacterial infections.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.7"
-  },
-  {
     "id": "real-1mg-batch2-gelusil-mps-liquid",
     "name": "Gelusil MPS Liquid",
     "price": 137,
     "image": "/products/Screenshot 2026-06-10 161916.png",
     "description": "Gelusil MPS Liquid is an antacid liquid that gives quick relief from acidity, heartburn and gas.",
     "category": "Syrup",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.7"
-  },
-  {
-    "id": "real-1mg-batch2-voveran-sr-100-tablet",
-    "name": "Voveran SR 100 Tablet",
-    "price": 220,
-    "image": "/products/real-1mg-batch2-voveran-sr-100-tablet.jpg",
-    "description": "Voveran SR 100 Tablet is a pain relieving medicine. It is used to treat pain, swelling, stiffness, and joint pain in conditions like rheumatoid arthritis, osteoarthritis, and acute musculoskeletal injuries.",
-    "category": "Tablet",
     "specifications": {
       "Product Type": "Healthcare"
     },
@@ -3156,19 +2922,6 @@ export const medicines = [
     "rating": "4.0"
   },
   {
-    "id": "real-1mg-batch2-norflox-tz-tablet",
-    "name": "Norflox TZ Tablet",
-    "price": 110,
-    "image": "/products/real-1mg-batch2-norflox-tz-tablet.jpg",
-    "description": "Norflox TZ Tablet is a combination medicine that is used to treat gynecological infections, teeth and urine infections, lung infections, and abdominal infections such as acute diarrhea or dysentery.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.4"
-  },
-  {
     "id": "real-1mg-batch2-sporlac-ds-tablet",
     "name": "Sporlac DS Tablet",
     "price": 140,
@@ -3180,19 +2933,6 @@ export const medicines = [
     },
     "inStock": true,
     "rating": "4.3"
-  },
-  {
-    "id": "real-1mg-batch2-enterogermina-suspension",
-    "name": "Enterogermina Suspension",
-    "price": 250,
-    "image": "/products/real-1mg-batch2-enterogermina-suspension.jpg",
-    "description": "Enterogermina Oral Suspension is a probiotic medicine that helps treat diarrhea caused due to infections, medicines, etc.",
-    "category": "Suspension",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.7"
   },
   {
     "id": "real-1mg-batch2-cetzine-tablet",
@@ -3208,19 +2948,6 @@ export const medicines = [
     "rating": "4.5"
   },
   {
-    "id": "real-1mg-batch2-okacet-tablet",
-    "name": "Okacet Tablet",
-    "price": 20,
-    "image": "/products/real-1mg-batch2-okacet-tablet.jpg",
-    "description": "Okacet Tablet belongs to a group of medicines called antihistamines. It is used to treat various allergic conditions.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.8"
-  },
-  {
     "id": "real-1mg-batch2-levocet-m-tablet",
     "name": "Levocet M Tablet",
     "price": 145,
@@ -3234,23 +2961,10 @@ export const medicines = [
     "rating": "4.8"
   },
   {
-    "id": "real-1mg-batch2-combiflam-tablet",
-    "name": "Combiflam Tablet",
-    "price": 48,
-    "image": "/products/real-1mg-batch2-combiflam-tablet.jpg",
-    "description": "Combiflam Tablet contains two painkiller medicines. They work together to reduce pain, fever, and inflammation. It is used to treat many conditions such as headache, muscle pain, pain during periods, toothache and joint pain.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.6"
-  },
-  {
     "id": "real-1mg-batch2-zerodol-sp-tablet",
     "name": "Zerodol-SP Tablet",
     "price": 125,
-    "image": "/products/real-1mg-batch2-zerodol-sp-tablet.jpg",
+    "image": "/products/Zerodol-SP Tablet.jpg",
     "description": "Zerodol-SP Tablet is a combination medicine used to relieve pain and swelling in various conditions like muscle pain, joint pain, and postoperative pain.",
     "category": "Tablet",
     "specifications": {
@@ -3260,23 +2974,10 @@ export const medicines = [
     "rating": "4.6"
   },
   {
-    "id": "real-1mg-batch2-hifenac-p-tablet",
-    "name": "Hifenac-P Tablet",
-    "price": 95,
-    "image": "/products/real-1mg-batch2-hifenac-p-tablet.jpg",
-    "description": "Hifenac-P Tablet is a pain relieving medicine. It is used to reduce pain and inflammation in conditions like rheumatoid arthritis, ankylosing spondylitis, and osteoarthritis.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.5"
-  },
-  {
     "id": "real-1mg-batch2-pantocid-dsr-capsule",
     "name": "Pantocid DSR Capsule",
     "price": 230,
-    "image": "/products/real-1mg-batch2-pantocid-dsr-capsule.jpg",
+    "image": "/products/Pantocid DSR Capsule.avif",
     "description": "Pantocid DSR Capsule is a prescription medicine used to treat gastroesophageal reflux disease (Acid reflux) and peptic ulcer disease by relieving the symptoms of acidity such as heartburn, stomach pain, or irritation.",
     "category": "Capsule",
     "specifications": {
@@ -3286,23 +2987,10 @@ export const medicines = [
     "rating": "4.7"
   },
   {
-    "id": "real-1mg-batch2-rablet-d-capsule",
-    "name": "Rablet D Capsule",
-    "price": 245,
-    "image": "/products/real-1mg-batch2-rablet-d-capsule.jpg",
-    "description": "Rablet D Capsule is a prescription medicine used to treat gastroesophageal reflux disease (Acid reflux) and indigestion.",
-    "category": "Capsule",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.5"
-  },
-  {
     "id": "real-1mg-batch2-evion-400-capsule",
     "name": "Evion 400 Capsule",
     "price": 38,
-    "image": "/products/real-1mg-batch2-evion-400-capsule.jpg",
+    "image": "/products/Evion 400 Capsule.webp",
     "description": "Evion 400 Capsule contains Vitamin E which is known as a fat-soluble vitamin with antioxidant properties. It helps to maintain healthy skin, hair, and eyes.",
     "category": "Capsule",
     "specifications": {
@@ -3312,37 +3000,11 @@ export const medicines = [
     "rating": "4.8"
   },
   {
-    "id": "real-1mg-batch2-supradyn-daily-tablet",
-    "name": "Supradyn Daily Tablet",
-    "price": 65,
-    "image": "/products/real-1mg-batch2-supradyn-daily-tablet.jpg",
-    "description": "Supradyn Daily Tablet is a multivitamin and multimineral supplement which improves energy levels and boosts immunity.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.0"
-  },
-  {
     "id": "real-1mg-batch2-limcee-chewable-tablet",
     "name": "Limcee Chewable Tablet",
     "price": 25,
-    "image": "/products/real-1mg-batch2-limcee-chewable-tablet.jpg",
+    "image": "/products/Limcee Chewable Tablet.jpg",
     "description": "Limcee Chewable Tablet Orange is a nutritional supplement that contains Vitamin C. It helps the body absorb iron from the diet and prevents and treats Vitamin C deficiency.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.2"
-  },
-  {
-    "id": "real-1mg-batch2-neurobion-forte-tablet",
-    "name": "Neurobion Forte Tablet",
-    "price": 38,
-    "image": "/products/real-1mg-batch2-neurobion-forte-tablet.jpg",
-    "description": "Neurobion Forte Tablet is a vitamin supplement that is used to treat or prevent vitamin deficiency due to poor diet, certain illnesses, or during pregnancy.",
     "category": "Tablet",
     "specifications": {
       "Product Type": "Healthcare"
@@ -3354,7 +3016,7 @@ export const medicines = [
     "id": "real-1mg-batch2-dexorange-syrup",
     "name": "Dexorange Syrup",
     "price": 175,
-    "image": "/products/real-1mg-batch2-dexorange-syrup.jpg",
+    "image": "/products/Dexorange Syrup.webp",
     "description": "Dexorange Syrup is a nutritional supplement used to treat and prevent iron deficiency anemia.",
     "category": "Syrup",
     "specifications": {
@@ -3364,23 +3026,10 @@ export const medicines = [
     "rating": "4.8"
   },
   {
-    "id": "real-1mg-batch2-t-bact-ointment",
-    "name": "T-Bact Ointment",
-    "price": 135,
-    "image": "/products/real-1mg-batch2-t-bact-ointment.jpg",
-    "description": "T-Bact Ointment is an antibiotic medicine used to treat certain skin infections such as impetigo (red sores), recurring boils, and others.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.2"
-  },
-  {
     "id": "real-1mg-batch2-soframycin-skin-cream",
     "name": "Soframycin Skin Cream",
     "price": 55,
-    "image": "/products/real-1mg-batch2-soframycin-skin-cream.jpg",
+    "image": "/products/Soframycin Skin Cream.jpg",
     "description": "Soframycin Skin Cream is an antibiotic used to treat bacterial skin infections. It is effective in treating infected cuts, wounds, and minor burns.",
     "category": "Other",
     "specifications": {
@@ -3390,23 +3039,10 @@ export const medicines = [
     "rating": "4.0"
   },
   {
-    "id": "real-1mg-batch2-candid-b-cream",
-    "name": "Candid-B Cream",
-    "price": 145,
-    "image": "/products/real-1mg-batch2-candid-b-cream.jpg",
-    "description": "Candid-B Cream is a combination medicine used to treat various types of skin infections, usually the fungal type of skin infections.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.8"
-  },
-  {
     "id": "real-1mg-batch2-quadriderm-rf-cream",
     "name": "Quadriderm RF Cream",
     "price": 95,
-    "image": "/products/real-1mg-batch2-quadriderm-rf-cream.jpg",
+    "image": "/products/Quadriderm RF Cream.avif",
     "description": "Quadriderm RF Cream is a combination medicine used in the treatment of various types of skin infections.",
     "category": "Other",
     "specifications": {
@@ -3416,23 +3052,10 @@ export const medicines = [
     "rating": "4.1"
   },
   {
-    "id": "real-1mg-batch2-clocip-dusting-powder",
-    "name": "Clocip Dusting Powder",
-    "price": 110,
-    "image": "/products/real-1mg-batch2-clocip-dusting-powder.jpg",
-    "description": "Clocip Dusting Powder is an antifungal medicine. It is used in the treatment of fungal skin infections such as ringworm, athlete’s foot, nappy rash, sweat rash, and vaginal thrush.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.5"
-  },
-  {
     "id": "real-1mg-batch2-itracoe-100-capsule",
     "name": "Itracoe 100 Capsule",
     "price": 210,
-    "image": "/products/real-1mg-batch2-itracoe-100-capsule.jpg",
+    "image": "/products/Itracoe 100 Capsule.avif",
     "description": "Itracoe 100 Capsule belongs to a group of medicines called antifungals. It works by stopping the growth of fungi and is used to treat infections of the mouth, throat, vagina, and other parts of the body including fingernails and toenails.",
     "category": "Capsule",
     "specifications": {
@@ -3442,23 +3065,10 @@ export const medicines = [
     "rating": "4.2"
   },
   {
-    "id": "real-1mg-batch2-lulifin-cream",
-    "name": "Lulifin Cream",
-    "price": 285,
-    "image": "/products/real-1mg-batch2-lulifin-cream.jpg",
-    "description": "Lulifin Cream is an antifungal medicine used to treat fungal infections of the skin such as athlete’s foot, Dhobie Itch, thrush, ringworm, and dry, flaky skin.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.4"
-  },
-  {
     "id": "real-1mg-batch2-ketomac-shampoo",
     "name": "Ketomac Shampoo",
     "price": 265,
-    "image": "/products/real-1mg-batch2-ketomac-shampoo.jpg",
+    "image": "/products/Ketomac Shampoo.png",
     "description": "Ketomac Shampoo is an antifungal medicine that is used to treat fungal infections of the scalp.",
     "category": "Other",
     "specifications": {
@@ -3468,23 +3078,10 @@ export const medicines = [
     "rating": "4.7"
   },
   {
-    "id": "real-1mg-batch2-scalpe-plus-shampoo",
-    "name": "Scalpe Plus Shampoo",
-    "price": 345,
-    "image": "/products/real-1mg-batch2-scalpe-plus-shampoo.jpg",
-    "description": "Scalpe Plus Anti-Dandruff Shampoo is used to treat dandruff and seborrheic dermatitis of the scalp.",
-    "category": "Other",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.0"
-  },
-  {
     "id": "real-1mg-batch2-folvite-5mg-tablet",
     "name": "Folvite 5mg Tablet",
     "price": 75,
-    "image": "/products/real-1mg-batch2-folvite-5mg-tablet.jpg",
+    "image": "/products/Folvite 5mg Tablet.avif",
     "description": "Folvite 5mg Tablet is a folic acid supplement. It is used to treat a type of anemia where you have too few red blood cells because you have too little folic acid in your body.",
     "category": "Tablet",
     "specifications": {
@@ -3494,23 +3091,10 @@ export const medicines = [
     "rating": "4.2"
   },
   {
-    "id": "real-1mg-batch2-orofer-xt-tablet",
-    "name": "Orofer XT Tablet",
-    "price": 195,
-    "image": "/products/real-1mg-batch2-orofer-xt-tablet.jpg",
-    "description": "Orofer XT Tablet is a hematinic which is primarily used to manage iron deficiency anemia and nutritional anemias that occur especially during pregnancy and lactation.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.4"
-  },
-  {
     "id": "real-1mg-batch2-concor-5-tablet",
     "name": "Concor 5 Tablet",
     "price": 125,
-    "image": "/products/real-1mg-batch2-concor-5-tablet.jpg",
+    "image": "/products/Concor 5 Tablet.jpg",
     "description": "Concor 5 Tablet belongs to a group of medicines called beta-blockers. It is used to treat high blood pressure (hypertension), angina (heart-related chest pain), and irregular heart rhythms (arrhythmia).",
     "category": "Tablet",
     "specifications": {
@@ -3520,23 +3104,10 @@ export const medicines = [
     "rating": "4.7"
   },
   {
-    "id": "real-1mg-batch2-amlokind-at-tablet",
-    "name": "Amlokind-AT Tablet",
-    "price": 45,
-    "image": "/products/real-1mg-batch2-amlokind-at-tablet.jpg",
-    "description": "Amlokind-AT Tablet is used to treat hypertension (high blood pressure). This is a combination of two medicines that controls blood pressure when a single medication is not effective.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.6"
-  },
-  {
     "id": "real-1mg-batch2-gluconorm-g-1-tablet",
     "name": "Gluconorm-G 1 Tablet",
     "price": 185,
-    "image": "/products/real-1mg-batch2-gluconorm-g-1-tablet.jpg",
+    "image": "/products/Gluconorm-G 1 Tablet.webp",
     "description": "Gluconorm-G 1 Tablet belongs to a category of medicines known as anti-diabetic drugs. It is a combination of two medicines used to treat type 2 diabetes mellitus in adults.",
     "category": "Tablet",
     "specifications": {
@@ -3546,23 +3117,10 @@ export const medicines = [
     "rating": "4.5"
   },
   {
-    "id": "real-1mg-batch2-glycomet-gp-1-tablet",
-    "name": "Glycomet-GP 1 Tablet",
-    "price": 195,
-    "image": "/products/real-1mg-batch2-glycomet-gp-1-tablet.jpg",
-    "description": "Glycomet-GP 1 Tablet belongs to a category of medicines known as anti-diabetic drugs. It is a combination of two medicines used to treat type 2 diabetes mellitus in adults.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.0"
-  },
-  {
     "id": "real-1mg-batch2-rosuvas-10-tablet",
     "name": "Rosuvas 10 Tablet",
     "price": 230,
-    "image": "/products/real-1mg-batch2-rosuvas-10-tablet.jpg",
+    "image": "/products/Rosuvas 10 Tablet.webp",
     "description": "Rosuvas 10 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and to reduce the risk of heart disease.",
     "category": "Tablet",
     "specifications": {
@@ -3572,377 +3130,364 @@ export const medicines = [
     "rating": "4.4"
   },
   {
-    "id": "real-1mg-batch2-atorva-20-tablet",
-    "name": "Atorva 20 Tablet",
-    "price": 165,
-    "image": "/products/real-1mg-batch2-atorva-20-tablet.jpg",
-    "description": "Atorva 20 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and to reduce the risk of heart disease.",
-    "category": "Tablet",
-    "specifications": {
-      "Product Type": "Healthcare"
-    },
-    "inStock": true,
-    "rating": "4.9"
-  },
-  {
     "id": "sinarest-new-tablet",
     "name": "Sinarest New Tablet",
     "category": "Tablet",
-    "image": "/products/sinarest-new-tablet.jpg",
+    "image": "/products/Sinarest New Tablet.jpg",
     "shortDescription": "Tablet formulation with Paracetamol 500 mg, Phenylephrine 10 mg, Chlorpheniramine Maleate 2 mg, Caffeine 30 mg.",
     "description": "Sinarest New Tablet is a combination cold and flu remedy. Each tablet contains Paracetamol 500 mg, Phenylephrine Hydrochloride 10 mg, Chlorpheniramine Maleate 2 mg, and Caffeine 30 mg. It provides relief from symptoms of common cold, flu, and allergic conditions including headache, body ache, nasal congestion, sneezing, and watery eyes.",
     "benefits": [
-        "Fast relief from cold and flu symptoms",
-        "Reduces nasal congestion and sneezing",
-        "Alleviates headache and body pain",
-        "Caffeine helps combat drowsiness and fatigue"
+      "Fast relief from cold and flu symptoms",
+      "Reduces nasal congestion and sneezing",
+      "Alleviates headache and body pain",
+      "Caffeine helps combat drowsiness and fatigue"
     ],
     "tags": [
-        "tablet",
-        "sinarest",
-        "cold",
-        "flu",
-        "paracetamol",
-        "phenylephrine",
-        "chlorpheniramine",
-        "caffeine",
-        "otc"
+      "tablet",
+      "sinarest",
+      "cold",
+      "flu",
+      "paracetamol",
+      "phenylephrine",
+      "chlorpheniramine",
+      "caffeine",
+      "otc"
     ],
     "price": 42,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "10 Tablets per strip",
-        "Composition": "Paracetamol 500 mg, Phenylephrine HCl 10 mg, Chlorpheniramine Maleate 2 mg, Caffeine 30 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Common cold, Flu, Nasal congestion, Sneezing, Headache, Body ache",
-        "Usage Instructions": "Take 1 tablet every 4-6 hours as needed. Do not exceed 4 tablets in 24 hours.",
-        "Precautions": "May cause drowsiness. Avoid driving or operating heavy machinery.",
-        "Storage": "Store below 25°C in a dry place. Keep out of reach of children.",
-        "Disclaimer": "Read the label carefully before use. This is an over-the-counter medicine."
+      "Product Type": "Tablet",
+      "Packing": "10 Tablets per strip",
+      "Composition": "Paracetamol 500 mg, Phenylephrine HCl 10 mg, Chlorpheniramine Maleate 2 mg, Caffeine 30 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Common cold, Flu, Nasal congestion, Sneezing, Headache, Body ache",
+      "Usage Instructions": "Take 1 tablet every 4-6 hours as needed. Do not exceed 4 tablets in 24 hours.",
+      "Precautions": "May cause drowsiness. Avoid driving or operating heavy machinery.",
+      "Storage": "Store below 25°C in a dry place. Keep out of reach of children.",
+      "Disclaimer": "Read the label carefully before use. This is an over-the-counter medicine."
     }
-},
+  },
   {
     "id": "disprin-tablet",
     "name": "Disprin Tablet",
     "category": "Tablet",
-    "image": "/products/disprin-tablet.jpg",
+    "image": "/products/Disprin Tablet.webp",
     "shortDescription": "Soluble tablet with Aspirin 350 mg for pain relief and fever reduction.",
     "description": "Disprin Tablet contains Aspirin (Acetylsalicylic Acid) 350 mg. It is a soluble effervescent tablet used for the relief of mild to moderate pain including headache, toothache, and muscle pain. It also helps in reducing fever. Disprin dissolves quickly in water for faster absorption and action.",
     "benefits": [
-        "Quick pain relief from headache and toothache",
-        "Effective fever reducer",
-        "Fast-dissolving effervescent formula",
-        "Widely trusted brand for over-the-counter pain relief"
+      "Quick pain relief from headache and toothache",
+      "Effective fever reducer",
+      "Fast-dissolving effervescent formula",
+      "Widely trusted brand for over-the-counter pain relief"
     ],
     "tags": [
-        "tablet",
-        "disprin",
-        "aspirin",
-        "pain",
-        "headache",
-        "fever",
-        "effervescent",
-        "otc"
+      "tablet",
+      "disprin",
+      "aspirin",
+      "pain",
+      "headache",
+      "fever",
+      "effervescent",
+      "otc"
     ],
     "price": 18,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "10 Tablets per strip",
-        "Composition": "Aspirin (Acetylsalicylic Acid) 350 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Headache, Toothache, Muscle pain, Fever, Body aches",
-        "Usage Instructions": "Dissolve 1-2 tablets in half a glass of water. Take every 4-6 hours as needed.",
-        "Precautions": "Not recommended for children under 12 years. Not for patients with bleeding disorders.",
-        "Storage": "Store in a cool, dry place below 25°C.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Tablet",
+      "Packing": "10 Tablets per strip",
+      "Composition": "Aspirin (Acetylsalicylic Acid) 350 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Headache, Toothache, Muscle pain, Fever, Body aches",
+      "Usage Instructions": "Dissolve 1-2 tablets in half a glass of water. Take every 4-6 hours as needed.",
+      "Precautions": "Not recommended for children under 12 years. Not for patients with bleeding disorders.",
+      "Storage": "Store in a cool, dry place below 25°C.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "avil-25-tablet",
     "name": "Avil 25 Tablet",
     "category": "Tablet",
-    "image": "/products/avil-25-tablet.jpg",
+    "image": "/products/Avil 25 Tablet.jpg",
     "shortDescription": "Tablet formulation with Pheniramine Maleate 25 mg for allergy relief.",
     "description": "Avil 25 Tablet contains Pheniramine Maleate 25 mg, an antihistamine. It is used for the symptomatic relief of allergic conditions such as hay fever, urticaria (hives), skin rashes, insect bites, and allergic rhinitis. It helps relieve itching, sneezing, runny nose, and watery eyes caused by allergies.",
     "benefits": [
-        "Effective relief from allergic reactions",
-        "Reduces itching, sneezing, and runny nose",
-        "Fast-acting antihistamine",
-        "Useful for skin allergies and insect bites"
+      "Effective relief from allergic reactions",
+      "Reduces itching, sneezing, and runny nose",
+      "Fast-acting antihistamine",
+      "Useful for skin allergies and insect bites"
     ],
     "tags": [
-        "tablet",
-        "avil",
-        "allergy",
-        "antihistamine",
-        "pheniramine",
-        "itching",
-        "hives"
+      "tablet",
+      "avil",
+      "allergy",
+      "antihistamine",
+      "pheniramine",
+      "itching",
+      "hives"
     ],
     "price": 22,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "15 Tablets per strip",
-        "Composition": "Pheniramine Maleate 25 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Allergic rhinitis, Urticaria, Skin allergies, Insect bites",
-        "Usage Instructions": "Take 1 tablet 2-3 times daily as directed by the physician.",
-        "Precautions": "May cause drowsiness. Avoid driving after taking this medicine.",
-        "Storage": "Store in a cool, dry place below 25°C.",
-        "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
+      "Product Type": "Tablet",
+      "Packing": "15 Tablets per strip",
+      "Composition": "Pheniramine Maleate 25 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Allergic rhinitis, Urticaria, Skin allergies, Insect bites",
+      "Usage Instructions": "Take 1 tablet 2-3 times daily as directed by the physician.",
+      "Precautions": "May cause drowsiness. Avoid driving after taking this medicine.",
+      "Storage": "Store in a cool, dry place below 25°C.",
+      "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
     }
-},
+  },
   {
     "id": "eno-fruit-salt",
     "name": "Eno Fruit Salt",
     "category": "Sachet",
-    "image": "/products/eno-fruit-salt.jpg",
+    "image": "/products/Eno Fruit Salt.webp",
     "shortDescription": "Antacid powder with Sodium Bicarbonate and Citric Acid for quick acidity relief.",
     "description": "Eno Fruit Salt is a fast-acting antacid available as an effervescent powder. It contains Sodium Bicarbonate and Citric Acid. It provides quick relief from acidity, heartburn, acid indigestion, and sour stomach. Simply mix with water for instant fizz and fast action. Trusted by millions for over 100 years.",
     "benefits": [
-        "Provides relief from acidity in just 6 seconds",
-        "Fast-acting effervescent formula",
-        "Pleasant lemon flavour",
-        "Trusted household antacid brand"
+      "Provides relief from acidity in just 6 seconds",
+      "Fast-acting effervescent formula",
+      "Pleasant lemon flavour",
+      "Trusted household antacid brand"
     ],
     "tags": [
-        "sachet",
-        "eno",
-        "antacid",
-        "acidity",
-        "heartburn",
-        "sodium",
-        "bicarbonate",
-        "citric",
-        "acid",
-        "otc"
+      "sachet",
+      "eno",
+      "antacid",
+      "acidity",
+      "heartburn",
+      "sodium",
+      "bicarbonate",
+      "citric",
+      "acid",
+      "otc"
     ],
     "price": 10,
     "specifications": {
-        "Product Type": "Sachet",
-        "Packing": "5g Sachet",
-        "Composition": "Sodium Bicarbonate, Citric Acid Anhydrous, Sodium Carbonate",
-        "Shelf Life": "3 years",
-        "Indications": "Acidity, Heartburn, Acid indigestion, Sour stomach",
-        "Usage Instructions": "Mix one sachet in half a glass of water and drink when the fizz settles.",
-        "Precautions": "Consult a doctor if symptoms persist beyond 14 days.",
-        "Storage": "Store in a cool, dry place. Protect from moisture.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Sachet",
+      "Packing": "5g Sachet",
+      "Composition": "Sodium Bicarbonate, Citric Acid Anhydrous, Sodium Carbonate",
+      "Shelf Life": "3 years",
+      "Indications": "Acidity, Heartburn, Acid indigestion, Sour stomach",
+      "Usage Instructions": "Mix one sachet in half a glass of water and drink when the fizz settles.",
+      "Precautions": "Consult a doctor if symptoms persist beyond 14 days.",
+      "Storage": "Store in a cool, dry place. Protect from moisture.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "vicks-action-500-tablet",
     "name": "Vicks Action 500 Advanced Tablet",
     "category": "Tablet",
-    "image": "/products/vicks-action-500-tablet.jpg",
+    "image": "/products/Vicks Action 500 Advanced Tablet.avif",
     "shortDescription": "Tablet formulation with Paracetamol 500 mg, Phenylephrine 5 mg, Caffeine 25 mg for cold and flu.",
     "description": "Vicks Action 500 Advanced Tablet is a multi-symptom cold and flu relief medicine. Each tablet contains Paracetamol 500 mg, Phenylephrine Hydrochloride 5 mg, and Caffeine 25 mg. It provides targeted relief from headache, body ache, fever, nasal congestion and sinus pressure associated with cold and flu.",
     "benefits": [
-        "Multi-symptom cold and flu relief",
-        "Reduces fever and body ache effectively",
-        "Clears nasal and sinus congestion",
-        "Non-drowsy formula with caffeine"
+      "Multi-symptom cold and flu relief",
+      "Reduces fever and body ache effectively",
+      "Clears nasal and sinus congestion",
+      "Non-drowsy formula with caffeine"
     ],
     "tags": [
-        "tablet",
-        "vicks",
-        "action",
-        "500",
-        "cold",
-        "flu",
-        "paracetamol",
-        "phenylephrine",
-        "caffeine"
+      "tablet",
+      "vicks",
+      "action",
+      "500",
+      "cold",
+      "flu",
+      "paracetamol",
+      "phenylephrine",
+      "caffeine"
     ],
     "price": 55,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "10 Tablets per strip",
-        "Composition": "Paracetamol 500 mg, Phenylephrine HCl 5 mg, Caffeine 25 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Cold, Flu, Fever, Headache, Body ache, Nasal congestion",
-        "Usage Instructions": "Adults: 1-2 tablets every 4-6 hours. Do not exceed 8 tablets in 24 hours.",
-        "Precautions": "Do not use with other paracetamol-containing products.",
-        "Storage": "Store below 25°C in a dry place.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Tablet",
+      "Packing": "10 Tablets per strip",
+      "Composition": "Paracetamol 500 mg, Phenylephrine HCl 5 mg, Caffeine 25 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Cold, Flu, Fever, Headache, Body ache, Nasal congestion",
+      "Usage Instructions": "Adults: 1-2 tablets every 4-6 hours. Do not exceed 8 tablets in 24 hours.",
+      "Precautions": "Do not use with other paracetamol-containing products.",
+      "Storage": "Store below 25°C in a dry place.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "strepsils-lozenges",
     "name": "Strepsils Original Lozenges",
     "category": "Lozenges",
-    "image": "/products/strepsils-lozenges.jpg",
+    "image": "/products/Strepsils Original Lozenges.jpg",
     "shortDescription": "Lozenges with Dichlorobenzyl Alcohol 1.2 mg and Amylmetacresol 0.6 mg for sore throat relief.",
     "description": "Strepsils Original Lozenges provide effective relief from sore throat and mouth infections. Each lozenge contains 2,4-Dichlorobenzyl Alcohol 1.2 mg and Amylmetacresol 0.6 mg, which are mild antiseptics that help kill bacteria causing sore throat. They soothe the throat and provide a warming sensation.",
     "benefits": [
-        "Effective relief from sore throat pain",
-        "Dual antiseptic action fights throat infections",
-        "Soothes irritated throat",
-        "Convenient lozenge form"
+      "Effective relief from sore throat pain",
+      "Dual antiseptic action fights throat infections",
+      "Soothes irritated throat",
+      "Convenient lozenge form"
     ],
     "tags": [
-        "lozenges",
-        "strepsils",
-        "sore",
-        "throat",
-        "antiseptic",
-        "cough",
-        "cold",
-        "otc"
+      "lozenges",
+      "strepsils",
+      "sore",
+      "throat",
+      "antiseptic",
+      "cough",
+      "cold",
+      "otc"
     ],
     "price": 45,
     "specifications": {
-        "Product Type": "Lozenges",
-        "Packing": "8 Lozenges per pack",
-        "Composition": "2,4-Dichlorobenzyl Alcohol 1.2 mg, Amylmetacresol 0.6 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Sore throat, Mouth infections, Throat irritation",
-        "Usage Instructions": "Dissolve 1 lozenge slowly in the mouth every 2-3 hours. Maximum 12 lozenges in 24 hours.",
-        "Precautions": "Not recommended for children under 6 years without medical advice.",
-        "Storage": "Store below 25°C. Protect from moisture and heat.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Lozenges",
+      "Packing": "8 Lozenges per pack",
+      "Composition": "2,4-Dichlorobenzyl Alcohol 1.2 mg, Amylmetacresol 0.6 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Sore throat, Mouth infections, Throat irritation",
+      "Usage Instructions": "Dissolve 1 lozenge slowly in the mouth every 2-3 hours. Maximum 12 lozenges in 24 hours.",
+      "Precautions": "Not recommended for children under 6 years without medical advice.",
+      "Storage": "Store below 25°C. Protect from moisture and heat.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "imodium-capsule",
     "name": "Imodium Capsule",
     "category": "Capsule",
-    "image": "/products/imodium-capsule.jpg",
+    "image": "/products/Imodium Capsule.webp",
     "shortDescription": "Capsule formulation with Loperamide Hydrochloride 2 mg for diarrhea relief.",
     "description": "Imodium Capsule contains Loperamide Hydrochloride 2 mg, an anti-diarrheal medicine. It works by slowing down the movement of the gut, reducing the number of bowel movements and making the stool less watery. Imodium provides effective relief from acute and chronic diarrhea.",
     "benefits": [
-        "Fast relief from acute diarrhea",
-        "Reduces frequency of bowel movements",
-        "Makes stools less watery",
-        "Well-established anti-diarrheal brand"
+      "Fast relief from acute diarrhea",
+      "Reduces frequency of bowel movements",
+      "Makes stools less watery",
+      "Well-established anti-diarrheal brand"
     ],
     "tags": [
-        "capsule",
-        "imodium",
-        "loperamide",
-        "diarrhea",
-        "anti-diarrheal",
-        "stomach"
+      "capsule",
+      "imodium",
+      "loperamide",
+      "diarrhea",
+      "anti-diarrheal",
+      "stomach"
     ],
     "price": 32,
     "specifications": {
-        "Product Type": "Capsule",
-        "Packing": "4 Capsules per strip",
-        "Composition": "Loperamide Hydrochloride 2 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Acute diarrhea, Chronic diarrhea, Traveller's diarrhea",
-        "Usage Instructions": "Adults: 2 capsules initially, then 1 capsule after each loose stool. Maximum 8 capsules in 24 hours.",
-        "Precautions": "Not recommended for children under 12 years. Consult doctor if diarrhea persists beyond 48 hours.",
-        "Storage": "Store below 25°C in a dry place.",
-        "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
+      "Product Type": "Capsule",
+      "Packing": "4 Capsules per strip",
+      "Composition": "Loperamide Hydrochloride 2 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Acute diarrhea, Chronic diarrhea, Traveller's diarrhea",
+      "Usage Instructions": "Adults: 2 capsules initially, then 1 capsule after each loose stool. Maximum 8 capsules in 24 hours.",
+      "Precautions": "Not recommended for children under 12 years. Consult doctor if diarrhea persists beyond 48 hours.",
+      "Storage": "Store below 25°C in a dry place.",
+      "Disclaimer": "This is a prescription medicine. Consult your doctor before use."
     }
-},
+  },
   {
     "id": "dulcolax-tablet",
     "name": "Dulcolax Tablet",
     "category": "Tablet",
-    "image": "/products/dulcolax-tablet.jpg",
+    "image": "/products/Dulcolax Tablet.jpg",
     "shortDescription": "Tablet formulation with Bisacodyl 5 mg for relief from constipation.",
     "description": "Dulcolax Tablet contains Bisacodyl 5 mg, a stimulant laxative. It works by stimulating the bowel muscles to cause a bowel movement. Dulcolax provides predictable, overnight relief from constipation. It is enteric-coated to ensure the active ingredient is released in the intestine for gentle yet effective action.",
     "benefits": [
-        "Predictable overnight relief from constipation",
-        "Gentle stimulant laxative action",
-        "Enteric-coated for targeted release",
-        "Trusted brand for bowel regularity"
+      "Predictable overnight relief from constipation",
+      "Gentle stimulant laxative action",
+      "Enteric-coated for targeted release",
+      "Trusted brand for bowel regularity"
     ],
     "tags": [
-        "tablet",
-        "dulcolax",
-        "bisacodyl",
-        "laxative",
-        "constipation",
-        "bowel"
+      "tablet",
+      "dulcolax",
+      "bisacodyl",
+      "laxative",
+      "constipation",
+      "bowel"
     ],
     "price": 48,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "10 Tablets per strip",
-        "Composition": "Bisacodyl 5 mg (enteric-coated)",
-        "Shelf Life": "3 years",
-        "Indications": "Constipation, Bowel preparation before medical procedures",
-        "Usage Instructions": "Adults: 1-2 tablets at bedtime. Swallow whole with water, do not chew or crush.",
-        "Precautions": "Do not use daily for more than 7 days without medical advice. Not for children under 10 years.",
-        "Storage": "Store below 25°C in a dry place.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Tablet",
+      "Packing": "10 Tablets per strip",
+      "Composition": "Bisacodyl 5 mg (enteric-coated)",
+      "Shelf Life": "3 years",
+      "Indications": "Constipation, Bowel preparation before medical procedures",
+      "Usage Instructions": "Adults: 1-2 tablets at bedtime. Swallow whole with water, do not chew or crush.",
+      "Precautions": "Do not use daily for more than 7 days without medical advice. Not for children under 10 years.",
+      "Storage": "Store below 25°C in a dry place.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "saridon-tablet",
     "name": "Saridon Tablet",
     "category": "Tablet",
-    "image": "/products/saridon-tablet.jpg",
+    "image": "/products/Saridon Tablet.avif",
     "shortDescription": "Tablet formulation with Paracetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg for headache relief.",
     "description": "Saridon Tablet is a triple-action headache relief formula. Each tablet contains Paracetamol 250 mg, Propyphenazone 150 mg, and Caffeine 50 mg. It provides fast and effective relief from headaches, including tension headaches and migraines. The combination of three active ingredients works synergistically for superior pain relief.",
     "benefits": [
-        "Triple-action formula for fast headache relief",
-        "Works on tension headaches and migraines",
-        "Caffeine enhances pain-relieving effect",
-        "Trusted headache specialist brand"
+      "Triple-action formula for fast headache relief",
+      "Works on tension headaches and migraines",
+      "Caffeine enhances pain-relieving effect",
+      "Trusted headache specialist brand"
     ],
     "tags": [
-        "tablet",
-        "saridon",
-        "headache",
-        "paracetamol",
-        "propyphenazone",
-        "caffeine",
-        "migraine",
-        "pain"
+      "tablet",
+      "saridon",
+      "headache",
+      "paracetamol",
+      "propyphenazone",
+      "caffeine",
+      "migraine",
+      "pain"
     ],
     "price": 30,
     "specifications": {
-        "Product Type": "Tablet",
-        "Packing": "10 Tablets per strip",
-        "Composition": "Paracetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg",
-        "Shelf Life": "3 years",
-        "Indications": "Headache, Tension headache, Migraine, Toothache, Body pain",
-        "Usage Instructions": "Adults: 1-2 tablets with water as needed. Do not exceed 6 tablets in 24 hours.",
-        "Precautions": "Not recommended for children under 12 years. Avoid with alcohol.",
-        "Storage": "Store below 25°C in a dry place.",
-        "Disclaimer": "Read the label carefully before use."
+      "Product Type": "Tablet",
+      "Packing": "10 Tablets per strip",
+      "Composition": "Paracetamol 250 mg, Propyphenazone 150 mg, Caffeine 50 mg",
+      "Shelf Life": "3 years",
+      "Indications": "Headache, Tension headache, Migraine, Toothache, Body pain",
+      "Usage Instructions": "Adults: 1-2 tablets with water as needed. Do not exceed 6 tablets in 24 hours.",
+      "Precautions": "Not recommended for children under 12 years. Avoid with alcohol.",
+      "Storage": "Store below 25°C in a dry place.",
+      "Disclaimer": "Read the label carefully before use."
     }
-},
+  },
   {
     "id": "dabur-honitus-madhuvaani",
     "name": "Dabur Honitus Madhuvaani",
     "category": "Syrup",
-    "image": "/products/dabur-honitus-madhuvaani.jpg",
+    "image": "/products/Dabur Honitus Madhuvaani Syrup.webp",
     "shortDescription": "Ayurvedic cough syrup with Honey, Tulsi, Mulethi and Banaphsha for cough and cold relief.",
     "description": "Dabur Honitus Madhuvaani is an ayurvedic cough and cold remedy. It is formulated with natural ingredients including Honey, Tulsi (Holy Basil), Mulethi (Licorice), Banaphsha (Viola), and other time-tested herbs. It provides relief from cough, cold, sore throat, and chest congestion. Being non-drowsy, it can be taken during the day without affecting daily activities.",
     "benefits": [
-        "Natural ayurvedic formula for cough relief",
-        "Soothes sore throat and chest congestion",
-        "Non-drowsy and safe for daily use",
-        "Contains honey and natural herbs"
+      "Natural ayurvedic formula for cough relief",
+      "Soothes sore throat and chest congestion",
+      "Non-drowsy and safe for daily use",
+      "Contains honey and natural herbs"
     ],
     "tags": [
-        "syrup",
-        "dabur",
-        "honitus",
-        "madhuvaani",
-        "ayurvedic",
-        "cough",
-        "cold",
-        "honey",
-        "tulsi",
-        "herbal"
+      "syrup",
+      "dabur",
+      "honitus",
+      "madhuvaani",
+      "ayurvedic",
+      "cough",
+      "cold",
+      "honey",
+      "tulsi",
+      "herbal"
     ],
     "price": 85,
     "specifications": {
-        "Product Type": "Syrup",
-        "Packing": "150 ML Bottle",
-        "Composition": "Honey, Tulsi, Mulethi, Banaphsha, and other herbal extracts",
-        "Shelf Life": "3 years",
-        "Indications": "Cough, Cold, Sore throat, Chest congestion",
-        "Usage Instructions": "Adults: 2 teaspoons 3 times a day. Children: 1 teaspoon 3 times a day.",
-        "Precautions": "Consult a physician if symptoms persist beyond 7 days.",
-        "Storage": "Store in a cool, dry place. Keep the bottle tightly closed.",
-        "Disclaimer": "This is an ayurvedic proprietary medicine."
+      "Product Type": "Syrup",
+      "Packing": "150 ML Bottle",
+      "Composition": "Honey, Tulsi, Mulethi, Banaphsha, and other herbal extracts",
+      "Shelf Life": "3 years",
+      "Indications": "Cough, Cold, Sore throat, Chest congestion",
+      "Usage Instructions": "Adults: 2 teaspoons 3 times a day. Children: 1 teaspoon 3 times a day.",
+      "Precautions": "Consult a physician if symptoms persist beyond 7 days.",
+      "Storage": "Store in a cool, dry place. Keep the bottle tightly closed.",
+      "Disclaimer": "This is an ayurvedic proprietary medicine."
     }
-}
+  }
 ];;;
