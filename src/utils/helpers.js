@@ -18,7 +18,8 @@ export const searchProducts = (products, query) => {
 
 export const filterByCategory = (products, category) => {
   if (!category || category === 'all' || category === 'All Categories') return products;
-  return products.filter(product => product.category === category);
+  const target = category.toLowerCase().replace(/ /g, '-');
+  return products.filter(product => product.category && product.category.toLowerCase().replace(/ /g, '-') === target);
 };
 
 export const sortProducts = (products, sortBy) => {

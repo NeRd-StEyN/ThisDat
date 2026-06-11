@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { medicines } from '../data/medicines';
+import { products as medicines } from '../data/products';
 import './CategoryCard.css';
 
 const CategoryCard = ({ category }) => {

@@ -4,7 +4,7 @@ import { ShoppingCart, Search, MapPin, ChevronDown, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../components/Toast';
-import { medicines } from '../data/medicines';
+import { products as medicines } from '../data/products';
 import './Navbar.css';
 
 const Navbar = () => {

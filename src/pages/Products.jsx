@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Package, Search } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
-import { medicines, categories } from '../data/medicines';
+import { products as medicines, categories } from '../data/products';
 import { searchProducts, filterByCategory, sortProducts } from '../utils/helpers';
 import './Products.css';
 
@@ -53,6 +53,12 @@ const Products = () => {
 
         <div className="products-page__controls">
           <div className="products-page__categories">
+            <button
+              className={`products-page__cat-chip${activeCategory === 'All Categories' ? ' products-page__cat-chip--active' : ''}`}
+              onClick={() => handleCategoryChange('All Categories')}
+            >
+              All Categories
+            </button>
             {categories.map(cat => (
               <button
                 key={cat.id}

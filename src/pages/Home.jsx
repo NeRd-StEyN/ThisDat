@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Truck, Headset, Search, FileText, CheckCircle } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import HeroBanner from '../components/HeroBanner';
-import { medicines, categories } from '../data/medicines';
+import { products as medicines, categories } from '../data/products';
 import './Home.css';
 
 const Home = () => {

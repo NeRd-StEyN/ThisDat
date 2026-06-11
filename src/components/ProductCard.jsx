@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Plus, Minus, Star, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/helpers';
-import { categories } from '../data/medicines';
+import { categories } from '../data/products';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {

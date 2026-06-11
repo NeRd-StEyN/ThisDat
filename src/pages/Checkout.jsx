@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
 import { formatPrice, getOrderId, saveOrder, saveAddress, getSavedAddress } from '../utils/helpers';
-import { categories } from '../data/medicines';
+import { categories } from '../data/products';
 import './Checkout.css';
 
 // Replace with your Formspree form ID

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Plus, Minus, ShieldCheck, User, Tag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../components/Toast';
-import { medicines, categories } from '../data/medicines';
+import { products as medicines, categories } from '../data/products';
 import './ProductDetail.css';
 
 const ProductDetail = () => {

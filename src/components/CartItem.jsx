@@ -1,7 +1,7 @@
 import { Plus, Minus, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/helpers';
-import { categories } from '../data/medicines';
+import { categories } from '../data/products';
 import './CartItem.css';
 
 const CartItem = ({ item }) => {

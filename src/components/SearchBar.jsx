@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, X } from 'lucide-react';
-import { medicines } from '../data/medicines';
+import { products as medicines } from '../data/products';
 import { searchProducts, formatPrice } from '../utils/helpers';
 import './SearchBar.css';
 
