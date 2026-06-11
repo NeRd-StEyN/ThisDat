@@ -47,12 +47,12 @@ const Cart = () => {
 
           {/* Summary */}
           <div className="cart-page__summary" id="cart-summary">
-            <h3 className="cart-page__summary-title">Request Summary</h3>
+            <h3 className="cart-page__summary-title">Order Summary</h3>
 
             <div className="cart-page__summary-row">
               <span className="cart-page__summary-label">Subtotal ({itemCount} items)</span>
               <span className="cart-page__summary-value">
-                {items.some(i => typeof i.price === 'string') ? 'TBD' : formatPrice(subtotal)}
+                {formatPrice(subtotal)}
               </span>
             </div>
 
@@ -68,7 +68,7 @@ const Cart = () => {
               className="cart-page__checkout-btn"
               id="checkout-btn"
             >
-              {isAuthenticated ? 'Proceed to Request' : 'Login to Request'}
+              {isAuthenticated ? 'Proceed to Checkout' : 'Login to Checkout'}
               <ArrowRight size={18} />
             </Link>
 

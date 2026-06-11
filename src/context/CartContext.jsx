@@ -118,7 +118,11 @@ export const CartProvider = ({ children }) => {
 
   const getSubtotal = useCallback(() => {
     return items.reduce((sum, item) => {
-      const price = typeof item.price === 'number' ? item.price : 0;
+      let price = item.price;
+      if (typeof price === 'string') {
+        price = parseFloat(price.replace(/[^\d.]/g, '')) || 0;
+      }
+      price = typeof price === 'number' ? price : 0;
       return sum + (price * item.quantity);
     }, 0);
   }, [items]);
