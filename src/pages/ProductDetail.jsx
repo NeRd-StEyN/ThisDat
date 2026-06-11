@@ -6,6 +6,48 @@ import { useToast } from '../components/Toast';
 import { products as medicines, categories } from '../data/products';
 import './ProductDetail.css';
 
+const renderFormattedDescription = (text) => {
+  if (!text) return null;
+  
+  const keywords = ['Composition:', 'Indications:', 'Usage:', 'Side Effects:', 'Dosage:', 'Storage:', 'Warning:', 'Precautions:', 'Direction for use:', 'Safety Information:'];
+  
+  if (!keywords.some(kw => text.includes(kw))) {
+    return <p className="pd-description">{text}</p>;
+  }
+
+  const regex = new RegExp(`(${keywords.join('|')})`, 'g');
+  const parts = text.split(regex);
+  
+  const sections = [];
+  const initialContent = parts[0].trim();
+  if (initialContent) {
+    sections.push({ title: 'Overview', content: initialContent });
+  }
+  
+  for (let i = 1; i < parts.length; i += 2) {
+    const title = parts[i].replace(':', '').trim();
+    const content = parts[i+1] ? parts[i+1].trim() : '';
+    sections.push({ title, content });
+  }
+
+  return (
+    <div className="pd-formatted-description">
+      {sections.map((sec, idx) => (
+        <div key={idx} className="pd-desc-section">
+          <h4 className="pd-desc-title">{sec.title}</h4>
+          <p className="pd-desc-content">
+            {sec.content.split('., ').map((sentence, sIdx, arr) => (
+              <span key={sIdx} className="pd-desc-sentence">
+                {sentence}{sIdx < arr.length - 1 ? '. ' : ''}
+              </span>
+            ))}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, updateQuantity, removeFromCart, getItemQuantity, isInCart } = useCart();
@@ -101,9 +143,7 @@ const ProductDetail = () => {
             
             <h1 className="pd-title">{product.name}</h1>
             
-            <p className="pd-description">
-              {product.description}
-            </p>
+            {renderFormattedDescription(product.description)}
 
             {/* Action Box */}
             <div className="pd-action-card">

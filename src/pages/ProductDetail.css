@@ -441,3 +441,41 @@
     width: 100%;
   }
 }
+
+.pd-formatted-description {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pd-desc-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #10847e;
+}
+
+.pd-desc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+.pd-desc-content {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pd-desc-sentence {
+  display: block;
+  margin-bottom: 8px;
+}
+.pd-desc-sentence:last-child {
+  margin-bottom: 0;
+}
+
