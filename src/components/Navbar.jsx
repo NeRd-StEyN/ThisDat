@@ -131,19 +131,22 @@ const Navbar = () => {
           <div className="navbar-1mg__top-right">
             {isAuthenticated ? (
               <div className="navbar-1mg__auth-links" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                <Link to="/profile">Profile</Link> | 
-                <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: '#4a4a4a', cursor: 'pointer', fontSize: '14px', padding: 0 }}>Logout</button>
+                <Link to="/profile" style={{ display: 'flex', alignItems: 'center' }}>Profile</Link>
+                <span style={{ color: '#ccc', display: 'flex', alignItems: 'center' }}>|</span> 
+                <button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', fontFamily: 'inherit' }}>Logout</button>
               </div>
             ) : (
-              <div className="navbar-1mg__auth-links">
-                <Link to="/login">Login</Link> | <Link to="/signup">Signup</Link>
+              <div className="navbar-1mg__auth-links" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <Link to="/login" style={{ display: 'flex', alignItems: 'center' }}>Login</Link>
+                <span style={{ color: '#ccc', display: 'flex', alignItems: 'center' }}>|</span> 
+                <Link to="/signup" style={{ display: 'flex', alignItems: 'center' }}>Signup</Link>
               </div>
             )}
-            <Link to="/cart" className="navbar-1mg__cart-icon">
+            <Link to="/cart" className="navbar-1mg__cart-icon" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
               <ShoppingCart size={20} />
               {itemCount > 0 && <span className="navbar-1mg__cart-badge">{itemCount}</span>}
             </Link>
-            <Link to="#" className="navbar-1mg__help" onClick={(e) => { e.preventDefault(); info('Reach us at support@thisdat.com or call 1800-THISDAT', 'Contact Support'); }}>Need Help?</Link>
+            <Link to="#" className="navbar-1mg__help" style={{ display: 'flex', alignItems: 'center', height: '100%' }} onClick={(e) => { e.preventDefault(); info('Reach us at support@thisdat.com or call 1800-THISDAT', 'Contact Support'); }}>Need Help?</Link>
           </div>
         </div>
       </div>
